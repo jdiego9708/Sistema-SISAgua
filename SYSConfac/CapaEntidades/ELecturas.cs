@@ -293,6 +293,11 @@ namespace CapaEntidades
             return DLecturas.BuscarLecturas(tipo_busqueda, texto_busqueda, out rpta);
         }
 
+        public static DataTable BuscarLecturas(string tipo_busqueda, string texto_busqueda1, string texto_busqueda2, out string rpta)
+        {
+            return DLecturas.BuscarLecturas(tipo_busqueda, texto_busqueda1, texto_busqueda2, out rpta);
+        }
+
         private int _id_lectura;
         private ECliente _eCliente;
         private ETarifas _eTarifas;

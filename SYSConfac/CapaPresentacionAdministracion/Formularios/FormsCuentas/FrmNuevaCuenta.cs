@@ -143,6 +143,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 {
                     eCuenta.Descuento = 0;
                 }
+
                 eCuenta.Total_pagar = this.Total_cuenta;
                 eCuenta.Motivo_descuento = "";
                 eCuenta.Estado_cuenta = "PENDIENTE DE PAGO";
@@ -252,8 +253,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 "$" + total.ToString("N2");
         }
 
-        private ECliente ECliente;
-
         public void AsignarDatosEditar(ECuentas eCuenta)
         {
             this.ECuenta = eCuenta;
@@ -288,8 +287,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             this.ECliente = eCliente;
             this.IsLectura = false;
         }
-
-        public ECuentas ECuenta;
 
         public void AsignarDatosLectura(EMedidor eMedidor, ECliente eCliente, decimal total, bool isEditar)
         {
@@ -412,6 +409,9 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
 
         public event EventHandler OnCuentaSuccess;
 
+
+        public ECuentas ECuenta;
+        private ECliente ECliente;
         private bool _isEditar;
         private bool _isLectura;
         private decimal _total_lectura;

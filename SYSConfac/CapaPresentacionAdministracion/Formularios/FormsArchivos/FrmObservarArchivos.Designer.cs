@@ -30,24 +30,38 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmObservarArchivos));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelArchivos = new CapaPresentacionAdministracion.Controles.CustomGridPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarArchivo = new System.Windows.Forms.Button();
-            this.panelArchivos = new CapaPresentacionAdministracion.Controles.CustomGridPanel();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.panelArchivos);
             this.groupBox2.Location = new System.Drawing.Point(12, 86);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(563, 403);
+            this.groupBox2.Size = new System.Drawing.Size(819, 592);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Archivos";
+            // 
+            // panelArchivos
+            // 
+            this.panelArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelArchivos.AutoScroll = true;
+            this.panelArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelArchivos.Location = new System.Drawing.Point(6, 24);
+            this.panelArchivos.Name = "panelArchivos";
+            this.panelArchivos.PageSize = 10;
+            this.panelArchivos.Size = new System.Drawing.Size(807, 562);
+            this.panelArchivos.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -56,7 +70,7 @@
             this.groupBox1.Controls.Add(this.btnAgregarArchivo);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(563, 68);
+            this.groupBox1.Size = new System.Drawing.Size(819, 68);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
@@ -82,25 +96,12 @@
             this.btnAgregarArchivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregarArchivo.UseVisualStyleBackColor = false;
             // 
-            // panelArchivos
-            // 
-            this.panelArchivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelArchivos.AutoScroll = true;
-            this.panelArchivos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelArchivos.Location = new System.Drawing.Point(6, 24);
-            this.panelArchivos.Name = "panelArchivos";
-            this.panelArchivos.PageSize = 10;
-            this.panelArchivos.Size = new System.Drawing.Size(551, 373);
-            this.panelArchivos.TabIndex = 0;
-            // 
             // FrmObservarArchivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(581, 501);
+            this.ClientSize = new System.Drawing.Size(837, 634);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,8 +109,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FrmObservarArchivos";
             this.Text = "Archivos";
             this.groupBox2.ResumeLayout(false);

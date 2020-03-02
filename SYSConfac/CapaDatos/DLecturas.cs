@@ -111,5 +111,80 @@ namespace CapaDatos
 
             return DConexion.EjecutarConsultaDt(Convert.ToString(consulta), out rpta);
         }
+
+        public static DataTable BuscarLecturas(string tipo_busqueda, string texto_busqueda1, string texto_busqueda2, out string rpta)
+        {
+            rpta = "OK";
+            StringBuilder consulta = new StringBuilder();
+            try
+            {
+                consulta.Append("SELECT * " +
+                "FROM Lecturas_cliente lec " +
+                "INNER JOIN Clientes cl " +
+                "ON lec.Id_cliente = cl.Id_cliente " +
+                "INNER JOIN Tipo_tarifas tpt " +
+                "ON lec.Id_tarifa = tpt.Id_tarifa " +
+                "INNER JOIN Empleados emp " +
+                "ON lec.Id_empleado = emp.Id_empleado " +
+                "INNER JOIN Medidores med " +
+                "ON lec.Id_medidor = med.Id_medidor " +
+                "INNER JOIN Direccion_clientes dircl " +
+                "ON med.Id_direccion = dircl.Id_direccion " +
+                "INNER JOIN Cuentas_cliente ccl " +
+                "ON lec.Id_cuenta = ccl.Id_cuenta " +
+                "INNER JOIN Medidas medidas " +
+                "ON lec.Id_medida = medidas.Id_medida ");
+
+                if (tipo_busqueda.Equals("COMPLETO ID CLIENTE"))
+                {
+                    consulta.Append("WHERE lec.Id_cliente = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("COMPLETO ID MEDIDOR"))
+                {
+                    consulta.Append("WHERE lec.Id_medidor = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("COMPLETO ID DIRECCION"))
+                {
+                    consulta.Append("WHERE med.Id_direccion = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("ID CUENTA"))
+                {
+                    consulta.Append("WHERE lec.Id_cuenta = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("LECTURA ANTERIOR ID CLIENTE"))
+                {
+                    consulta.Append("WHERE lec.Id_cliente = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("LECTURA ANTERIOR ID MEDIDOR"))
+                {
+                    consulta.Append("WHERE lec.Id_medidor = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("LECTURA MES"))
+                {
+                    consulta.Append("WHERE lec.Mes_lectura = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("ID LECTURA"))
+                {
+                    consulta.Append("WHERE lec.Id_lectura = '" + texto_busqueda1 + "' ");
+                }
+                else if (tipo_busqueda.Equals("ID LECTURA Y MEDIDOR"))
+                {
+                    consulta.Append("WHERE lec.Id_lectura = '" + texto_busqueda1 + "' " +
+                        "and lec.Id_medidor = '" + texto_busqueda2 + "' ");
+                }
+                else if (tipo_busqueda.Equals("MEDIDOR"))
+                {
+                    consulta.Append("WHERE lec.Id_medidor = '" + texto_busqueda1 + "' ");
+                }
+                consulta.Append("ORDER BY lec.Id_lectura DESC ");
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+                return null;
+            }
+
+            return DConexion.EjecutarConsultaDt(Convert.ToString(consulta), out rpta);
+        }
     }
 }

@@ -232,7 +232,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
         {
             if (this._isEnabled)
             {
-                DataTable dtTarifas = ETarifas.BuscarTarifas("CONSUMO", "CONSUMO", out string rpta);
+                DataTable dtTarifas = 
+                    ETarifas.BuscarTarifas("CONSUMO", "CONSUMO", out string rpta);
                 if (dtTarifas != null)
                 {
                     ETarifas eTarifa = new ETarifas(dtTarifas, 0);
@@ -429,11 +430,16 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                     this.EDetalleTarifa = eLectura.ETarifas.EDetalleTarifa;
 
                     //Obtener lectura anterior
-                    DataTable dtLecturaAnterior = ELecturas.BuscarLecturas("ID LECTURA", (id_lectura-1).ToString(),
+                    DataTable dtLecturaAnterior = ELecturas.BuscarLecturas("COMPLETO ID MEDIDOR", eLectura.EMedidor.Id_medidor.ToString(),
                     out rpta);
                     if (dtLecturaAnterior != null)
                     {
-                        ELecturas eLecturaAnterior = new ELecturas(dtLecturaAnterior, 0);
+                        ELecturas eLecturaAnterior;
+
+                        if (dtLecturaAnterior.Rows.Count > 1)
+                            eLecturaAnterior = new ELecturas(dtLecturaAnterior, 1);
+                        else
+                            eLecturaAnterior = new ELecturas(dtLecturaAnterior, 0);
 
                         this.txtLecturaAnterior.Text = eLecturaAnterior.Valor_lectura.ToString();
                         LecturaSmall lecturaSmall = new LecturaSmall();
