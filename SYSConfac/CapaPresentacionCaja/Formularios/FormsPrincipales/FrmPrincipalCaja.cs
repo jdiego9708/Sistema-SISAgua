@@ -229,7 +229,6 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                         StartPosition = FormStartPosition.CenterScreen
                     };
                     frmAbrirCaja.OnCajaModified += Frm_OnCajaModified;
-
                     frmAbrirCaja.AsignarDatos(this.ECaja, datosInicio.EEmpleado);
                     frmAbrirCaja.ShowDialog();
                 }
@@ -279,7 +278,8 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             FrmObservarCuentas frmObservarCuentas = new FrmObservarCuentas
             {
                 WindowState = FormWindowState.Maximized,
-                IsEditar = false
+                IsEditar = false,
+                IsCaja = this.IsCaja
             };
             frmObservarCuentas.BuscarCuentas("PENDIENTE DE PAGO HOY", DateTime.Now.ToString("yyyy-MM-dd"), "");
             frmObservarCuentas.gbBusqueda.Visible = false;

@@ -236,7 +236,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             decimal total_descuento = 0;
             if (resultDescuento)
             {
-                descuento = descuento / 100;
+                //descuento = descuento / 100;
                 if (Convert.ToString(this.listDescuentos.Text).Equals("100%"))
                     total_descuento = total;
                 else
@@ -253,18 +253,19 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 "$" + total.ToString("N2");
         }
 
-        public void AsignarDatosEditar(ECuentas eCuenta)
+        public void AsignarDatosEditar(ECuentas eCuenta, bool isLectura)
         {
             this.ECuenta = eCuenta;
             EMedidor eMedidor = eCuenta.EMedidor;
             ECliente eCliente = eCuenta.ECliente;
             this.Total_cuenta = eCuenta.Total_pagar;
+            this.Total_lectura = eCuenta.Total_lectura;
 
             this.txtCliente.Text = eCliente.Nombres + " " + eCliente.Apellidos;
             this.txtFecha.Text = DateTime.Now.ToLongDateString();
             this.ECliente = eCliente;
 
-            this.IsLectura = false;
+            this.IsLectura = isLectura;
             this.btnMedidor.Enabled = false;
 
             this.btnMedidor.Text = eMedidor.Medidor;
@@ -278,6 +279,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             this.txtFecha.Text = this.ECuenta.Fecha_cuenta.ToLongDateString();
             this.listDescuentos.SelectedValue = this.ECuenta.Descuento;
             this.listaIva.SelectedValue = this.ECuenta.Iva;
+
+            this.Calcular();
         }
 
         public void AsignarDatos(ECliente eCliente)
@@ -370,6 +373,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             this.listaIva.DataSource = dtIva;
             this.listaIva.ValueMember = "num_iva";
             this.listaIva.DisplayMember = "text_iva";
+            this.listaIva.SelectedIndexChanged += ListaIva_SelectedIndexChanged;
+        }
+
+        private void ListaIva_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.listaIva.DataSource != null)
+            {
+                this.Calcular();
+            }
         }
 
         private void ListaDescuentos()
@@ -381,8 +393,9 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             int contador = 0;
             while (contador <= 100)
             {
+                decimal des = (decimal)contador / (decimal)100;
                 DataRow row = TablaDescuentos.NewRow();
-                row["descuento_decimal"] = Convert.ToDecimal(Convert.ToString("0." + contador));
+                row["descuento_decimal"] = des;
                 row["descuento_entero"] = contador;
                 row["descuento_texto"] = contador + "%";
 
@@ -392,6 +405,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             this.listDescuentos.DataSource = TablaDescuentos;
             this.listDescuentos.ValueMember = "descuento_decimal";
             this.listDescuentos.DisplayMember = "descuento_texto";
+            this.listDescuentos.SelectedIndexChanged += ListDescuentos_SelectedIndexChanged;
+        }
+
+        private void ListDescuentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.listDescuentos.DataSource != null)
+            {
+                this.Calcular();
+            }
         }
 
         private void FrmNuevaCuenta_Load(object sender, EventArgs e)
@@ -408,7 +430,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
         }
 
         public event EventHandler OnCuentaSuccess;
-
 
         public ECuentas ECuenta;
         private ECliente ECliente;

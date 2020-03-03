@@ -330,11 +330,10 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                     }
                 }
 
-                this.lblDescuentos.Text =
-                    Convert.ToInt32(cuenta.Descuento) == 0 ?
-                    "No aplica ningún descuento" :
+                //decimal descuentoTotal = 
+                this.lblDescuentos.Text = cuenta.Descuento == 0 ? "No aplica ningún descuento" :
                     "Descuento: " + Convert.ToInt32(cuenta.Descuento * 100).ToString() + "%";
-                this.lblIva.Text = "IVA: " + (cuenta.Iva * 100).ToString() + "%";
+                this.lblIva.Text = "IVA: " + Convert.ToInt32((cuenta.Iva * 100)).ToString() + "%";
                 this.lblTotalPagar.Text = "Total a pagar: $" + Total_pagar.ToString("N2");
 
                 if (cuenta.Estado_cuenta.Equals("TERMINADO"))

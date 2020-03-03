@@ -31,7 +31,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                         StartPosition = FormStartPosition.CenterScreen,
                         IsEditar = true
                     };
-                    frmNuevaCuenta.AsignarDatosEditar(this.ECuenta);
+                    frmNuevaCuenta.AsignarDatosEditar(this.ECuenta, false);
                     frmNuevaCuenta.OnCuentaSuccess += FrmNuevaCuenta_OnCuentaSuccess;
                     frmNuevaCuenta.ShowDialog();
                 }

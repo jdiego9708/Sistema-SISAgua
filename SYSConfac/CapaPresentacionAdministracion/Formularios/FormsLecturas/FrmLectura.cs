@@ -43,9 +43,16 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                 };
 
                 if (this.IsEditar)
+                {
+                    frmNuevaCuenta.IsLectura = true;
+                    frmNuevaCuenta.IsEditar = true;
+                    this.ECuenta.Total_lectura = this.Total;
                     frmNuevaCuenta.ECuenta = this.ECuenta;
+                    frmNuevaCuenta.AsignarDatosEditar(this.ECuenta, true);
+                }
+                else
+                    frmNuevaCuenta.AsignarDatosLectura(this.EMedidor, this.ECliente, this.Total, this.IsEditar);
 
-                frmNuevaCuenta.AsignarDatosLectura(this.EMedidor, this.ECliente, this.Total, this.IsEditar);
                 frmNuevaCuenta.OnCuentaSuccess += FrmNuevaCuenta_OnCuentaSuccess;
                 frmNuevaCuenta.ShowDialog();
             }
@@ -426,6 +433,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                     this.txtMedida.Text = eLectura.EMedida.Alias_medida;
 
                     this.ECuenta = eLectura.ECuenta;
+                    this.ECuenta.ECliente = eLectura.ECliente;
+                    this.ECuenta.EMedidor = eLectura.EMedidor;
 
                     this.EDetalleTarifa = eLectura.ETarifas.EDetalleTarifa;
 

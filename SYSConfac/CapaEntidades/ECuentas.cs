@@ -22,8 +22,8 @@ namespace CapaEntidades
                 this.EMedidor = new EMedidor(Convert.ToInt32(row["Id_medidor"]));
                 this.Fecha_cuenta = Convert.ToDateTime(row["Fecha_cuenta"]);
                 this.Estado_cuenta = Convert.ToString(row["Estado_cuenta"]);
-                this.Iva = Convert.ToInt32(row["IVA"]);
-                this.Descuento = Convert.ToInt32(row["Descuento"]);
+                this.Iva = Convert.ToDecimal(row["IVA"]);
+                this.Descuento = Convert.ToDecimal(row["Descuento"]);
                 this.Motivo_descuento = Convert.ToString(row["Motivo_descuento"]);
                 this.Total_pagar = Convert.ToDecimal(row["Total_pagar"]);
                 this.Fecha_pago = Convert.ToDateTime(row["Fecha_pago"]);
@@ -44,8 +44,8 @@ namespace CapaEntidades
                 this.EMedidor = new EMedidor(Convert.ToInt32(dt.Rows[fila]["Id_medidor"]));
                 this.Fecha_cuenta = Convert.ToDateTime(dt.Rows[fila]["Fecha_cuenta"]);
                 this.Estado_cuenta = Convert.ToString(dt.Rows[fila]["Estado_cuenta"]);
-                this.Iva = Convert.ToInt32(dt.Rows[fila]["IVA"]);
-                this.Descuento = Convert.ToInt32(dt.Rows[fila]["Descuento"]);
+                this.Iva = Convert.ToDecimal(dt.Rows[fila]["IVA"]);
+                this.Descuento = Convert.ToDecimal(dt.Rows[fila]["Descuento"]);
                 this.Motivo_descuento = Convert.ToString(dt.Rows[fila]["Motivo_descuento"]);
                 this.Total_pagar = Convert.ToDecimal(dt.Rows[fila]["Total_pagar"]);
                 this.Fecha_pago = Convert.ToDateTime(dt.Rows[fila]["Fecha_pago"]);
@@ -70,8 +70,8 @@ namespace CapaEntidades
                     this.EMedidor = new EMedidor(Convert.ToInt32(dt.Rows[0]["Id_medidor"]));
                     this.Fecha_cuenta = Convert.ToDateTime(dt.Rows[0]["Fecha_cuenta"]);
                     this.Estado_cuenta = Convert.ToString(dt.Rows[0]["Estado_cuenta"]);
-                    this.Iva = Convert.ToInt32(dt.Rows[0]["IVA"]);
-                    this.Descuento = Convert.ToInt32(dt.Rows[0]["Descuento"]);
+                    this.Iva = Convert.ToDecimal(dt.Rows[0]["IVA"]);
+                    this.Descuento = Convert.ToDecimal(dt.Rows[0]["Descuento"]);
                     this.Motivo_descuento = Convert.ToString(dt.Rows[0]["Motivo_descuento"]);
                     this.Total_pagar = Convert.ToDecimal(dt.Rows[0]["Total_pagar"]);
                     this.Fecha_pago = Convert.ToDateTime(dt.Rows[0]["Fecha_pago"]);
@@ -136,6 +136,8 @@ namespace CapaEntidades
         private string _motivo_descuento;
         private decimal _total_pagar;
         private DateTime _fecha_pago;
+        //Variable temporal
+        private decimal _total_lectura;
 
         public int Id_cuenta { get => _id_cuenta; set => _id_cuenta = value; }
         public ECliente ECliente { get => _eCliente; set => _eCliente = value; }
@@ -148,5 +150,7 @@ namespace CapaEntidades
         public decimal Total_pagar { get => _total_pagar; set => _total_pagar = value; }
         public DateTime Fecha_pago { get => _fecha_pago; set => _fecha_pago = value; }
         public EMedidor EMedidor { get => _eMedidor; set => _eMedidor = value; }
+        //Variable temporal
+        public decimal Total_lectura { get => _total_lectura; set => _total_lectura = value; }       
     }
 }
