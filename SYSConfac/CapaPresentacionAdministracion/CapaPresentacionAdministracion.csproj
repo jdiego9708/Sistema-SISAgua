@@ -84,6 +84,12 @@
     <Compile Include="Controles\CustomGridPanel.designer.cs">
       <DependentUpon>CustomGridPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\CustomSuperTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\CustomSuperTextBox.Designer.cs">
+      <DependentUpon>CustomSuperTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\CustomTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -305,6 +311,36 @@
     <Compile Include="Formularios\FormsConfiguraciones\FormsBD\FrmRutaArchivo.Designer.cs">
       <DependentUpon>FrmRutaArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigTarifas.Designer.cs">
+      <DependentUpon>FrmConfigTarifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigFacturas.Designer.cs">
+      <DependentUpon>FrmConfigFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigCorreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigCorreos.Designer.cs">
+      <DependentUpon>FrmConfigCorreos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigBD.Designer.cs">
+      <DependentUpon>FrmConfigBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigInicial.Designer.cs">
+      <DependentUpon>FrmConfigInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FormsLicencias\ConfigLicencias.cs" />
     <Compile Include="Formularios\FormsConfiguraciones\FormsLicencias\ConfigLicencias.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -329,11 +365,23 @@
     <Compile Include="Formularios\FormsConfiguraciones\FormsTarifas\FrmConfiguracionTarifas.Designer.cs">
       <DependentUpon>FrmConfiguracionTarifas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracion.Designer.cs">
+      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracionAplicacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracionAplicacion.Designer.cs">
       <DependentUpon>FrmConfiguracionAplicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracionInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracionInicial.Designer.cs">
+      <DependentUpon>FrmConfiguracionInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormsCuentas\CuentaLarge.cs">
       <SubType>UserControl</SubType>
@@ -745,6 +793,9 @@
     <EmbeddedResource Include="Controles\ConfiguracionImagen.resx">
       <DependentUpon>ConfiguracionImagen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\CustomSuperTextBox.resx">
+      <DependentUpon>CustomSuperTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -854,6 +905,21 @@
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsBD\FrmRutaArchivo.resx">
       <DependentUpon>FrmRutaArchivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigTarifas.resx">
+      <DependentUpon>FrmConfigTarifas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigFacturas.resx">
+      <DependentUpon>FrmConfigFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigCorreos.resx">
+      <DependentUpon>FrmConfigCorreos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigBD.resx">
+      <DependentUpon>FrmConfigBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigInicial.resx">
+      <DependentUpon>FrmConfigInicial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsLicencias\FrmGestionarLicencias.resx">
       <DependentUpon>FrmGestionarLicencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -863,8 +929,14 @@
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsTarifas\FrmConfiguracionTarifas.resx">
       <DependentUpon>FrmConfiguracionTarifas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FrmConfiguracion.resx">
+      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FrmConfiguracionAplicacion.resx">
       <DependentUpon>FrmConfiguracionAplicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FrmConfiguracionInicial.resx">
+      <DependentUpon>FrmConfiguracionInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsCuentas\CuentaLarge.resx">
       <DependentUpon>CuentaLarge.cs</DependentUpon>
