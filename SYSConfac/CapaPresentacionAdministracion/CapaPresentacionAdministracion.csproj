@@ -102,6 +102,12 @@
     <Compile Include="Controles\CustomToolTip.designer.cs">
       <DependentUpon>CustomToolTip.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controles\HelpToolTip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\HelpToolTip.Designer.cs">
+      <DependentUpon>HelpToolTip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controles\Observacion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -310,6 +316,22 @@
     </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FormsBD\FrmRutaArchivo.Designer.cs">
       <DependentUpon>FrmRutaArchivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigFacturas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ConfigFacturas.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigGeneral.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ConfigGeneral.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigGeneral.Designer.cs">
+      <DependentUpon>FrmConfigGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigTarifas.cs">
       <SubType>Form</SubType>
@@ -802,6 +824,9 @@
     <EmbeddedResource Include="Controles\CustomToolTip.resx">
       <DependentUpon>CustomToolTip.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\HelpToolTip.resx">
+      <DependentUpon>HelpToolTip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\Observacion.resx">
       <DependentUpon>Observacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -904,6 +929,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsBD\FrmRutaArchivo.resx">
       <DependentUpon>FrmRutaArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigGeneral.resx">
+      <DependentUpon>FrmConfigGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigTarifas.resx">
       <DependentUpon>FrmConfigTarifas.cs</DependentUpon>
@@ -1146,6 +1174,14 @@
     </None>
     <None Include="Formularios\dsPrincipal.xss">
       <DependentUpon>dsPrincipal.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigFacturas.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigFacturas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigGeneral.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigGeneral.Designer.cs</LastGenOutput>
     </None>
     <None Include="Formularios\FormsConfiguraciones\FormsLicencias\ConfigLicencias.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -16,5 +16,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         {
             InitializeComponent();
         }
+
+        public event EventHandler OnBtnSiguiente;
+        public event EventHandler OnBtnAtras;
     }
 }
