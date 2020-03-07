@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using CapaEntidades;
-
 using CapaPresentacionAdministracion.Formularios.FormsCantones;
 using CapaPresentacionAdministracion.Formularios.FormsParroquias;
 using CapaPresentacionAdministracion.Formularios.FormsBarrios;
@@ -900,9 +891,41 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
             menuOtrasConfiguraciones.OnBtnObservarMedidas += MenuOtrasConfiguraciones_OnBtnObservarMedidas;
 
             menuOtrasConfiguraciones.OnBtnConfiguracionAvanzada += MenuOtrasConfiguraciones_OnBtnConfiguracionAvanzada;
+            menuOtrasConfiguraciones.OnBtnConfiguracionAvanzada2 += MenuOtrasConfiguraciones_OnBtnConfiguracionAvanzada2;
 
             container = new PoperContainer(menuOtrasConfiguraciones);
             container.Show(btnConfiguraciones);
+        }
+
+        private void MenuOtrasConfiguraciones_OnBtnConfiguracionAvanzada2(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmConfiguracionInicial frm = new FrmConfiguracionInicial
+                {
+                    TopLevel = false,
+                    StartPosition = FormStartPosition.CenterParent
+                };
+
+                Form FormComprobado = this.ComprobarExistencia(frm);
+                if (FormComprobado != null)
+                {
+                    frm.WindowState = FormWindowState.Normal;
+                    frm.Activate();
+                }
+                else
+                {
+                    this.panel1.Controls.Add(frm);
+                    this.panel1.Tag = frm;
+                    frm.Show();
+                }
+                frm.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                Mensajes.MensajeErrorCompleto(this.Name, "MenuOtrasConfiguraciones_OnBtnConfiguracionAvanzada2",
+                    "Hubo un error con el botón configuraciones avanzadas", ex.Message);
+            }
         }
 
         private void MenuOtrasConfiguraciones_OnBtnConfiguracionAvanzada(object sender, EventArgs e)

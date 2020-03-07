@@ -65,6 +65,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
                             };
                             frm.ShowDialog();
                         }
+                        else if (this.txtPass.Text.Equals("con"))
+                        {
+                            FrmConfiguracionInicial frm = new FrmConfiguracionInicial
+                            {
+                                StartPosition = FormStartPosition.CenterScreen,
+                                FormBorderStyle = FormBorderStyle.None
+                            };
+                            frm.ShowDialog();
+                        }
                     }
                     else
                     {

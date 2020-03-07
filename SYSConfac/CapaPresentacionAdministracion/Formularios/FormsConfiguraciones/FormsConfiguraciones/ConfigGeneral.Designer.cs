@@ -25,7 +25,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("JUNTA ADMINISTRADORA DE AGUA DE LA PARROQUIA DE YAMANA")]
         public string Nombre_empresa {
             get {
                 return ((string)(this["Nombre_empresa"]));
@@ -37,7 +37,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("JUAN DIEGO DUQUE")]
         public string Nombre_presidente {
             get {
                 return ((string)(this["Nombre_presidente"]));

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfigInicial));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,9 +39,14 @@
             this.txtPresidente = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSiguiente = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(138)))), ((int)(((byte)(249)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(1, 17);
@@ -87,13 +93,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmpresa.BackColor = System.Drawing.Color.White;
             this.txtEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmpresa.Enabled = false;
             this.txtEmpresa.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtEmpresa.Location = new System.Drawing.Point(7, 25);
             this.txtEmpresa.Name = "txtEmpresa";
-            this.txtEmpresa.ReadOnly = true;
-            this.txtEmpresa.Size = new System.Drawing.Size(541, 20);
+            this.txtEmpresa.Size = new System.Drawing.Size(519, 20);
             this.txtEmpresa.TabIndex = 1;
             this.txtEmpresa.Text = "JUNTA ADMINISTRADORA DE AGUA POTABLE DE LA PARROQUIA DE YAMANA";
             this.txtEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -114,10 +118,10 @@
             this.groupBox2.Controls.Add(this.txtPresidente);
             this.groupBox2.Location = new System.Drawing.Point(9, 181);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(558, 65);
+            this.groupBox2.Size = new System.Drawing.Size(558, 56);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Información del presidente de la junta";
+            this.groupBox2.Text = "Nombre del presidente de la junta";
             // 
             // txtPresidente
             // 
@@ -125,13 +129,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPresidente.BackColor = System.Drawing.Color.White;
             this.txtPresidente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPresidente.Enabled = false;
             this.txtPresidente.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPresidente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPresidente.Location = new System.Drawing.Point(9, 30);
+            this.txtPresidente.Location = new System.Drawing.Point(9, 25);
             this.txtPresidente.Name = "txtPresidente";
-            this.txtPresidente.ReadOnly = true;
-            this.txtPresidente.Size = new System.Drawing.Size(541, 20);
+            this.txtPresidente.Size = new System.Drawing.Size(517, 20);
             this.txtPresidente.TabIndex = 1;
             this.txtPresidente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -173,12 +175,41 @@
             this.btnSiguiente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSiguiente.UseVisualStyleBackColor = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtCorreo);
+            this.groupBox3.Location = new System.Drawing.Point(9, 243);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(337, 56);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Correo electrónico";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCorreo.BackColor = System.Drawing.Color.White;
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCorreo.Location = new System.Drawing.Point(9, 25);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(299, 20);
+            this.txtCorreo.TabIndex = 1;
+            this.txtCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmConfigInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 428);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox2);
@@ -197,6 +228,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +247,8 @@
         private System.Windows.Forms.TextBox txtPresidente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

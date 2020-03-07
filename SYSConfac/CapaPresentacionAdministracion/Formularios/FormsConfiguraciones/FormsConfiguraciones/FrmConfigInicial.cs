@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaPresentacionAdministracion.Servicios;
+using System;
 using System.Windows.Forms;
 
 namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones
@@ -13,12 +14,30 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnSiguiente.Click += BtnSiguiente_Click;
         }
 
-        private event EventHandler OnBtnCancelarClick;
-        private event EventHandler OnBtnSiguienteClick;
+        private bool Comprobaciones()
+        {
+            if (this.txtEmpresa.Text.Equals(""))
+            {
+                this.errorProvider1.SetError(this.txtEmpresa, "El campo no puede estar vacío");
+                return false;
+            }
+
+            if (!HelperMail.Email_comprobation(this.txtCorreo.Text))
+            {
+                this.errorProvider1.SetError(this.txtCorreo, "Verifique el formato del correo electrónico");
+                return false;
+            }
+
+            return true;
+        }
+
+        public event EventHandler OnBtnCancelarClick;
+        public event EventHandler OnBtnSiguienteClick;
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            OnBtnSiguienteClick?.Invoke(sender, e);
+            if (this.Comprobaciones())
+                OnBtnSiguienteClick?.Invoke(this, e);
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)

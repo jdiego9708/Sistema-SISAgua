@@ -19,16 +19,75 @@
         private FrmConfigInicial FrmConfigInicial;
         private FrmConfigTarifas FrmConfigTarifas;
 
+        //private bool Comprobaciones()
+        //{
+        //    bool result = true;
+
+        //}
+
         private void Frm_OnBtnAtras(object sender, EventArgs e)
         {
+            Form frm = (Form)sender;
 
+            if (frm.Name.Equals("frmConfigInicial"))
+            {
+                Mensajes.MensajePregunta("¿Desea abandonar la configuración?", "Abandonar", "Cancelar", out DialogResult dialog);
+                if (dialog == DialogResult.Yes)
+                {
+                    frm.Close();
+                    this.Close();
+                }
+            }
+            else if (frm.Name.Equals("frmConfigGeneral"))
+            {
+                this.AbrirConfigInicial();
+            }
+            else if (frm.Name.Equals("frmConfigBD"))
+            {
+                this.AbrirConfigGeneral();
+            }
+            else if (frm.Name.Equals("frmConfigFacturas"))
+            {
+                this.AbrirConfigBD();
+            }
+            else if (frm.Name.Equals("frmConfigCorreos"))
+            {
+                this.AbrirConfigFacturas();
+            }
+            else if (frm.Name.Equals("frmConfigTarifas"))
+            {
+                this.AbrirConfigCorreos();
+            }
         }
 
         private void Frm_OnBtnSiguiente(object sender, EventArgs e)
         {
-
+            Form frm = (Form)sender;
+            if (frm.Name.Equals("FrmConfigInicial"))
+            {
+                this.AbrirConfigGeneral();
+            }
+            else if (frm.Name.Equals("FrmConfigGeneral"))
+            {
+                this.AbrirConfigBD();
+            }
+            else if (frm.Name.Equals("FrmConfigBD"))
+            {
+                this.AbrirConfigFacturas();
+            }
+            else if (frm.Name.Equals("FrmConfigFacturas"))
+            {
+                this.AbrirConfigCorreos();
+            }
+            else if (frm.Name.Equals("FrmConfigCorreos"))
+            {
+                this.AbrirConfigTarifas();
+            }
+            else if (frm.Name.Equals("FrmConfigTarifas"))
+            {
+                //Terminar la configuración
+            }
         }
-
 
         private void AbrirConfigBD()
         {
@@ -109,6 +168,8 @@
                         StartPosition = FormStartPosition.CenterParent,
                         WindowState = FormWindowState.Normal
                     };
+                    this.FrmConfigFacturas.OnBtnSiguiente += Frm_OnBtnSiguiente;
+                    this.FrmConfigFacturas.OnBtnAtras += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigFacturas);
@@ -139,6 +200,8 @@
                         StartPosition = FormStartPosition.CenterParent,
                         WindowState = FormWindowState.Normal
                     };
+                    this.FrmConfigGeneral.OnBtnSiguiente += Frm_OnBtnSiguiente;
+                    this.FrmConfigGeneral.OnBtnAtras += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigGeneral);
@@ -169,6 +232,8 @@
                         StartPosition = FormStartPosition.CenterParent,
                         WindowState = FormWindowState.Normal
                     };
+                    this.FrmConfigInicial.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
+                    this.FrmConfigInicial.OnBtnCancelarClick += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigInicial);
@@ -199,6 +264,8 @@
                         StartPosition = FormStartPosition.CenterParent,
                         WindowState = FormWindowState.Normal
                     };
+                    this.FrmConfigTarifas.OnBtnSiguiente += Frm_OnBtnSiguiente;
+                    this.FrmConfigTarifas.OnBtnAtras += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigTarifas);

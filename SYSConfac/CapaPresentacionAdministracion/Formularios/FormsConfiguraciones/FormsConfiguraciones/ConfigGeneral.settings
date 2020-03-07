@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Nombre_empresa" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">JUNTA ADMINISTRADORA DE AGUA DE LA PARROQUIA DE YAMANA</Value>
     </Setting>
     <Setting Name="Nombre_presidente" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">JUAN DIEGO DUQUE</Value>
     </Setting>
     <Setting Name="Ruta_archivos" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

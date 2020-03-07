@@ -30,12 +30,19 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
         #region CONFIGURACION AVANZADA
 
         public event EventHandler OnBtnConfiguracionAvanzada;
+        public event EventHandler OnBtnConfiguracionAvanzada2;
         private void CargarMenuConfiguracionAvanzada()
         {
             MenuConfiguracionAvanzada menuConfiguracion = new MenuConfiguracionAvanzada();
             menuConfiguracion.btnConfiguracionAvanzada.Click += BtnConfiguracionAvanzada_Click;
+            menuConfiguracion.btnConfig.Click += BtnConfig_Click;
             menuConfiguracion.Dock = DockStyle.Fill;
             this.gbConfiguracionAvanzada.Controls.Add(menuConfiguracion);
+        }
+
+        private void BtnConfig_Click(object sender, EventArgs e)
+        {
+            OnBtnConfiguracionAvanzada2?.Invoke(sender, e);
         }
 
         private void BtnConfiguracionAvanzada_Click(object sender, EventArgs e)

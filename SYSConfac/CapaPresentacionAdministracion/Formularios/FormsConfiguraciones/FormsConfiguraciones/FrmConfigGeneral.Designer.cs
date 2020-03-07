@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfigGeneral));
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtEncabezado = new System.Windows.Forms.TextBox();
@@ -36,23 +37,25 @@
             this.btnRuta = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbCaja = new System.Windows.Forms.GroupBox();
             this.btnAyudaCaja = new System.Windows.Forms.Button();
             this.listaCajas = new System.Windows.Forms.ComboBox();
             this.btnAddCaja = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.gbMesesCorte = new System.Windows.Forms.GroupBox();
             this.numericMesesCorte = new System.Windows.Forms.NumericUpDown();
             this.btnAyudaMesesCorte = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gbMesesAlerta = new System.Windows.Forms.GroupBox();
             this.numericMesesAlerta = new System.Windows.Forms.NumericUpDown();
             this.btnAyudaMesesAlerta = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.gbRuta.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.gbCaja.SuspendLayout();
+            this.gbMesesCorte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericMesesCorte)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.gbMesesAlerta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericMesesAlerta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -72,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEncabezado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(138)))), ((int)(((byte)(249)))));
             this.txtEncabezado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEncabezado.Enabled = false;
+            this.txtEncabezado.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtEncabezado.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEncabezado.ForeColor = System.Drawing.Color.White;
             this.txtEncabezado.Location = new System.Drawing.Point(1, 17);
@@ -89,7 +92,7 @@
             this.gbRuta.Controls.Add(this.btnRuta);
             this.gbRuta.Location = new System.Drawing.Point(9, 68);
             this.gbRuta.Name = "gbRuta";
-            this.gbRuta.Size = new System.Drawing.Size(558, 65);
+            this.gbRuta.Size = new System.Drawing.Size(546, 65);
             this.gbRuta.TabIndex = 1;
             this.gbRuta.TabStop = false;
             this.gbRuta.Text = "Ruta predeterminada de archivos";
@@ -108,7 +111,7 @@
             this.btnAyudaRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaRuta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyudaRuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaRuta.Location = new System.Drawing.Point(525, 29);
+            this.btnAyudaRuta.Location = new System.Drawing.Point(512, 27);
             this.btnAyudaRuta.Name = "btnAyudaRuta";
             this.btnAyudaRuta.Size = new System.Drawing.Size(25, 25);
             this.btnAyudaRuta.TabIndex = 6;
@@ -130,7 +133,7 @@
             this.btnRuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRuta.Location = new System.Drawing.Point(6, 22);
             this.btnRuta.Name = "btnRuta";
-            this.btnRuta.Size = new System.Drawing.Size(513, 35);
+            this.btnRuta.Size = new System.Drawing.Size(500, 35);
             this.btnRuta.TabIndex = 5;
             this.btnRuta.Text = "Seleccionar una ruta";
             this.btnRuta.UseVisualStyleBackColor = false;
@@ -173,17 +176,17 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // groupBox2
+            // gbCaja
             // 
-            this.groupBox2.Controls.Add(this.btnAyudaCaja);
-            this.groupBox2.Controls.Add(this.listaCajas);
-            this.groupBox2.Controls.Add(this.btnAddCaja);
-            this.groupBox2.Location = new System.Drawing.Point(9, 139);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 57);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Caja principal";
+            this.gbCaja.Controls.Add(this.btnAyudaCaja);
+            this.gbCaja.Controls.Add(this.listaCajas);
+            this.gbCaja.Controls.Add(this.btnAddCaja);
+            this.gbCaja.Location = new System.Drawing.Point(9, 139);
+            this.gbCaja.Name = "gbCaja";
+            this.gbCaja.Size = new System.Drawing.Size(309, 57);
+            this.gbCaja.TabIndex = 18;
+            this.gbCaja.TabStop = false;
+            this.gbCaja.Text = "Caja principal";
             // 
             // btnAyudaCaja
             // 
@@ -218,7 +221,7 @@
             this.listaCajas.FormattingEnabled = true;
             this.listaCajas.Location = new System.Drawing.Point(69, 20);
             this.listaCajas.Name = "listaCajas";
-            this.listaCajas.Size = new System.Drawing.Size(219, 28);
+            this.listaCajas.Size = new System.Drawing.Size(234, 28);
             this.listaCajas.TabIndex = 1;
             // 
             // btnAddCaja
@@ -241,16 +244,16 @@
             this.btnAddCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCaja.UseVisualStyleBackColor = false;
             // 
-            // groupBox5
+            // gbMesesCorte
             // 
-            this.groupBox5.Controls.Add(this.numericMesesCorte);
-            this.groupBox5.Controls.Add(this.btnAyudaMesesCorte);
-            this.groupBox5.Location = new System.Drawing.Point(159, 202);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(144, 60);
-            this.groupBox5.TabIndex = 19;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Meses para corte";
+            this.gbMesesCorte.Controls.Add(this.numericMesesCorte);
+            this.gbMesesCorte.Controls.Add(this.btnAyudaMesesCorte);
+            this.gbMesesCorte.Location = new System.Drawing.Point(167, 202);
+            this.gbMesesCorte.Name = "gbMesesCorte";
+            this.gbMesesCorte.Size = new System.Drawing.Size(151, 60);
+            this.gbMesesCorte.TabIndex = 19;
+            this.gbMesesCorte.TabStop = false;
+            this.gbMesesCorte.Text = "Meses para corte";
             // 
             // numericMesesCorte
             // 
@@ -283,7 +286,7 @@
             this.btnAyudaMesesCorte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaMesesCorte.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyudaMesesCorte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaMesesCorte.Location = new System.Drawing.Point(113, 24);
+            this.btnAyudaMesesCorte.Location = new System.Drawing.Point(120, 24);
             this.btnAyudaMesesCorte.Name = "btnAyudaMesesCorte";
             this.btnAyudaMesesCorte.Size = new System.Drawing.Size(25, 25);
             this.btnAyudaMesesCorte.TabIndex = 8;
@@ -291,16 +294,16 @@
             this.btnAyudaMesesCorte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAyudaMesesCorte.UseVisualStyleBackColor = false;
             // 
-            // groupBox7
+            // gbMesesAlerta
             // 
-            this.groupBox7.Controls.Add(this.numericMesesAlerta);
-            this.groupBox7.Controls.Add(this.btnAyudaMesesAlerta);
-            this.groupBox7.Location = new System.Drawing.Point(9, 202);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(144, 60);
-            this.groupBox7.TabIndex = 20;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Meses para alerta";
+            this.gbMesesAlerta.Controls.Add(this.numericMesesAlerta);
+            this.gbMesesAlerta.Controls.Add(this.btnAyudaMesesAlerta);
+            this.gbMesesAlerta.Location = new System.Drawing.Point(9, 202);
+            this.gbMesesAlerta.Name = "gbMesesAlerta";
+            this.gbMesesAlerta.Size = new System.Drawing.Size(152, 60);
+            this.gbMesesAlerta.TabIndex = 20;
+            this.gbMesesAlerta.TabStop = false;
+            this.gbMesesAlerta.Text = "Meses para alerta";
             // 
             // numericMesesAlerta
             // 
@@ -333,7 +336,7 @@
             this.btnAyudaMesesAlerta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaMesesAlerta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyudaMesesAlerta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaMesesAlerta.Location = new System.Drawing.Point(113, 24);
+            this.btnAyudaMesesAlerta.Location = new System.Drawing.Point(121, 24);
             this.btnAyudaMesesAlerta.Name = "btnAyudaMesesAlerta";
             this.btnAyudaMesesAlerta.Size = new System.Drawing.Size(25, 25);
             this.btnAyudaMesesAlerta.TabIndex = 8;
@@ -341,15 +344,19 @@
             this.btnAyudaMesesAlerta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAyudaMesesAlerta.UseVisualStyleBackColor = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmConfigGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 484);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbMesesAlerta);
+            this.Controls.Add(this.gbMesesCorte);
+            this.Controls.Add(this.gbCaja);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.gbRuta);
@@ -363,11 +370,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gbRuta.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
+            this.gbCaja.ResumeLayout(false);
+            this.gbMesesCorte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericMesesCorte)).EndInit();
-            this.groupBox7.ResumeLayout(false);
+            this.gbMesesAlerta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericMesesAlerta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,15 +389,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRuta;
         private System.Windows.Forms.Button btnAyudaRuta;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbCaja;
         private System.Windows.Forms.ComboBox listaCajas;
         private System.Windows.Forms.Button btnAddCaja;
         private System.Windows.Forms.Button btnAyudaCaja;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gbMesesCorte;
         private System.Windows.Forms.NumericUpDown numericMesesCorte;
         private System.Windows.Forms.Button btnAyudaMesesCorte;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox gbMesesAlerta;
         private System.Windows.Forms.NumericUpDown numericMesesAlerta;
         private System.Windows.Forms.Button btnAyudaMesesAlerta;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
