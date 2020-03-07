@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EConfigBD.cs" />
     <Compile Include="EDetalleAgendamientoLectura.cs" />
     <Compile Include="EDetalleExcedente.cs" />
     <Compile Include="EHistorialGastos.cs" />

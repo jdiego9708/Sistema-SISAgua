@@ -1,17 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Configuration;
 using System.Data.SQLite;
 using System.Data;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
 
 namespace CapaDatos
 {
     public static class DConexion
     {        
+        public static List<string> ObtenerConfiguraciones(out List<string> connectionsStrings)
+        {
+            StringCollection stringCollection = ConfigBD.Default.ConnectionsStrings;
+            connectionsStrings = stringCollection.Cast<string>().ToList();
+
+            return new List<string>
+            {
+                ConfigBD.Default.ConnectionDefault,
+                ConfigBD.Default.MotorBD,
+                ConfigBD.Default.TipoBackup,
+                ConfigBD.Default.Frecuencia.ToString(),
+                ConfigBD.Default.RutaDestinoBackup,
+                ConfigBD.Default.FileNameConnection
+            };
+        }
+
+        public static string AsignarConfiguraciones(List<string> configurations, 
+            List<string> connectionsStrings)
+        {
+            
+            return "OK";
+        }
+
         private static string ObtenerCadenaDeConexion(string Nombre_cadena_de_conexion, string tipo_dato)
         {
             string cadena = "";
@@ -62,6 +83,22 @@ namespace CapaDatos
             {
                 rpta = ex.Message;
                 return null;
+            }
+        }
+
+        public static bool TestConnection(string connectionString, out string rpta)
+        {
+            rpta = "OK";
+            try
+            {
+                string conec = connectionString;
+                SQLiteConnection conn = new SQLiteConnection(conec);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+                return false;
             }
         }
 

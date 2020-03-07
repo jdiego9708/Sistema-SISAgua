@@ -22,5 +22,92 @@ namespace CapaDatos {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ConnectionDefault {
+            get {
+                return ((string)(this["ConnectionDefault"]));
+            }
+            set {
+                this["ConnectionDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MotorBD {
+            get {
+                return ((string)(this["MotorBD"]));
+            }
+            set {
+                this["MotorBD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TipoBackup {
+            get {
+                return ((string)(this["TipoBackup"]));
+            }
+            set {
+                this["TipoBackup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Frecuencia {
+            get {
+                return ((int)(this["Frecuencia"]));
+            }
+            set {
+                this["Frecuencia"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaDestinoBackup {
+            get {
+                return ((string)(this["RutaDestinoBackup"]));
+            }
+            set {
+                this["RutaDestinoBackup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>Data Source=E:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBD.db</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection ConnectionsStrings {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["ConnectionsStrings"]));
+            }
+            set {
+                this["ConnectionsStrings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FileNameConnection {
+            get {
+                return ((string)(this["FileNameConnection"]));
+            }
+            set {
+                this["FileNameConnection"] = value;
+            }
+        }
     }
 }

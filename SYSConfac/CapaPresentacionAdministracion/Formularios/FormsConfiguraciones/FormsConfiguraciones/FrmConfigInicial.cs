@@ -54,6 +54,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         {
             this.txtEmpresa.Text = ConfigGeneral.Default.Nombre_empresa;
             this.txtPresidente.Text = ConfigGeneral.Default.Nombre_presidente;
+            this.txtCorreo.Text = ConfigGeneral.Default.Correo_presidente;
         }
     }
 }

@@ -94,5 +94,17 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                 this["Meses_corte"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("jdiego9708@gmail.com")]
+        public string Correo_presidente {
+            get {
+                return ((string)(this["Correo_presidente"]));
+            }
+            set {
+                this["Correo_presidente"] = value;
+            }
+        }
     }
 }

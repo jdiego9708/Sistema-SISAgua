@@ -19,12 +19,6 @@
         private FrmConfigInicial FrmConfigInicial;
         private FrmConfigTarifas FrmConfigTarifas;
 
-        //private bool Comprobaciones()
-        //{
-        //    bool result = true;
-
-        //}
-
         private void Frm_OnBtnAtras(object sender, EventArgs e)
         {
             Form frm = (Form)sender;
@@ -38,17 +32,17 @@
                     this.Close();
                 }
             }
-            else if (frm.Name.Equals("frmConfigGeneral"))
+            else if (frm.Name.Equals("frmConfigBD"))
             {
                 this.AbrirConfigInicial();
             }
-            else if (frm.Name.Equals("frmConfigBD"))
+            else if (frm.Name.Equals("frmConfigGeneral"))
             {
-                this.AbrirConfigGeneral();
+                this.AbrirConfigBD();
             }
             else if (frm.Name.Equals("frmConfigFacturas"))
             {
-                this.AbrirConfigBD();
+                this.AbrirConfigGeneral();
             }
             else if (frm.Name.Equals("frmConfigCorreos"))
             {
@@ -65,13 +59,13 @@
             Form frm = (Form)sender;
             if (frm.Name.Equals("FrmConfigInicial"))
             {
-                this.AbrirConfigGeneral();
-            }
-            else if (frm.Name.Equals("FrmConfigGeneral"))
-            {
                 this.AbrirConfigBD();
             }
             else if (frm.Name.Equals("FrmConfigBD"))
+            {
+                this.AbrirConfigGeneral();
+            }
+            else if (frm.Name.Equals("FrmConfigGeneral"))
             {
                 this.AbrirConfigFacturas();
             }
@@ -102,10 +96,11 @@
                     {
                         TopLevel = false,
                         StartPosition = FormStartPosition.CenterParent,
-                        WindowState = FormWindowState.Normal
+                        WindowState = FormWindowState.Normal,
+                        Dock = DockStyle.Fill
                     };
-                    this.FrmConfigBD.OnBtnSiguiente += Frm_OnBtnSiguiente;
-                    this.FrmConfigBD.OnBtnAtras += Frm_OnBtnAtras;
+                    this.FrmConfigBD.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
+                    this.FrmConfigBD.OnBtnAtrasClick += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigBD);
@@ -134,7 +129,8 @@
                     {
                         TopLevel = false,
                         StartPosition = FormStartPosition.CenterParent,
-                        WindowState = FormWindowState.Normal
+                        WindowState = FormWindowState.Normal,
+                        Dock = DockStyle.Fill
                     };
                     this.FrmConfigCorreos.OnBtnSiguiente += Frm_OnBtnSiguiente;
                     this.FrmConfigCorreos.OnBtnAtras += Frm_OnBtnAtras;
@@ -166,7 +162,8 @@
                     {
                         TopLevel = false,
                         StartPosition = FormStartPosition.CenterParent,
-                        WindowState = FormWindowState.Normal
+                        WindowState = FormWindowState.Normal,
+                        Dock = DockStyle.Fill
                     };
                     this.FrmConfigFacturas.OnBtnSiguiente += Frm_OnBtnSiguiente;
                     this.FrmConfigFacturas.OnBtnAtras += Frm_OnBtnAtras;
@@ -198,10 +195,11 @@
                     {
                         TopLevel = false,
                         StartPosition = FormStartPosition.CenterParent,
-                        WindowState = FormWindowState.Normal
+                        WindowState = FormWindowState.Normal,
+                        Dock = DockStyle.Fill
                     };
-                    this.FrmConfigGeneral.OnBtnSiguiente += Frm_OnBtnSiguiente;
-                    this.FrmConfigGeneral.OnBtnAtras += Frm_OnBtnAtras;
+                    this.FrmConfigGeneral.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
+                    this.FrmConfigGeneral.OnBtnAtrasClick += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigGeneral);
@@ -230,7 +228,8 @@
                     {
                         TopLevel = false,
                         StartPosition = FormStartPosition.CenterParent,
-                        WindowState = FormWindowState.Normal
+                        WindowState = FormWindowState.Normal,
+                        Dock = DockStyle.Fill
                     };
                     this.FrmConfigInicial.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
                     this.FrmConfigInicial.OnBtnCancelarClick += Frm_OnBtnAtras;
@@ -262,7 +261,8 @@
                     {
                         TopLevel = false,
                         StartPosition = FormStartPosition.CenterParent,
-                        WindowState = FormWindowState.Normal
+                        WindowState = FormWindowState.Normal,
+                        Dock = DockStyle.Fill
                     };
                     this.FrmConfigTarifas.OnBtnSiguiente += Frm_OnBtnSiguiente;
                     this.FrmConfigTarifas.OnBtnAtras += Frm_OnBtnAtras;

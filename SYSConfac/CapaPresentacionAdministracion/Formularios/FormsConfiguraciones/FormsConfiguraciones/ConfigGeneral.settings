@@ -20,5 +20,8 @@
     <Setting Name="Meses_corte" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="Correo_presidente" Type="System.String" Scope="User">
+      <Value Profile="(Default)">jdiego9708@gmail.com</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
