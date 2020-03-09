@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using CapaPresentacionAdministracion.Formularios.FormsAgendamientoSesiones;
 using CapaPresentacionAdministracion.Formularios.FormsClientes;
 using System.Configuration;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 
 namespace CapaPresentacionAdministracion.Formularios.FormsSesiones
 {
@@ -204,7 +205,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsSesiones
 
         private void FrmNuevaSesion_Load(object sender, EventArgs e)
         {
-            if (int.TryParse(ConfigurationManager.AppSettings["Id_tarifa_predeterminada_sesion"].ToString(), out int id_tarifa))
+            if (int.TryParse(ConfigTarifas.Default.Id_tarifa_sesion.ToString(), out int id_tarifa))
             {
                 DataTable dtTarifa = ETarifas.BuscarTarifas("ID TARIFA", id_tarifa.ToString(), out string rpta);
                 if (dtTarifa != null)

@@ -15,8 +15,8 @@ namespace CapaDatos
 
         public static string InsertarCajas(List<string> variables)
         {
-            string consulta = "INSERT INTO Cajas (Id_caja, Nombre_caja, Estado_caja) " +
-                "VALUES('" + variables[0] + "','" + variables[1] + "','" + variables[2] + "')";
+            string consulta = "INSERT INTO Cajas (Nombre_caja, Estado_caja) " +
+                "VALUES('" + variables[0] + "','" + variables[1] + "')";
             return DConexion.EjecutarConsultaCadena(consulta, false);
         }
 

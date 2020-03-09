@@ -29,8 +29,31 @@ namespace CapaDatos
         public static string AsignarConfiguraciones(List<string> configurations, 
             List<string> connectionsStrings)
         {
-            
-            return "OK";
+
+            try
+            {
+                if (configurations.Count > 0)
+                {
+                    StringCollection collection = new StringCollection();
+                    collection.AddRange(connectionsStrings.ToArray());
+
+                    ConfigBD.Default.ConnectionDefault = configurations[0];
+                    ConfigBD.Default.MotorBD = configurations[1];
+                    ConfigBD.Default.TipoBackup = configurations[2];
+                    ConfigBD.Default.Frecuencia = Convert.ToInt32(configurations[3]);
+                    ConfigBD.Default.ConnectionsStrings = collection;
+                    ConfigBD.Default.RutaDestinoBackup = configurations[4];
+                    ConfigBD.Default.FileNameConnection = configurations[5];
+                    ConfigBD.Default.Save();
+                    return "OK";
+                }
+                else
+                    throw new Exception("La configuraciones a guardar están vacías.");
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }           
         }
 
         private static string ObtenerCadenaDeConexion(string Nombre_cadena_de_conexion, string tipo_dato)
@@ -67,7 +90,7 @@ namespace CapaDatos
 
         public static string Cn
         {
-            get { return ObtenerCadenaDeConexion(Convert.ToString(ConfigurationManager.AppSettings["nameBDConnection"]), "COMPLETA"); }
+            get { return ConfigBD.Default.ConnectionDefault; }
         }
 
         public static SQLiteConnection Conex(out string rpta)

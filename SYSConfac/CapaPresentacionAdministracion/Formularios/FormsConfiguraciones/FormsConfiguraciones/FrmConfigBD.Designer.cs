@@ -184,11 +184,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConexion.BackColor = System.Drawing.Color.White;
             this.txtConexion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConexion.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConexion.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtConexion.Location = new System.Drawing.Point(9, 25);
+            this.txtConexion.Location = new System.Drawing.Point(9, 28);
             this.txtConexion.Name = "txtConexion";
-            this.txtConexion.Size = new System.Drawing.Size(493, 24);
+            this.txtConexion.Size = new System.Drawing.Size(493, 20);
             this.txtConexion.TabIndex = 1;
             this.txtConexion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -207,7 +207,7 @@
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(125, 53);
             this.btnAtras.TabIndex = 4;
-            this.btnAtras.Text = "Cancelar";
+            this.btnAtras.Text = "Atras";
             this.btnAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAtras.UseVisualStyleBackColor = false;
             // 
@@ -334,6 +334,7 @@
             this.rdAutomaticas.TabIndex = 9;
             this.rdAutomaticas.Text = "Automáticas";
             this.rdAutomaticas.UseVisualStyleBackColor = true;
+            this.rdAutomaticas.Visible = false;
             // 
             // rdManuales
             // 

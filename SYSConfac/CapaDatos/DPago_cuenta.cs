@@ -85,6 +85,16 @@ namespace CapaDatos
                     consulta.Append("WHERE tar.Descripcion like 'CONSUMO DE AGUA' and " +
                         "pc.Fecha_pago between '" + fecha1.ToString("yyyy-MM-dd") + "' and '" + fecha2.ToString("yyyy-MM-dd") + "' ");
                 }
+                else if (tipo_busqueda.Equals("MES"))
+                {
+                    int mes = Convert.ToInt32(texto_busqueda);
+                    int days = DateTime.DaysInMonth(DateTime.Now.Year, mes);
+                    DateTime fecha1 = new DateTime(DateTime.Now.Year, mes, 01);
+                    DateTime fecha2 = new DateTime(DateTime.Now.Year, mes, days);
+
+                    consulta.Append("WHERE pc.Fecha_pago between '" + 
+                        fecha1.ToString("yyyy-MM-dd") + "' and '" + fecha2.ToString("yyyy-MM-dd") + "' ");
+                }
                 consulta.Append("ORDER BY pc.Id_pago DESC ");
             }
             catch (Exception ex)

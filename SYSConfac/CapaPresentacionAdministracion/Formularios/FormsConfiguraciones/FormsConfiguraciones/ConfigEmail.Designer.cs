@@ -13,11 +13,11 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
-    public sealed partial class ConfigGeneral : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class ConfigEmail : global::System.Configuration.ApplicationSettingsBase {
         
-        private static ConfigGeneral defaultInstance = ((ConfigGeneral)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new ConfigGeneral())));
+        private static ConfigEmail defaultInstance = ((ConfigEmail)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new ConfigEmail())));
         
-        public static ConfigGeneral Default {
+        public static ConfigEmail Default {
             get {
                 return defaultInstance;
             }
@@ -25,121 +25,121 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("JUNTA ADMINISTRADORA DE AGUA DE LA PARROQUIA DE YAMANA")]
-        public string Nombre_empresa {
+        [global::System.Configuration.DefaultSettingValueAttribute("solucionesinformaticas9708@gmail.com")]
+        public string Email_errores {
             get {
-                return ((string)(this["Nombre_empresa"]));
+                return ((string)(this["Email_errores"]));
             }
             set {
-                this["Nombre_empresa"] = value;
+                this["Email_errores"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("JUAN DIEGO DUQUE")]
-        public string Nombre_presidente {
+        [global::System.Configuration.DefaultSettingValueAttribute("soluciones2020")]
+        public string Password_email_errores {
             get {
-                return ((string)(this["Nombre_presidente"]));
+                return ((string)(this["Password_email_errores"]));
             }
             set {
-                this["Nombre_presidente"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac")]
-        public string Ruta_archivos {
-            get {
-                return ((string)(this["Ruta_archivos"]));
-            }
-            set {
-                this["Ruta_archivos"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Id_caja_principal {
-            get {
-                return ((int)(this["Id_caja_principal"]));
-            }
-            set {
-                this["Id_caja_principal"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Meses_alerta_corte {
-            get {
-                return ((int)(this["Meses_alerta_corte"]));
-            }
-            set {
-                this["Meses_alerta_corte"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int Meses_corte {
-            get {
-                return ((int)(this["Meses_corte"]));
-            }
-            set {
-                this["Meses_corte"] = value;
+                this["Password_email_errores"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("jdiego9708@gmail.com")]
-        public string Correo_presidente {
+        public string Email_recepcion_errores {
             get {
-                return ((string)(this["Correo_presidente"]));
+                return ((string)(this["Email_recepcion_errores"]));
             }
             set {
-                this["Correo_presidente"] = value;
+                this["Email_recepcion_errores"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8768684")]
-        public string Telefono_empresa {
+        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
+        public string Server_smtp_errores {
             get {
-                return ((string)(this["Telefono_empresa"]));
+                return ((string)(this["Server_smtp_errores"]));
             }
             set {
-                this["Telefono_empresa"] = value;
+                this["Server_smtp_errores"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Calle de prueba")]
-        public string Direccion_empresa {
+        [global::System.Configuration.DefaultSettingValueAttribute("587")]
+        public string Port_server_errores {
             get {
-                return ((string)(this["Direccion_empresa"]));
+                return ((string)(this["Port_server_errores"]));
             }
             set {
-                this["Direccion_empresa"] = value;
+                this["Port_server_errores"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Ecuador")]
-        public string Ciudad_empresa {
+        [global::System.Configuration.DefaultSettingValueAttribute("solucionesinformaticas9708@gmail.com")]
+        public string Email_reportes {
             get {
-                return ((string)(this["Ciudad_empresa"]));
+                return ((string)(this["Email_reportes"]));
             }
             set {
-                this["Ciudad_empresa"] = value;
+                this["Email_reportes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("soluciones2020")]
+        public string Password_email_reportes {
+            get {
+                return ((string)(this["Password_email_reportes"]));
+            }
+            set {
+                this["Password_email_reportes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("jdiego9708@gmail.com")]
+        public string Email_recepcion_reportes {
+            get {
+                return ((string)(this["Email_recepcion_reportes"]));
+            }
+            set {
+                this["Email_recepcion_reportes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("smtp.gmail.com")]
+        public string Server_smtp_reportes {
+            get {
+                return ((string)(this["Server_smtp_reportes"]));
+            }
+            set {
+                this["Server_smtp_reportes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("587")]
+        public string Port_server_reportes {
+            get {
+                return ((string)(this["Port_server_reportes"]));
+            }
+            set {
+                this["Port_server_reportes"] = value;
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using CapaEntidades;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 using CapaPresentacionAdministracion.Formularios.FormsCuentas;
 using CapaPresentacionAdministracion.Formularios.FormsPrincipales;
 using System;
@@ -239,8 +240,9 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
         {
             if (this._isEnabled)
             {
+                int id_tarifa_lectura_default = ConfigTarifas.Default.Id_tarifa_lectura;
                 DataTable dtTarifas = 
-                    ETarifas.BuscarTarifas("CONSUMO", "CONSUMO", out string rpta);
+                    ETarifas.BuscarTarifas("ID TARIFA", id_tarifa_lectura_default.ToString(), out string rpta);
                 if (dtTarifas != null)
                 {
                     ETarifas eTarifa = new ETarifas(dtTarifas, 0);

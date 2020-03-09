@@ -343,7 +343,7 @@
         0ekhoDo74CYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnAyudaDias.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAyudaRuta.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAFE5JREFUeF7dmwdYVVe2x0WHJG+ceU6SN5lEYxcxIIhUO2jsDUURFAQ0SLOgotgF
@@ -436,7 +436,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnAyudaRuta.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAyudaDias.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAFE5JREFUeF7dmwdYVVe2x0WHJG+ceU6SN5lEYxcxIIhUO2jsDUURFAQ0SLOgotgF

@@ -1,5 +1,6 @@
 ﻿using CapaEntidades;
 using CapaPresentacionAdministracion.Controles;
+using CapaPresentacionAdministracion.Formularios.FormsCajas;
 using CapaPresentacionAdministracion.Servicios;
 using System;
 using System.Data;
@@ -29,6 +30,49 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnAtras.Click += BtnAtras_Click;
             this.btnSiguiente.Click += BtnSiguiente_Click;
             this.Load += FrmConfigGeneral_Load;
+
+            this.btnAddCaja.Click += BtnAddCaja_Click;
+        }
+
+        public string GuardarDatos()
+        {
+            string rpta = "OK";
+            try
+            {
+                if (this.Comprobaciones())
+                {
+                    string ruta = Convert.ToString(this.btnRuta.Tag);
+                    DirectoryInfo directory = new DirectoryInfo(ruta);
+                    ConfigGeneral.Default.Ruta_archivos = directory.FullName;
+                    ConfigGeneral.Default.Id_caja_principal = Convert.ToInt32(this.listaCajas.SelectedValue);
+                    ConfigGeneral.Default.Meses_alerta_corte = Convert.ToInt32(this.numericMesesAlerta.Value);
+                    ConfigGeneral.Default.Meses_corte = Convert.ToInt32(this.numericMesesCorte.Value);
+                    ConfigGeneral.Default.Save();
+                }
+                else
+                    throw new Exception("No se pudo realizar la comprobación");
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
+
+        private void BtnAddCaja_Click(object sender, EventArgs e)
+        {
+            CajaAddSmall cajaAddSmall = new CajaAddSmall();
+            cajaAddSmall.OnCajaSuccess += CajaAddSmall_OnCajaSuccess;
+            this.container = new PoperContainer(cajaAddSmall);
+            this.container.Show(this.btnAddCaja);
+        }
+
+        private void CajaAddSmall_OnCajaSuccess(object sender, EventArgs e)
+        {
+            if (this.container != null)
+                this.container.Close();
+
+            this.CargarCajas();
         }
 
         private void FrmConfigGeneral_Load(object sender, EventArgs e)
@@ -48,7 +92,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         }
 
         private bool Comprobaciones()
-        {
+        {            
             if (this.btnRuta.Tag == null)
             {
                 this.errorProvider1.SetError(this.gbRuta, "Debe seleccionar una ruta predeterminada");
@@ -77,7 +121,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                 return false;
             }
 
-            if (!int.TryParse(Convert.ToString(this.listaCajas.SelectedValue), out int id_caja))
+            if (!int.TryParse(Convert.ToString(this.listaCajas.SelectedValue), out int _))
             {
                 this.errorProvider1.SetError(this.gbCaja, "Verifique la caja seleccionada");
                 return false;
@@ -160,6 +204,28 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             }
         }
 
+        private void CargarCajas()
+        {
+            int id_caja = ConfigGeneral.Default.Id_caja_principal;
+            DataTable dtCajas = ECaja.BuscarCajas("COMPLETO", "", out string rpta);
+
+            if (dtCajas != null)
+            {
+                this.listaCajas.DataSource = dtCajas;
+                this.listaCajas.DisplayMember = "Nombre_caja";
+                this.listaCajas.ValueMember = "Id_caja";
+
+                if (id_caja != 0)
+                {
+                    DataRow[] rows = dtCajas.Select(string.Format("Id_caja = {0}", id_caja));
+                    if (rows.Length > 0)
+                        this.listaCajas.SelectedValue = id_caja;
+                    else
+                        this.errorProvider1.SetError(this.gbCaja, "No se encontró la caja guardada en la lista de cajas");
+                }
+            }
+        }
+
         private void AsignarDatos()
         {
             string rutaArchivo = ConfigGeneral.Default.Ruta_archivos;
@@ -188,24 +254,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.errorProvider1.SetError(this.gbRuta, "El directorio no existe");
             }
 
-            int id_caja = ConfigGeneral.Default.Id_caja_principal;
-            DataTable dtCajas = ECaja.BuscarCajas("COMPLETO", "", out string rpta);
-
-            if (dtCajas != null)
-            {
-                this.listaCajas.DataSource = dtCajas;
-                this.listaCajas.DisplayMember = "Nombre_caja";
-                this.listaCajas.ValueMember = "Id_caja";
-
-                if (id_caja != 0)
-                {
-                    DataRow[] rows = dtCajas.Select(string.Format("Id_caja = {0}", id_caja));
-                    if (rows.Length > 0)
-                        this.listaCajas.SelectedValue = id_caja;
-                    else
-                        this.errorProvider1.SetError(this.gbCaja, "No se encontró la caja guardada en la lista de cajas");
-                }
-            }
+            this.CargarCajas();
 
             this.numericMesesAlerta.Value = ConfigGeneral.Default.Meses_alerta_corte;
             this.numericMesesCorte.Value = ConfigGeneral.Default.Meses_corte;

@@ -23,7 +23,7 @@
         {
             Form frm = (Form)sender;
 
-            if (frm.Name.Equals("frmConfigInicial"))
+            if (frm.Name.Equals("FrmConfigInicial"))
             {
                 Mensajes.MensajePregunta("¿Desea abandonar la configuración?", "Abandonar", "Cancelar", out DialogResult dialog);
                 if (dialog == DialogResult.Yes)
@@ -32,23 +32,23 @@
                     this.Close();
                 }
             }
-            else if (frm.Name.Equals("frmConfigBD"))
+            else if (frm.Name.Equals("FrmConfigBD"))
             {
                 this.AbrirConfigInicial();
             }
-            else if (frm.Name.Equals("frmConfigGeneral"))
+            else if (frm.Name.Equals("FrmConfigGeneral"))
             {
                 this.AbrirConfigBD();
             }
-            else if (frm.Name.Equals("frmConfigFacturas"))
+            else if (frm.Name.Equals("FrmConfigFacturas"))
             {
                 this.AbrirConfigGeneral();
             }
-            else if (frm.Name.Equals("frmConfigCorreos"))
+            else if (frm.Name.Equals("FrmConfigCorreos"))
             {
                 this.AbrirConfigFacturas();
             }
-            else if (frm.Name.Equals("frmConfigTarifas"))
+            else if (frm.Name.Equals("FrmConfigTarifas"))
             {
                 this.AbrirConfigCorreos();
             }
@@ -80,6 +80,68 @@
             else if (frm.Name.Equals("FrmConfigTarifas"))
             {
                 //Terminar la configuración
+                string rpta = this.FrmConfigInicial.GuardarDatos();
+                if (rpta.Equals("OK"))
+                {
+                    rpta = this.FrmConfigBD.GuardarDatos();
+                    if (rpta.Equals("OK"))
+                    {
+                        rpta = this.FrmConfigGeneral.GuardarDatos();
+                        if (rpta.Equals("OK"))
+                        {
+                            rpta = this.FrmConfigFacturas.GuardarDatos();
+                            if (rpta.Equals("OK"))
+                            {
+                                rpta = this.FrmConfigCorreos.GuardarDatos();
+                                if (rpta.Equals("OK"))
+                                {
+                                    rpta = this.FrmConfigTarifas.GuardarDatos();
+                                    if (rpta.Equals("OK"))
+                                    {
+                                        Mensajes.MensajeInformacion("¡Se guardaron las configuraciones correctamente! " +
+                                            "Reinicie el programa para que los cambios surgan efecto", "Entendido");
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                                            "la configuración de tarifas", "Entendido");
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                                        "la configuración de correos", "Entendido");
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                                    "la configuración de facturas", "Entendido");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                                "la configuración general", "Entendido");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        Mensajes.MensajeInformacion("Hubo un error con los datos del formulario de la " +
+                            "base de datos", "Entendido");
+                        return;
+                    }
+                }
+                else
+                {
+                    Mensajes.MensajeInformacion("Hubo un error con los datos del formulario inicial", "Entendido");
+                    return;
+                }
             }
         }
 
@@ -132,8 +194,8 @@
                         WindowState = FormWindowState.Normal,
                         Dock = DockStyle.Fill
                     };
-                    this.FrmConfigCorreos.OnBtnSiguiente += Frm_OnBtnSiguiente;
-                    this.FrmConfigCorreos.OnBtnAtras += Frm_OnBtnAtras;
+                    this.FrmConfigCorreos.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
+                    this.FrmConfigCorreos.OnBtnAtrasClick += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigCorreos);
@@ -165,8 +227,8 @@
                         WindowState = FormWindowState.Normal,
                         Dock = DockStyle.Fill
                     };
-                    this.FrmConfigFacturas.OnBtnSiguiente += Frm_OnBtnSiguiente;
-                    this.FrmConfigFacturas.OnBtnAtras += Frm_OnBtnAtras;
+                    this.FrmConfigFacturas.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
+                    this.FrmConfigFacturas.OnBtnAtrasClick += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigFacturas);
@@ -264,8 +326,8 @@
                         WindowState = FormWindowState.Normal,
                         Dock = DockStyle.Fill
                     };
-                    this.FrmConfigTarifas.OnBtnSiguiente += Frm_OnBtnSiguiente;
-                    this.FrmConfigTarifas.OnBtnAtras += Frm_OnBtnAtras;
+                    this.FrmConfigTarifas.OnBtnSiguienteClick += Frm_OnBtnSiguiente;
+                    this.FrmConfigTarifas.OnBtnAtrasClick += Frm_OnBtnAtras;
                 }
 
                 this.panel1.Controls.Add(this.FrmConfigTarifas);
@@ -284,24 +346,6 @@
         private void FrmConfiguracionInicial_Load(object sender, EventArgs e)
         {
             this.AbrirConfigInicial();
-        }
-
-        private Form ComprobarExistencia(Form form)
-        {
-            Form frmDevolver = null;
-            foreach (Control control in this.panel1.Controls)
-            {
-                if (control is Form frm)
-                {
-                    if (frm.Name.Equals(form.Name))
-                    {
-                        frmDevolver = frm;
-                        break;
-                    }
-                }
-            }
-
-            return frmDevolver;
         }
     }
 }

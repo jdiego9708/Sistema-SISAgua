@@ -42,11 +42,20 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtTeléfono = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,7 +108,6 @@
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(519, 20);
             this.txtEmpresa.TabIndex = 1;
-            this.txtEmpresa.Text = "JUNTA ADMINISTRADORA DE AGUA POTABLE DE LA PARROQUIA DE YAMANA";
             this.txtEmpresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
@@ -118,7 +126,7 @@
             this.groupBox2.Controls.Add(this.txtPresidente);
             this.groupBox2.Location = new System.Drawing.Point(9, 181);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(558, 56);
+            this.groupBox2.Size = new System.Drawing.Size(313, 56);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nombre del presidente de la junta";
@@ -133,7 +141,7 @@
             this.txtPresidente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtPresidente.Location = new System.Drawing.Point(9, 25);
             this.txtPresidente.Name = "txtPresidente";
-            this.txtPresidente.Size = new System.Drawing.Size(517, 20);
+            this.txtPresidente.Size = new System.Drawing.Size(272, 20);
             this.txtPresidente.TabIndex = 1;
             this.txtPresidente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -178,9 +186,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtCorreo);
-            this.groupBox3.Location = new System.Drawing.Point(9, 243);
+            this.groupBox3.Location = new System.Drawing.Point(328, 181);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(337, 56);
+            this.groupBox3.Size = new System.Drawing.Size(239, 56);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Correo electrónico";
@@ -195,7 +203,7 @@
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCorreo.Location = new System.Drawing.Point(9, 25);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(299, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(201, 20);
             this.txtCorreo.TabIndex = 1;
             this.txtCorreo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -203,12 +211,87 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtDireccion);
+            this.groupBox4.Location = new System.Drawing.Point(9, 243);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(313, 56);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Dirección empresa";
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDireccion.BackColor = System.Drawing.Color.White;
+            this.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDireccion.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDireccion.Location = new System.Drawing.Point(9, 25);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(275, 20);
+            this.txtDireccion.TabIndex = 1;
+            this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txtTeléfono);
+            this.groupBox5.Location = new System.Drawing.Point(328, 243);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(239, 56);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Teléfono empresa";
+            // 
+            // txtTeléfono
+            // 
+            this.txtTeléfono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTeléfono.BackColor = System.Drawing.Color.White;
+            this.txtTeléfono.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTeléfono.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTeléfono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTeléfono.Location = new System.Drawing.Point(9, 25);
+            this.txtTeléfono.Name = "txtTeléfono";
+            this.txtTeléfono.Size = new System.Drawing.Size(201, 20);
+            this.txtTeléfono.TabIndex = 1;
+            this.txtTeléfono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txtCiudad);
+            this.groupBox6.Location = new System.Drawing.Point(9, 305);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(230, 56);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "País, Ciudad";
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCiudad.BackColor = System.Drawing.Color.White;
+            this.txtCiudad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCiudad.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCiudad.Location = new System.Drawing.Point(9, 25);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(192, 20);
+            this.txtCiudad.TabIndex = 1;
+            this.txtCiudad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FrmConfigInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 484);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.btnCancelar);
@@ -231,6 +314,12 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +339,11 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox txtTeléfono;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtCiudad;
     }
 }

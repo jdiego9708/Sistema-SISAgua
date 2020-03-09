@@ -72,6 +72,13 @@ namespace CapaDatos
                     consulta.Append("WHERE ccl.Id_cliente = '" + texto_busqueda1 + "' and " +
                         "ccl.Fecha_cuenta = CONVERT(date, '" + texto_busqueda2 + "')");
                 }
+                else if (tipo_busqueda.Equals("FECHAS"))
+                {
+                    consulta.Append("WHERE ccl.Fecha_cuenta BETWEEN " +
+                        "CONVERT(date, '" + texto_busqueda1 + "') and " +
+                        "CONVERT(date, '" + texto_busqueda2 + "') and " +
+                        "ccl.Estado_cuenta = 'PENDIENTE DE PAGO' ");
+                }
                 else if (tipo_busqueda.Equals("ID CUENTA"))
                 {
                     consulta.Append("WHERE ccl.Id_cuenta = '" + texto_busqueda1 + "'");

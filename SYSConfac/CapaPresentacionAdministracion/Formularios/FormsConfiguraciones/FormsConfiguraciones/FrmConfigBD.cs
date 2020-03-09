@@ -23,6 +23,36 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnSeleccionarBD.Click += BtnSeleccionarBD_Click;
             this.btnRutaBackup.Click += BtnRuta_Click;
         }
+        public string GuardarDatos()
+        {
+            string rpta = "OK";
+            try
+            {
+                if (this.Comprobaciones(out EConfigBD eConfigBD))
+                {
+                    List<string> configurations = new List<string>
+                    {
+                        eConfigBD.ConnectionDefault,
+                        eConfigBD.MotorBD,
+                        eConfigBD.TipoBackup,
+                        eConfigBD.Frecuencia.ToString(),
+                        eConfigBD.RutaDestinoBackup,
+                        eConfigBD.FileName
+                    };
+
+                    rpta = EConfigBD.InsertarConfiguraciones(configurations, eConfigBD.ConnectionsStrings);
+                    if (!rpta.Equals("OK"))
+                        throw new Exception(rpta);
+                }
+                else
+                    throw new Exception("No se pudo realizar la comprobación");
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+            }
+            return rpta;
+        }
 
         private void BtnSeleccionarBD_Click(object sender, EventArgs e)
         {
@@ -40,6 +70,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                         this.errorProvider1.Clear();
                         this.btnSeleccionarBD.Text = connectionString;
                         this.btnSeleccionarBD.Tag = archivo.FileName;
+                        this.txtConexion.Text = connectionString;
                         this.toolTip1.SetToolTip(this.btnSeleccionarBD, connectionString);
                     }
                     else
@@ -48,6 +79,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                             rpta, "Entendido");
                         this.btnSeleccionarBD.Text = "Seleccione base de datos";
                         this.btnSeleccionarBD.Tag = null;
+                        this.txtConexion.Text = string.Empty;
                         this.toolTip1.SetToolTip(this.btnSeleccionarBD, "Seleccionar base de datos");
                     }
                 }
@@ -90,7 +122,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
 
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
-            if (this.Comprobaciones())
+            if (this.Comprobaciones(out _))
                 OnBtnSiguienteClick?.Invoke(this, e);
         }
 
@@ -99,8 +131,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             OnBtnAtrasClick?.Invoke(this, e);
         }
 
-        private bool Comprobaciones()
+        private bool Comprobaciones(out EConfigBD eConfigBD)
         {
+            eConfigBD = new EConfigBD();
+
+            if (this.rdSqlite.Checked)
+                eConfigBD.MotorBD = "SQLITE";
+            else
+                eConfigBD.MotorBD = "SQLSERVER";
+
             if (this.btnSeleccionarBD.Tag == null)
             {
                 this.errorProvider1.SetError(this.gbBaseDatos, "Debe seleccionar una base de datos válida");
@@ -123,16 +162,37 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.errorProvider1.SetError(this.gbBaseDatos, "Verifique el archivo seleccionado al parecer no existe");
                     return false;
                 }
+                else
+                {
+                    eConfigBD.ConnectionDefault = connectionsString;
 
-                if (!HelperFiles.ArchiveAuthorization(directory, out string rpta1))
+                    if (this.EConfigBD != null)
+                    {
+                        eConfigBD.ConnectionsStrings = this.EConfigBD.ConnectionsStrings;
+                        if (eConfigBD.ConnectionsStrings != null)
+                        {
+                            if (!eConfigBD.ConnectionsStrings.Contains(connectionsString))
+                                eConfigBD.ConnectionsStrings.Add(connectionsString);
+                        }
+                        else
+                        {
+                            eConfigBD.ConnectionsStrings = new List<string>();
+                            eConfigBD.ConnectionsStrings.Add(connectionsString);
+                        }
+                    }
+                }
+
+                if (!HelperFiles.BDAuthorization(directory, out string rpta1))
                 {
                     Mensajes.MensajeInformacion("Hay un error con los permisos del archivo de base de datos seleccionaoa por favor verifique, detalles: " +
                         rpta1, "Entendido");
                     this.errorProvider1.SetError(this.gbBaseDatos, "Verifique el archivo de base de datos seleccionado");
                     return false;
                 }
+                else
+                    eConfigBD.FileName = directory.FullName;
 
-                if (!EConfigBD.TestConnection("Data Source=" + rutaBD, out string rpta))
+                if (!EConfigBD.TestConnection(connectionsString, out string rpta))
                 {
                     Mensajes.MensajeInformacion("Hubo un error al tratar de conectarse a la base de datos, detalles: " +
                         rpta, "Entendido");
@@ -179,7 +239,14 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.errorProvider1.SetError(this.gbFrecuencia, "La frecuencia de las copias de seguridad automáticas debe ser mayor que 0 días");
                     return false;
                 }
+                else
+                {
+                    eConfigBD.TipoBackup = "AUTOMATICO";
+                    eConfigBD.Frecuencia = Convert.ToInt32(this.numericFrecuencia.Value);
+                }
             }
+            else
+                eConfigBD.TipoBackup = "MANUAL";
 
             return true;
         }
@@ -246,7 +313,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         private void AsignarDatos()
         {
             EConfigBD eConfigBD = new EConfigBD();
-
+            this.EConfigBD = eConfigBD;
             if (eConfigBD.MotorBD.Equals("SQLITE"))
                 this.rdSqlite.Checked = true;
             else if (eConfigBD.MotorBD.Equals("SQL SERVER"))
@@ -269,7 +336,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
 
                     this.errorProvider1.SetIconAlignment(this.gbBaseDatos, ErrorIconAlignment.TopRight);
 
-                    if (HelperFiles.ArchiveAuthorization(directory, out string rpta1))
+                    if (HelperFiles.BDAuthorization(directory, out string rpta1))
                     {
                         this.btnSeleccionarBD.Text = connectionString;
                         this.btnSeleccionarBD.Tag = rutaBD;
@@ -292,9 +359,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.txtConexion.Text = eConfigBD.ConnectionDefault;
 
             if (eConfigBD.TipoBackup.Equals("MANUAL"))
+            {
                 this.rdManuales.Checked = true;
+                this.gbFrecuencia.Visible = false;
+            }
             else
+            {
                 this.rdAutomaticas.Checked = true;
+                this.gbFrecuencia.Visible = true;
+            }
 
             this.numericFrecuencia.Value = eConfigBD.Frecuencia;
 
@@ -326,5 +399,10 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.errorProvider1.SetError(this.gbRutaDestino, "El directorio no existe");
             }
         }
+
+        private EConfigBD _eConfigBD;
+
+        public EConfigBD EConfigBD { get => _eConfigBD; 
+            set => _eConfigBD = value; }
     }
 }

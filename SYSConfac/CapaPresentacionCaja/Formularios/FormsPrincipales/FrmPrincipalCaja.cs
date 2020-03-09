@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 
 namespace CapaPresentacionCaja.Formularios.FormsPrincipales
 {
@@ -328,7 +329,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
         {
             try
             {
-                int id_caja_principal = Convert.ToInt32(ConfigurationManager.AppSettings["IdCajaPrincipal"]);
+                int id_caja_principal = ConfigGeneral.Default.Id_caja_principal;
                 DataTable dtCajas =
                     ECaja.BuscarCajas("ID CAJA", id_caja_principal.ToString(), out string rpta);
                 if (dtCajas != null)
@@ -357,12 +358,13 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                                 this.Saldo_caja += eApertura.Valor_inicial;
                             }
                         }
-    
+
                         this.btnLock.Image = Resources.lock_32px;
                         this.txtTitulo.Text = "Módulo de " + eCaja.Nombre_caja + " (Caja abierta)";
                         this.groupBox1.Enabled = true;
                         this.toolTip1.SetToolTip(btnLock, "Cerrar caja");
-                        this.IsCaja = true;                        
+                        this.IsCaja = true;
+                        this.ComprobarMontoRecaudar(DateTime.Now.Month);
                     }
 
                     DataTable dtHistorialCierres =
@@ -391,7 +393,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                         if (!rpta.Equals("OK"))
                             throw new Exception(rpta);
                     }
-                    
+
                     DatosInicioSesion datosInicioSesion = DatosInicioSesion.GetInstancia();
                     datosInicioSesion.ECaja = eCaja;
                 }
@@ -413,6 +415,49 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             }
         }
 
+        private void ComprobarMontoRecaudar(int mes)
+        {
+            //Obtenemos la fecha de inicio y de fin
+            DateTime fechaInicio = new DateTime(DateTime.Now.Year, mes, 1);
+            DateTime fechaFin = new DateTime(DateTime.Now.Year, mes, DateTime.DaysInMonth(DateTime.Now.Year, mes));
+            //Obtenemos las cuentas entre las fechas que tenemos
+            //Todas las cuentas que vienen tienen estado de pendiente de pago así que solo buscaremos los abonos
+            DataTable dtCuentas =
+                ECuentas.BuscarCuentas("FECHAS", fechaInicio.ToString("yyyy-MM-dd"),
+                fechaFin.ToString("yyyy-MM-dd"), out string rpta);
+            if (dtCuentas != null)
+            {
+                //Obtener todos los abonos
+                DataTable dtAbonos =
+                EDetalleAbonosCuentas.BuscarAbonos("COMPLETO", "", out rpta);
+
+                decimal montoTotal = 0;
+                decimal totalAbonos = 0;
+                foreach (DataRow row in dtCuentas.Rows)
+                {
+                    decimal monto = Convert.ToDecimal(row["Total_pagar"]);
+                    montoTotal += monto;
+
+                    int id_cuenta = Convert.ToInt32(row["Id_cuenta"]);
+                    if (dtAbonos != null)
+                    {
+                        DataRow[] rows = dtAbonos.Select(string.Format("Id_cuenta = {0}", id_cuenta));
+                        if (rows.Length > 0)
+                        {
+                            foreach (DataRow rowAbono in rows)
+                            {
+                                decimal valorAbono = Convert.ToDecimal(rowAbono["Valor_abono"]);
+                                totalAbonos += valorAbono;
+                            }
+                        }
+                    }
+                }
+
+                montoTotal = montoTotal - totalAbonos;
+                this.lblMonto.Text = "Monto a recaudar: $" + montoTotal.ToString("N2");
+            }
+        }
+
         private void ComprobarSaldoCaja(int id_caja)
         {
             DataTable dtPagos =
@@ -426,7 +471,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     this.Saldo_caja += ePago.ECuenta.Total_pagar;
                     listPagos.Add(ePago);
                 }
-                
+
             }
 
             DataTable dtAbonos =
@@ -456,7 +501,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 this.lblSaldoCaja.Text = "Saldo actual en caja: $" + this.Saldo_caja.ToString("N2");
             else
                 this.lblSaldoCaja.Text = "Sin saldo actual";
-            
+
         }
 
         private decimal saldo_caja;

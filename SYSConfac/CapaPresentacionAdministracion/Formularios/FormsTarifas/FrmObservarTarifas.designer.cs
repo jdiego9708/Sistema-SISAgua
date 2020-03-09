@@ -69,13 +69,16 @@
             this.txtBusqueda.BackColor = System.Drawing.Color.White;
             this.txtBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBusqueda.Imagen = null;
             this.txtBusqueda.Location = new System.Drawing.Point(6, 25);
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtBusqueda.MaxLenght = 0;
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(559, 20);
             this.txtBusqueda.TabIndex = 0;
             this.txtBusqueda.Texto = null;
             this.txtBusqueda.Texto_inicial = null;
+            this.txtBusqueda.Tipo_txt = null;
             this.txtBusqueda.Visible_px = false;
             // 
             // bindingNavigator1
@@ -94,7 +97,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(379, 80);
+            this.bindingNavigator1.Location = new System.Drawing.Point(382, 80);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -211,7 +214,7 @@
             this.dgvTarifas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTarifas.RowTemplate.Height = 30;
             this.dgvTarifas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvTarifas.Size = new System.Drawing.Size(572, 255);
+            this.dgvTarifas.Size = new System.Drawing.Size(575, 349);
             this.dgvTarifas.TabIndex = 11;
             // 
             // lblResultados
@@ -228,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(589, 365);
+            this.ClientSize = new System.Drawing.Size(592, 459);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dgvTarifas);

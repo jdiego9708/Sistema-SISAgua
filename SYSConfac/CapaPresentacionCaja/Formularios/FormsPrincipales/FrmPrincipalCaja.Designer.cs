@@ -49,6 +49,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lblUltimaApertura = new System.Windows.Forms.Label();
             this.lblSaldoCaja = new System.Windows.Forms.Label();
+            this.lblMonto = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -331,12 +332,23 @@
             this.lblSaldoCaja.TabIndex = 3;
             this.lblSaldoCaja.Text = "Saldo en caja";
             // 
+            // lblMonto
+            // 
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonto.Location = new System.Drawing.Point(360, 61);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(120, 19);
+            this.lblMonto.TabIndex = 4;
+            this.lblMonto.Text = "Monto a recaudar";
+            // 
             // FrmPrincipalCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(565, 346);
+            this.Controls.Add(this.lblMonto);
             this.Controls.Add(this.lblSaldoCaja);
             this.Controls.Add(this.lblUltimaApertura);
             this.Controls.Add(this.groupBox1);
@@ -382,5 +394,6 @@
         private System.Windows.Forms.RadioButton rdMedidor;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnObservarPagosHoy;
+        private System.Windows.Forms.Label lblMonto;
     }
 }

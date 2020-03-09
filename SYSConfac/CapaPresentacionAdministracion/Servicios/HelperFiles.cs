@@ -103,5 +103,36 @@
 
             return true;
         }
+
+        public static bool BDAuthorization(DirectoryInfo ruta, out string rpta)
+        {
+            rpta = "";
+            try
+            {
+                AuthorizationRuleCollection collection =
+                Directory.GetAccessControl(ruta.FullName).GetAccessRules(true,
+                 true, typeof(System.Security.Principal.NTAccount));
+                foreach (FileSystemAccessRule rule in collection)
+                {
+                    if (rule.AccessControlType == AccessControlType.Allow)
+                    {
+                        break;
+                    }
+                }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                rpta = ex.Message;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+                return false;
+            }
+
+            
+            return true;
+        }
     }
 }

@@ -28,40 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfigFacturas));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.gbTitulo = new System.Windows.Forms.GroupBox();
+            this.txtTitulo = new System.Windows.Forms.TextBox();
+            this.gbAncho = new System.Windows.Forms.GroupBox();
+            this.txtAncho = new System.Windows.Forms.TextBox();
+            this.gbMedida = new System.Windows.Forms.GroupBox();
+            this.listaMedida = new System.Windows.Forms.ComboBox();
+            this.gbDimensiones = new System.Windows.Forms.GroupBox();
+            this.gbAlto = new System.Windows.Forms.GroupBox();
+            this.txtAlto = new System.Windows.Forms.TextBox();
+            this.gbMargenes = new System.Windows.Forms.GroupBox();
+            this.gbDerecha = new System.Windows.Forms.GroupBox();
+            this.txtDerecha = new System.Windows.Forms.TextBox();
+            this.gbIzquierda = new System.Windows.Forms.GroupBox();
+            this.txtIzquierda = new System.Windows.Forms.TextBox();
+            this.gbBajo = new System.Windows.Forms.GroupBox();
+            this.txtBajo = new System.Windows.Forms.TextBox();
+            this.gbArriba = new System.Windows.Forms.GroupBox();
+            this.txtArriba = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbTitulo.SuspendLayout();
+            this.gbAncho.SuspendLayout();
+            this.gbMedida.SuspendLayout();
+            this.gbDimensiones.SuspendLayout();
+            this.gbAlto.SuspendLayout();
+            this.gbMargenes.SuspendLayout();
+            this.gbDerecha.SuspendLayout();
+            this.gbIzquierda.SuspendLayout();
+            this.gbBajo.SuspendLayout();
+            this.gbArriba.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,260 +95,276 @@
             this.textBox1.Text = "Facturas y reportes";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnReportes
+            // btnAtras
             // 
-            this.btnReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(10, 382);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(125, 53);
-            this.btnReportes.TabIndex = 4;
-            this.btnReportes.Text = "Cancelar";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAtras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtras.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Image = ((System.Drawing.Image)(resources.GetObject("btnAtras.Image")));
+            this.btnAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAtras.Location = new System.Drawing.Point(10, 382);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(125, 53);
+            this.btnAtras.TabIndex = 4;
+            this.btnAtras.Text = "Atrás";
+            this.btnAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAtras.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnSiguiente
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(439, 382);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 53);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Siguiente";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSiguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSiguiente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSiguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSiguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
+            this.btnSiguiente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSiguiente.Location = new System.Drawing.Point(439, 382);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(125, 53);
+            this.btnSiguiente.TabIndex = 5;
+            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSiguiente.UseVisualStyleBackColor = false;
             // 
-            // groupBox10
+            // gbTitulo
             // 
-            this.groupBox10.Controls.Add(this.textBox9);
-            this.groupBox10.Location = new System.Drawing.Point(10, 68);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(554, 57);
-            this.groupBox10.TabIndex = 7;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Título de reporte";
+            this.gbTitulo.Controls.Add(this.txtTitulo);
+            this.gbTitulo.Location = new System.Drawing.Point(10, 68);
+            this.gbTitulo.Name = "gbTitulo";
+            this.gbTitulo.Size = new System.Drawing.Size(554, 57);
+            this.gbTitulo.TabIndex = 7;
+            this.gbTitulo.TabStop = false;
+            this.gbTitulo.Text = "Título de reporte";
             // 
-            // textBox9
+            // txtTitulo
             // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox9.Location = new System.Drawing.Point(6, 20);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(542, 24);
-            this.textBox9.TabIndex = 2;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTitulo.BackColor = System.Drawing.Color.White;
+            this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTitulo.Location = new System.Drawing.Point(6, 20);
+            this.txtTitulo.Name = "txtTitulo";
+            this.txtTitulo.Size = new System.Drawing.Size(519, 24);
+            this.txtTitulo.TabIndex = 2;
+            this.txtTitulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox1
+            // gbAncho
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Location = new System.Drawing.Point(6, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(110, 57);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ancho";
+            this.gbAncho.Controls.Add(this.txtAncho);
+            this.gbAncho.Location = new System.Drawing.Point(6, 24);
+            this.gbAncho.Name = "gbAncho";
+            this.gbAncho.Size = new System.Drawing.Size(110, 57);
+            this.gbAncho.TabIndex = 10;
+            this.gbAncho.TabStop = false;
+            this.gbAncho.Text = "Ancho";
             // 
-            // textBox2
+            // txtAncho
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtAncho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox2.Location = new System.Drawing.Point(6, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(98, 24);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAncho.BackColor = System.Drawing.Color.White;
+            this.txtAncho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAncho.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAncho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAncho.Location = new System.Drawing.Point(6, 24);
+            this.txtAncho.MaxLength = 4;
+            this.txtAncho.Name = "txtAncho";
+            this.txtAncho.Size = new System.Drawing.Size(79, 24);
+            this.txtAncho.TabIndex = 2;
+            this.txtAncho.Text = "0";
+            this.txtAncho.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox2
+            // gbMedida
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Location = new System.Drawing.Point(10, 131);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(245, 57);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Medida";
+            this.gbMedida.Controls.Add(this.listaMedida);
+            this.gbMedida.Location = new System.Drawing.Point(10, 131);
+            this.gbMedida.Name = "gbMedida";
+            this.gbMedida.Size = new System.Drawing.Size(245, 57);
+            this.gbMedida.TabIndex = 14;
+            this.gbMedida.TabStop = false;
+            this.gbMedida.Text = "Medida";
             // 
-            // comboBox1
+            // listaMedida
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listaMedida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(5, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 28);
-            this.comboBox1.TabIndex = 0;
+            this.listaMedida.BackColor = System.Drawing.Color.White;
+            this.listaMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.listaMedida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.listaMedida.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaMedida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.listaMedida.FormattingEnabled = true;
+            this.listaMedida.Location = new System.Drawing.Point(5, 22);
+            this.listaMedida.Name = "listaMedida";
+            this.listaMedida.Size = new System.Drawing.Size(211, 28);
+            this.listaMedida.TabIndex = 0;
             // 
-            // groupBox7
+            // gbDimensiones
             // 
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Controls.Add(this.groupBox1);
-            this.groupBox7.Location = new System.Drawing.Point(10, 194);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(245, 100);
-            this.groupBox7.TabIndex = 18;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Dimensiones";
+            this.gbDimensiones.Controls.Add(this.gbAlto);
+            this.gbDimensiones.Controls.Add(this.gbAncho);
+            this.gbDimensiones.Location = new System.Drawing.Point(10, 194);
+            this.gbDimensiones.Name = "gbDimensiones";
+            this.gbDimensiones.Size = new System.Drawing.Size(245, 100);
+            this.gbDimensiones.TabIndex = 18;
+            this.gbDimensiones.TabStop = false;
+            this.gbDimensiones.Text = "Dimensiones";
             // 
-            // groupBox8
+            // gbAlto
             // 
-            this.groupBox8.Controls.Add(this.textBox6);
-            this.groupBox8.Location = new System.Drawing.Point(122, 24);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(117, 57);
-            this.groupBox8.TabIndex = 11;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Alto";
+            this.gbAlto.Controls.Add(this.txtAlto);
+            this.gbAlto.Location = new System.Drawing.Point(122, 24);
+            this.gbAlto.Name = "gbAlto";
+            this.gbAlto.Size = new System.Drawing.Size(117, 57);
+            this.gbAlto.TabIndex = 11;
+            this.gbAlto.TabStop = false;
+            this.gbAlto.Text = "Alto";
             // 
-            // textBox6
+            // txtAlto
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtAlto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox6.Location = new System.Drawing.Point(6, 24);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(105, 24);
-            this.textBox6.TabIndex = 2;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAlto.BackColor = System.Drawing.Color.White;
+            this.txtAlto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAlto.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAlto.Location = new System.Drawing.Point(6, 24);
+            this.txtAlto.MaxLength = 4;
+            this.txtAlto.Name = "txtAlto";
+            this.txtAlto.Size = new System.Drawing.Size(88, 24);
+            this.txtAlto.TabIndex = 2;
+            this.txtAlto.Text = "0";
+            this.txtAlto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox9
+            // gbMargenes
             // 
-            this.groupBox9.Controls.Add(this.groupBox13);
-            this.groupBox9.Controls.Add(this.groupBox12);
-            this.groupBox9.Controls.Add(this.groupBox11);
-            this.groupBox9.Controls.Add(this.groupBox3);
-            this.groupBox9.Location = new System.Drawing.Point(261, 131);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(303, 163);
-            this.groupBox9.TabIndex = 19;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Márgenes";
+            this.gbMargenes.Controls.Add(this.gbDerecha);
+            this.gbMargenes.Controls.Add(this.gbIzquierda);
+            this.gbMargenes.Controls.Add(this.gbBajo);
+            this.gbMargenes.Controls.Add(this.gbArriba);
+            this.gbMargenes.Location = new System.Drawing.Point(261, 131);
+            this.gbMargenes.Name = "gbMargenes";
+            this.gbMargenes.Size = new System.Drawing.Size(303, 163);
+            this.gbMargenes.TabIndex = 19;
+            this.gbMargenes.TabStop = false;
+            this.gbMargenes.Text = "Márgenes";
             // 
-            // groupBox13
+            // gbDerecha
             // 
-            this.groupBox13.Controls.Add(this.textBox10);
-            this.groupBox13.Location = new System.Drawing.Point(151, 89);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(93, 59);
-            this.groupBox13.TabIndex = 18;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Derecha";
+            this.gbDerecha.Controls.Add(this.txtDerecha);
+            this.gbDerecha.Location = new System.Drawing.Point(151, 89);
+            this.gbDerecha.Name = "gbDerecha";
+            this.gbDerecha.Size = new System.Drawing.Size(93, 59);
+            this.gbDerecha.TabIndex = 18;
+            this.gbDerecha.TabStop = false;
+            this.gbDerecha.Text = "Derecha";
             // 
-            // textBox10
+            // txtDerecha
             // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtDerecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.BackColor = System.Drawing.Color.White;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox10.Location = new System.Drawing.Point(6, 22);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(81, 24);
-            this.textBox10.TabIndex = 2;
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDerecha.BackColor = System.Drawing.Color.White;
+            this.txtDerecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDerecha.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDerecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDerecha.Location = new System.Drawing.Point(6, 22);
+            this.txtDerecha.MaxLength = 4;
+            this.txtDerecha.Name = "txtDerecha";
+            this.txtDerecha.Size = new System.Drawing.Size(67, 24);
+            this.txtDerecha.TabIndex = 2;
+            this.txtDerecha.Text = "0";
+            this.txtDerecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox12
+            // gbIzquierda
             // 
-            this.groupBox12.Controls.Add(this.textBox8);
-            this.groupBox12.Location = new System.Drawing.Point(52, 89);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(93, 59);
-            this.groupBox12.TabIndex = 17;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Izquierda";
+            this.gbIzquierda.Controls.Add(this.txtIzquierda);
+            this.gbIzquierda.Location = new System.Drawing.Point(52, 89);
+            this.gbIzquierda.Name = "gbIzquierda";
+            this.gbIzquierda.Size = new System.Drawing.Size(93, 59);
+            this.gbIzquierda.TabIndex = 17;
+            this.gbIzquierda.TabStop = false;
+            this.gbIzquierda.Text = "Izquierda";
             // 
-            // textBox8
+            // txtIzquierda
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtIzquierda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox8.Location = new System.Drawing.Point(6, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(81, 24);
-            this.textBox8.TabIndex = 2;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtIzquierda.BackColor = System.Drawing.Color.White;
+            this.txtIzquierda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIzquierda.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIzquierda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtIzquierda.Location = new System.Drawing.Point(6, 22);
+            this.txtIzquierda.MaxLength = 4;
+            this.txtIzquierda.Name = "txtIzquierda";
+            this.txtIzquierda.Size = new System.Drawing.Size(66, 24);
+            this.txtIzquierda.TabIndex = 2;
+            this.txtIzquierda.Text = "0";
+            this.txtIzquierda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox11
+            // gbBajo
             // 
-            this.groupBox11.Controls.Add(this.textBox7);
-            this.groupBox11.Location = new System.Drawing.Point(151, 24);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(93, 59);
-            this.groupBox11.TabIndex = 16;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Bajo";
+            this.gbBajo.Controls.Add(this.txtBajo);
+            this.gbBajo.Location = new System.Drawing.Point(151, 24);
+            this.gbBajo.Name = "gbBajo";
+            this.gbBajo.Size = new System.Drawing.Size(93, 59);
+            this.gbBajo.TabIndex = 16;
+            this.gbBajo.TabStop = false;
+            this.gbBajo.Text = "Bajo";
             // 
-            // textBox7
+            // txtBajo
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtBajo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox7.Location = new System.Drawing.Point(6, 22);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(81, 24);
-            this.textBox7.TabIndex = 2;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBajo.BackColor = System.Drawing.Color.White;
+            this.txtBajo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBajo.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBajo.Location = new System.Drawing.Point(6, 22);
+            this.txtBajo.MaxLength = 4;
+            this.txtBajo.Name = "txtBajo";
+            this.txtBajo.Size = new System.Drawing.Size(67, 24);
+            this.txtBajo.TabIndex = 2;
+            this.txtBajo.Text = "0";
+            this.txtBajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox3
+            // gbArriba
             // 
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Location = new System.Drawing.Point(52, 24);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(93, 59);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Alto";
+            this.gbArriba.Controls.Add(this.txtArriba);
+            this.gbArriba.Location = new System.Drawing.Point(52, 24);
+            this.gbArriba.Name = "gbArriba";
+            this.gbArriba.Size = new System.Drawing.Size(93, 59);
+            this.gbArriba.TabIndex = 15;
+            this.gbArriba.TabStop = false;
+            this.gbArriba.Text = "Arriba";
             // 
-            // textBox3
+            // txtArriba
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtArriba.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox3.Location = new System.Drawing.Point(6, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(81, 24);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtArriba.BackColor = System.Drawing.Color.White;
+            this.txtArriba.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtArriba.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArriba.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtArriba.Location = new System.Drawing.Point(6, 22);
+            this.txtArriba.MaxLength = 4;
+            this.txtArriba.Name = "txtArriba";
+            this.txtArriba.Size = new System.Drawing.Size(66, 24);
+            this.txtArriba.TabIndex = 2;
+            this.txtArriba.Text = "0";
+            this.txtArriba.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FrmConfigFacturas
             // 
@@ -353,13 +372,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 444);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnReportes);
+            this.Controls.Add(this.gbMargenes);
+            this.Controls.Add(this.gbDimensiones);
+            this.Controls.Add(this.gbMedida);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox10);
+            this.Controls.Add(this.gbTitulo);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -368,23 +387,24 @@
             this.Name = "FrmConfigFacturas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbTitulo.ResumeLayout(false);
+            this.gbTitulo.PerformLayout();
+            this.gbAncho.ResumeLayout(false);
+            this.gbAncho.PerformLayout();
+            this.gbMedida.ResumeLayout(false);
+            this.gbDimensiones.ResumeLayout(false);
+            this.gbAlto.ResumeLayout(false);
+            this.gbAlto.PerformLayout();
+            this.gbMargenes.ResumeLayout(false);
+            this.gbDerecha.ResumeLayout(false);
+            this.gbDerecha.PerformLayout();
+            this.gbIzquierda.ResumeLayout(false);
+            this.gbIzquierda.PerformLayout();
+            this.gbBajo.ResumeLayout(false);
+            this.gbBajo.PerformLayout();
+            this.gbArriba.ResumeLayout(false);
+            this.gbArriba.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,25 +413,26 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.GroupBox gbTitulo;
+        private System.Windows.Forms.TextBox txtTitulo;
+        private System.Windows.Forms.GroupBox gbAncho;
+        private System.Windows.Forms.TextBox txtAncho;
+        private System.Windows.Forms.GroupBox gbMedida;
+        private System.Windows.Forms.ComboBox listaMedida;
+        private System.Windows.Forms.GroupBox gbDimensiones;
+        private System.Windows.Forms.GroupBox gbAlto;
+        private System.Windows.Forms.TextBox txtAlto;
+        private System.Windows.Forms.GroupBox gbMargenes;
+        private System.Windows.Forms.GroupBox gbBajo;
+        private System.Windows.Forms.TextBox txtBajo;
+        private System.Windows.Forms.GroupBox gbArriba;
+        private System.Windows.Forms.TextBox txtArriba;
+        private System.Windows.Forms.GroupBox gbIzquierda;
+        private System.Windows.Forms.TextBox txtIzquierda;
+        private System.Windows.Forms.GroupBox gbDerecha;
+        private System.Windows.Forms.TextBox txtDerecha;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

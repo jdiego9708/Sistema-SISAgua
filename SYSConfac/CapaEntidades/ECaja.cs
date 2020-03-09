@@ -44,6 +44,24 @@ namespace CapaEntidades
             }
         }
 
+        public static string InsertarCaja(ECaja caja)
+        {
+            List<string> vs = new List<string>
+            {
+                caja.Nombre_caja, caja.Estado_caja
+            };
+            return DCajas.InsertarCajas(vs);
+        }
+
+        public static string EditarCaja(int id_caja, ECaja caja)
+        {
+            List<string> vs = new List<string>
+            {
+                caja.Nombre_caja, caja.Estado_caja
+            };
+            return DCajas.ModificarCajas(id_caja, vs);
+        }
+
         public static DataTable BuscarCajas(string tipo_busqueda, string texto_busqueda,
         out string rpta)
         {

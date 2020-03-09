@@ -9,7 +9,7 @@
       <Value Profile="(Default)">JUAN DIEGO DUQUE</Value>
     </Setting>
     <Setting Name="Ruta_archivos" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">D:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac</Value>
     </Setting>
     <Setting Name="Id_caja_principal" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -22,6 +22,15 @@
     </Setting>
     <Setting Name="Correo_presidente" Type="System.String" Scope="User">
       <Value Profile="(Default)">jdiego9708@gmail.com</Value>
+    </Setting>
+    <Setting Name="Telefono_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8768684</Value>
+    </Setting>
+    <Setting Name="Direccion_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Calle de prueba</Value>
+    </Setting>
+    <Setting Name="Ciudad_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ecuador</Value>
     </Setting>
   </Settings>
 </SettingsFile>

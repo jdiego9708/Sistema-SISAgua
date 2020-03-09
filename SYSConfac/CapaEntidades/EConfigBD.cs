@@ -24,7 +24,7 @@ namespace CapaEntidades
             this.FileName = vs[5];
         }
 
-        public string InsertarConfiguraciones(List<string> configurations,
+        public static string InsertarConfiguraciones(List<string> configurations,
             List<string> connectionsStrings)
         {
             return DConexion.AsignarConfiguraciones(configurations, connectionsStrings);

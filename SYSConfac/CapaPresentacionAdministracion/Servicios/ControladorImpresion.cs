@@ -11,6 +11,7 @@ using System.Drawing.Printing;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using System.Configuration;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 
 namespace CapaPresentacionAdministracion
 {
@@ -37,13 +38,13 @@ namespace CapaPresentacionAdministracion
         {
             try
             {
-                string medidaDefault = Convert.ToString(ConfigurationManager.AppSettings["MedidaPredeterminada"]);
-                string ancho = Convert.ToString(ConfigurationManager.AppSettings["AnchoHoja"]) + medidaDefault;
-                string alto = Convert.ToString(ConfigurationManager.AppSettings["AltoHoja"]) + medidaDefault;
-                string margenTop = Convert.ToString(ConfigurationManager.AppSettings["MargenArriba"]) + medidaDefault;
-                string margenBottom = Convert.ToString(ConfigurationManager.AppSettings["MargenAbajo"]) + medidaDefault;
-                string margenLeft= Convert.ToString(ConfigurationManager.AppSettings["MargenIzquierda"]) + medidaDefault;
-                string margenRight = Convert.ToString(ConfigurationManager.AppSettings["MargenDerecha"]) + medidaDefault;
+                string medidaDefault = ConfigFacturas.Default.Medida_default;
+                string ancho = ConfigFacturas.Default.Ancho + medidaDefault;
+                string alto = ConfigFacturas.Default.Alto + medidaDefault;
+                string margenTop = ConfigFacturas.Default.MargenArriba + medidaDefault;
+                string margenBottom = ConfigFacturas.Default.MargenAbajo + medidaDefault;
+                string margenLeft= ConfigFacturas.Default.MargenIzquierda + medidaDefault;
+                string margenRight = ConfigFacturas.Default.MargenDerecha + medidaDefault;
 
                 StringBuilder builder = new StringBuilder();
                 builder.Append("<DeviceInfo> ");

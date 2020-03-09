@@ -3,28 +3,29 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionDefault" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Data Source=D:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac\Base de datos\SISAguaBD.db</Value>
     </Setting>
     <Setting Name="MotorBD" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">SQLITE</Value>
     </Setting>
     <Setting Name="TipoBackup" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">MANUAL</Value>
     </Setting>
     <Setting Name="Frecuencia" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="RutaDestinoBackup" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">D:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac\Base de datos\Backups</Value>
     </Setting>
     <Setting Name="ConnectionsStrings" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;string&gt;Data Source=E:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBD.db&lt;/string&gt;
+  &lt;string&gt;Data Source=E:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBDPrueba - copia&lt;/string&gt;
+  &lt;string&gt;D:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBDPrueba - copia&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>
     <Setting Name="FileNameConnection" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">D:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac\Base de datos\SISAguaBD.db</Value>
     </Setting>
   </Settings>
 </SettingsFile>

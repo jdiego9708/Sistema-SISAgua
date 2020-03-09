@@ -42,7 +42,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -215,6 +215,12 @@
     <Compile Include="Formularios\FormsBarrios\FrmObservarBarrios.designer.cs">
       <DependentUpon>FrmObservarBarrios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsCajas\CajaAddSmall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsCajas\CajaAddSmall.Designer.cs">
+      <DependentUpon>CajaAddSmall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormsCajas\CierreSmall.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -305,6 +311,11 @@
     <Compile Include="Formularios\FormsClientes\FrmObservarClientes.designer.cs">
       <DependentUpon>FrmObservarClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigEmail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ConfigEmail.settings</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FormsBD\FrmConexionBD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,15 +328,27 @@
     <Compile Include="Formularios\FormsConfiguraciones\FormsBD\FrmRutaArchivo.Designer.cs">
       <DependentUpon>FrmRutaArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigEmailSmall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigEmailSmall.Designer.cs">
+      <DependentUpon>ConfigEmailSmall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigFacturas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>ConfigFacturas.settings</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigGeneral.cs" />
     <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigGeneral.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>ConfigGeneral.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigTarifas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>ConfigTarifas.settings</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigGeneral.cs">
       <SubType>Form</SubType>
@@ -880,6 +903,9 @@
     <EmbeddedResource Include="Formularios\FormsBarrios\FrmObservarBarrios.resx">
       <DependentUpon>FrmObservarBarrios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsCajas\CajaAddSmall.resx">
+      <DependentUpon>CajaAddSmall.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsCajas\CierreSmall.resx">
       <DependentUpon>CierreSmall.cs</DependentUpon>
     </EmbeddedResource>
@@ -931,6 +957,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsBD\FrmRutaArchivo.resx">
       <DependentUpon>FrmRutaArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigEmailSmall.resx">
+      <DependentUpon>ConfigEmailSmall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\FrmConfigGeneral.resx">
       <DependentUpon>FrmConfigGeneral.cs</DependentUpon>
@@ -1177,13 +1206,21 @@
     <None Include="Formularios\dsPrincipal.xss">
       <DependentUpon>dsPrincipal.xsd</DependentUpon>
     </None>
+    <None Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigEmail.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigEmail.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigFacturas.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>ConfigFacturas.Designer.cs</LastGenOutput>
     </None>
     <None Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigGeneral.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>ConfigGeneral.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\FormsConfiguraciones\FormsConfiguraciones\ConfigTarifas.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ConfigTarifas.Designer.cs</LastGenOutput>
     </None>
     <None Include="Formularios\FormsConfiguraciones\FormsLicencias\ConfigLicencias.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1259,6 +1296,9 @@
     <None Include="Resources\textx24.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Servicios\templateMail.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
