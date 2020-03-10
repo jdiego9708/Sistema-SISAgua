@@ -236,7 +236,6 @@
             this.gbBackups.Controls.Add(this.gbRutaDestino);
             this.gbBackups.Controls.Add(this.rdAutomaticas);
             this.gbBackups.Controls.Add(this.rdManuales);
-            this.gbBackups.Controls.Add(this.btnAyudaRuta);
             this.gbBackups.Location = new System.Drawing.Point(9, 267);
             this.gbBackups.Name = "gbBackups";
             this.gbBackups.Size = new System.Drawing.Size(558, 147);
@@ -298,9 +297,10 @@
             // gbRutaDestino
             // 
             this.gbRutaDestino.Controls.Add(this.btnRutaBackup);
+            this.gbRutaDestino.Controls.Add(this.btnAyudaRuta);
             this.gbRutaDestino.Location = new System.Drawing.Point(9, 80);
             this.gbRutaDestino.Name = "gbRutaDestino";
-            this.gbRutaDestino.Size = new System.Drawing.Size(510, 60);
+            this.gbRutaDestino.Size = new System.Drawing.Size(532, 60);
             this.gbRutaDestino.TabIndex = 10;
             this.gbRutaDestino.TabStop = false;
             this.gbRutaDestino.Text = "Ruta de destino";
@@ -319,7 +319,7 @@
             this.btnRutaBackup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRutaBackup.Location = new System.Drawing.Point(6, 18);
             this.btnRutaBackup.Name = "btnRutaBackup";
-            this.btnRutaBackup.Size = new System.Drawing.Size(498, 35);
+            this.btnRutaBackup.Size = new System.Drawing.Size(489, 35);
             this.btnRutaBackup.TabIndex = 6;
             this.btnRutaBackup.Text = "Seleccionar una ruta";
             this.btnRutaBackup.UseVisualStyleBackColor = false;
@@ -363,7 +363,7 @@
             this.btnAyudaRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyudaRuta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAyudaRuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaRuta.Location = new System.Drawing.Point(525, 101);
+            this.btnAyudaRuta.Location = new System.Drawing.Point(501, 24);
             this.btnAyudaRuta.Name = "btnAyudaRuta";
             this.btnAyudaRuta.Size = new System.Drawing.Size(25, 25);
             this.btnAyudaRuta.TabIndex = 7;

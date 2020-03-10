@@ -12,13 +12,13 @@
       <Value Profile="(Default)">D:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac</Value>
     </Setting>
     <Setting Name="Id_caja_principal" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="Meses_alerta_corte" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="Meses_corte" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="Correo_presidente" Type="System.String" Scope="User">
       <Value Profile="(Default)">jdiego9708@gmail.com</Value>

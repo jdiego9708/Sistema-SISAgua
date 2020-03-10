@@ -11,9 +11,9 @@
             return Directory.Exists(ruta.FullName);
         }
 
-        public static bool ArchiveExists(DirectoryInfo ruta)
+        public static bool ArchiveExists(string ruta)
         {
-            return File.Exists(ruta.FullName);
+            return File.Exists(ruta);
         }
 
 

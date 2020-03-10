@@ -157,7 +157,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     return false;
                 }
 
-                if (!HelperFiles.ArchiveExists(directory))
+                if (!HelperFiles.ArchiveExists(directory.FullName))
                 {
                     this.errorProvider1.SetError(this.gbBaseDatos, "Verifique el archivo seleccionado al parecer no existe");
                     return false;
@@ -329,7 +329,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             else
             {
                 DirectoryInfo directory = new DirectoryInfo(rutaBD);
-                if (HelperFiles.ArchiveExists(directory))
+                if (HelperFiles.ArchiveExists(directory.FullName))
                 {
                     this.btnSeleccionarBD.Text = connectionString;
                     this.btnSeleccionarBD.Tag = rutaBD;

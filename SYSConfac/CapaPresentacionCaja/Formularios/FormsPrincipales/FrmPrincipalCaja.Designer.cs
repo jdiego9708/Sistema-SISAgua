@@ -47,12 +47,15 @@
             this.btnHistorialCuentas = new System.Windows.Forms.Button();
             this.btnAgregarCuenta = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblUltimaApertura = new System.Windows.Forms.Label();
-            this.lblSaldoCaja = new System.Windows.Forms.Label();
-            this.lblMonto = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtInformacionCaja = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +68,7 @@
             this.panel1.Controls.Add(this.txtTitulo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 55);
+            this.panel1.Size = new System.Drawing.Size(602, 55);
             this.panel1.TabIndex = 0;
             // 
             // btnHome
@@ -98,7 +101,7 @@
             this.btnLock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLock.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLock.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLock.Location = new System.Drawing.Point(519, 10);
+            this.btnLock.Location = new System.Drawing.Point(555, 10);
             this.btnLock.Name = "btnLock";
             this.btnLock.Size = new System.Drawing.Size(34, 35);
             this.btnLock.TabIndex = 5;
@@ -112,18 +115,15 @@
             this.txtTitulo.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.txtTitulo.Location = new System.Drawing.Point(0, 11);
+            this.txtTitulo.Location = new System.Drawing.Point(49, 11);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(511, 32);
+            this.txtTitulo.Size = new System.Drawing.Size(500, 32);
             this.txtTitulo.TabIndex = 0;
             this.txtTitulo.Text = "Módulo de caja 1 (Caja cerrada)";
             this.txtTitulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnObservarPagosHoy);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.btnObservarGastosHoy);
@@ -131,9 +131,9 @@
             this.groupBox1.Controls.Add(this.btnCuentasPendientes);
             this.groupBox1.Controls.Add(this.btnHistorialCuentas);
             this.groupBox1.Controls.Add(this.btnAgregarCuenta);
-            this.groupBox1.Location = new System.Drawing.Point(12, 89);
+            this.groupBox1.Location = new System.Drawing.Point(30, 61);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(551, 228);
+            this.groupBox1.Size = new System.Drawing.Size(554, 230);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones disponibles";
@@ -312,45 +312,60 @@
             this.btnAgregarCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregarCuenta.UseVisualStyleBackColor = false;
             // 
-            // lblUltimaApertura
+            // groupBox3
             // 
-            this.lblUltimaApertura.AutoSize = true;
-            this.lblUltimaApertura.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUltimaApertura.Location = new System.Drawing.Point(4, 63);
-            this.lblUltimaApertura.Name = "lblUltimaApertura";
-            this.lblUltimaApertura.Size = new System.Drawing.Size(103, 17);
-            this.lblUltimaApertura.TabIndex = 2;
-            this.lblUltimaApertura.Text = "Última apertura";
+            this.groupBox3.Controls.Add(this.txtInformacionCaja);
+            this.groupBox3.Location = new System.Drawing.Point(12, 306);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(284, 281);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Información de caja";
             // 
-            // lblSaldoCaja
+            // txtInformacionCaja
             // 
-            this.lblSaldoCaja.AutoSize = true;
-            this.lblSaldoCaja.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoCaja.Location = new System.Drawing.Point(14, 320);
-            this.lblSaldoCaja.Name = "lblSaldoCaja";
-            this.lblSaldoCaja.Size = new System.Drawing.Size(105, 21);
-            this.lblSaldoCaja.TabIndex = 3;
-            this.lblSaldoCaja.Text = "Saldo en caja";
+            this.txtInformacionCaja.BackColor = System.Drawing.Color.White;
+            this.txtInformacionCaja.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtInformacionCaja.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtInformacionCaja.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInformacionCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtInformacionCaja.Location = new System.Drawing.Point(6, 24);
+            this.txtInformacionCaja.Multiline = true;
+            this.txtInformacionCaja.Name = "txtInformacionCaja";
+            this.txtInformacionCaja.Size = new System.Drawing.Size(272, 244);
+            this.txtInformacionCaja.TabIndex = 3;
             // 
-            // lblMonto
+            // groupBox4
             // 
-            this.lblMonto.AutoSize = true;
-            this.lblMonto.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonto.Location = new System.Drawing.Point(360, 61);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(120, 19);
-            this.lblMonto.TabIndex = 4;
-            this.lblMonto.Text = "Monto a recaudar";
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Location = new System.Drawing.Point(311, 306);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(284, 281);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Notificaciones";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.Location = new System.Drawing.Point(6, 24);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(272, 244);
+            this.textBox1.TabIndex = 3;
             // 
             // FrmPrincipalCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(565, 346);
-            this.Controls.Add(this.lblMonto);
-            this.Controls.Add(this.lblSaldoCaja);
-            this.Controls.Add(this.lblUltimaApertura);
+            this.ClientSize = new System.Drawing.Size(601, 596);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -368,8 +383,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -384,9 +402,7 @@
         private System.Windows.Forms.Button btnHistorialCuentas;
         private System.Windows.Forms.Button btnCuentasPendientes;
         private System.Windows.Forms.Button btnAgregarGasto;
-        private System.Windows.Forms.Label lblUltimaApertura;
         private System.Windows.Forms.Button btnObservarGastosHoy;
-        private System.Windows.Forms.Label lblSaldoCaja;
         private System.Windows.Forms.GroupBox groupBox2;
         private CapaPresentacionAdministracion.CustomTextBox txtBusqueda;
         private System.Windows.Forms.RadioButton rdIdentificacion;
@@ -394,6 +410,9 @@
         private System.Windows.Forms.RadioButton rdMedidor;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnObservarPagosHoy;
-        private System.Windows.Forms.Label lblMonto;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtInformacionCaja;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

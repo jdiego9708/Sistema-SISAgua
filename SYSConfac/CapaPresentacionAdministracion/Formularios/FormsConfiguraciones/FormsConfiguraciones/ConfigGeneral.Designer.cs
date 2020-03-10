@@ -61,7 +61,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int Id_caja_principal {
             get {
                 return ((int)(this["Id_caja_principal"]));
@@ -73,7 +73,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int Meses_alerta_corte {
             get {
                 return ((int)(this["Meses_alerta_corte"]));
@@ -85,7 +85,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int Meses_corte {
             get {
                 return ((int)(this["Meses_corte"]));
