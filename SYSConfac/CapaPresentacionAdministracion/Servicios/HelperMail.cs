@@ -32,6 +32,66 @@
             }
         }
 
+        public bool SendEmailCierreCaja(string subject, string informacion, out string rpta)
+        {
+            rpta = "OK";
+            try
+            {
+                string emailFrom = ConfigEmail.Default.Email_reportes;
+                string emailTo = ConfigGeneral.Default.Correo_presidente;
+                string smtpServer = ConfigEmail.Default.Server_smtp_reportes;
+                int smtpPort = Convert.ToInt32(ConfigEmail.Default.Port_server_reportes);
+                string emailPass = ConfigEmail.Default.Password_email_reportes;
+                string HTMLTemplateMail = this.templateEmail();
+                string nameBusiness = ConfigGeneral.Default.Nombre_empresa;
+                string telBusiness = ConfigGeneral.Default.Telefono_empresa;
+                string direccionBusiness = ConfigGeneral.Default.Direccion_empresa;
+                string cityCountry = ConfigGeneral.Default.Ciudad_empresa;
+
+                if (HTMLTemplateMail == null)
+                {
+                    throw new Exception("No se envió el correo, no se encontró la plantilla");
+                }
+
+                StringBuilder headerEmail = new StringBuilder();
+                StringBuilder contentEmail = new StringBuilder();
+
+                headerEmail.Append("<h3>Reporte de cierre de caja</h3>");
+                headerEmail.Append("<br />");
+
+                contentEmail.Append("Reporte de caja enviado el " + DateTime.Now.ToLongDateString() +
+                    "a las " + DateTime.Now.ToLongTimeString());
+                contentEmail.Append("<br />");
+
+                contentEmail.Append("<strong>Detalle del reporte:</strong>");
+                contentEmail.Append("<p>" + informacion + "</p>");
+
+                contentEmail.Append("<br />");
+                contentEmail.Append("<strong>Fecha " + DateTime.Now.ToLongDateString() + "</strong>");
+
+                HTMLTemplateMail = concatTemplateEmailWithHeaderBody(HTMLTemplateMail, headerEmail.ToString(), contentEmail.ToString(),
+                    nameBusiness, telBusiness, direccionBusiness, cityCountry);
+
+                MailMessage mail = new MailMessage(emailFrom, emailTo);
+                mail.IsBodyHtml = true;
+                mail.Subject = subject;
+                mail.Body = HTMLTemplateMail;
+                //mail.Bcc.Add(ConfigurationManager.AppSettings["eMailRetail"].ToString());
+
+                SmtpClient client = new SmtpClient(smtpServer);
+                client.Credentials = new System.Net.NetworkCredential(emailFrom, emailPass);
+                client.Port = smtpPort;
+                client.EnableSsl = true;
+                client.Send(mail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message;
+                return false;
+            }
+        }
+
         public bool SendEmailTest(string emailFrom, string emailTo,
             string smtpServer, int smtpPort, string emailPass, string subject, out string rpta)
         {
@@ -68,15 +128,12 @@
                 contentEmail.Append("<br />");
                 contentEmail.Append("<strong>Fecha " + DateTime.Now.ToLongDateString() + "</strong>");
 
-                headerEmail.Append("<br />");
-                headerEmail.Append("<br />");
-
                 HTMLTemplateMail = concatTemplateEmailWithHeaderBody(HTMLTemplateMail, headerEmail.ToString(), contentEmail.ToString(),
                     nameBusiness, telBusiness, direccionBusiness, cityCountry);
 
                 MailMessage mail = new MailMessage(emailFrom, emailTo);
                 mail.IsBodyHtml = true;
-                mail.Subject = "SISAgua - Prueba";
+                mail.Subject = subject;
                 mail.Body = HTMLTemplateMail;
                 //mail.Bcc.Add(ConfigurationManager.AppSettings["eMailRetail"].ToString());
 
@@ -114,7 +171,7 @@
             return eMailHTML;
         }
 
-        private string concatTemplateEmailWithHeaderBody(string HTMLTemplate, string header, string body, 
+        private string concatTemplateEmailWithHeaderBody(string HTMLTemplate, string header, string body,
             string name_business, string tel_business, string direccion_business, string city_country)
         {
             try

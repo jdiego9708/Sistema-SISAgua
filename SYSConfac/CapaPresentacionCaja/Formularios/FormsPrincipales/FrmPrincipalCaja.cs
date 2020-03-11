@@ -7,8 +7,6 @@ using CapaPresentacionAdministracion.Formularios.FormsGastos;
 using CapaPresentacionAdministracion.Formularios.FormsPrincipales;
 using CapaPresentacionCaja.Properties;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
@@ -97,10 +95,6 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
         private void FrmPrincipalCaja_Load(object sender, EventArgs e)
         {
             VerificarCaja();
-
-            if (this.ECaja != null)
-                this.ComprobarInformacion(this.ECaja.Id_caja);
-
             this.txtBusqueda.txtBusqueda.Focus();
         }
 
@@ -231,7 +225,8 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 {
                     FrmCerrarCaja frmCerrarCaja = new FrmCerrarCaja
                     {
-                        StartPosition = FormStartPosition.CenterScreen
+                        StartPosition = FormStartPosition.CenterScreen,
+                        InformacionCaja = this.txtInformacionCaja.Text
                     };
                     frmCerrarCaja.AsignarDatos(this.ECaja);
                     frmCerrarCaja.OnCajaModified += Frm_OnCajaModified;
@@ -277,6 +272,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 IsEditar = false,
                 IsCaja = this.IsCaja
             };
+            frmObservarCuentas.OnCuentaSuccess += FrmNuevaCuenta_OnCuentaSuccess;
             frmObservarCuentas.BuscarCuentas("PENDIENTE DE PAGO HOY", DateTime.Now.ToString("yyyy-MM-dd"), "");
             frmObservarCuentas.gbBusqueda.Visible = false;
             frmObservarCuentas.Show();
@@ -348,16 +344,17 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                         this.IsCaja = false;
                     }
                     else
-                    {                      
+                    {
                         this.btnLock.Image = Resources.lock_32px;
                         this.txtTitulo.Text = "Módulo de " + eCaja.Nombre_caja + " (Caja abierta)";
                         this.groupBox1.Enabled = true;
                         this.toolTip1.SetToolTip(btnLock, "Cerrar caja");
                         this.IsCaja = true;
+
+                        if (this.ECaja != null)
+                            this.ComprobarInformacion(this.ECaja.Id_caja);
                     }
 
-                    
-                    
                     DatosInicioSesion datosInicioSesion = DatosInicioSesion.GetInstancia();
                     datosInicioSesion.ECaja = eCaja;
                 }
@@ -420,11 +417,11 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             if (dtGastos != null)
             {
                 cantidad_gastos = dtGastos.Rows.Count;
-                foreach(DataRow row in dtGastos.Rows)
+                foreach (DataRow row in dtGastos.Rows)
                 {
                     EHistorialGastos eHistorial = new EHistorialGastos(row);
                     total_gastos += eHistorial.Valor_gasto;
-                }                
+                }
             }
 
             //Obtener los pagos realizados hoy
@@ -472,26 +469,30 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     //pero recordemos que hay cuentas que están en pendientes pero que tienen abonos
                     if (estado_cuenta.Equals("TERMINADO"))
                         total_recaudado_mes += total_cuenta;
-                    //Obtenemos el id de la cuenta
-                    int id_cuenta = Convert.ToInt32(row["Id_cuenta"]);
-                    if (dtAbonos != null)
+                    else
                     {
-                        //Buscamos en todos los abonos el id de la cuenta que estamos recorriendo
-                        DataRow[] rows = dtAbonos.Select(string.Format("Id_cuenta = {0}", id_cuenta));
-                        if (rows.Length > 0)
+                        //Obtenemos el id de la cuenta
+                        int id_cuenta = Convert.ToInt32(row["Id_cuenta"]);
+                        if (dtAbonos != null)
                         {
-                            //Recorremos los abonos
-                            foreach (DataRow rowAbono in rows)
+                            //Buscamos en todos los abonos el id de la cuenta que estamos recorriendo
+                            DataRow[] rows = dtAbonos.Select(string.Format("Id_cuenta = {0}", id_cuenta));
+                            if (rows.Length > 0)
                             {
-                                //Asignamos el valor del abono
-                                decimal valorAbono = Convert.ToDecimal(rowAbono["Valor_abono"]);
-                                //Sumamos al total de abonos
-                                total_abonos += valorAbono;
+                                //Recorremos los abonos
+                                foreach (DataRow rowAbono in rows)
+                                {
+                                    //Asignamos el valor del abono
+                                    decimal valorAbono = Convert.ToDecimal(rowAbono["Valor_abono"]);
+                                    //Sumamos al total de abonos
+                                    total_abonos += valorAbono;
+                                }
                             }
-                            //El total recaudado del mes se le suma el total de abonos
-                            total_recaudado_mes = total_recaudado_mes + total_abonos;
                         }
                     }
+
+                    //El total recaudado del mes se le suma el total de abonos
+                    total_recaudado_mes += total_abonos;
 
                     if (dtAbonos != null)
                     {
@@ -515,7 +516,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 decimal saldo_recaudado_mes = total_recaudar_mes - total_recaudado_mes;
 
                 //Saldo en caja inicial
-                decimal saldo_inicial = 0;
+                decimal saldo_inicial = valor_inicial;
                 //Variable para almacenar la información
                 StringBuilder info = new StringBuilder();
                 //Información del último cierre
@@ -529,7 +530,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("No se encontró el último cierre");
 
                 info.Append(Environment.NewLine);
-                info.Append("-------------------");
+                info.Append("-");
                 info.Append(Environment.NewLine);
 
                 //Información del total a recaudar
@@ -537,21 +538,21 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("Total a cobrar en el mes $").Append(total_recaudar_mes.ToString("N2"));
                 else
                     info.Append("No hay dinero para cobrar este mes");
-
+                info.Append(Environment.NewLine);
                 //Información del total a recaudado
                 if (total_recaudado_mes != 0)
                     info.Append("Total cobrado $").Append(total_recaudado_mes.ToString("N2"));
                 else
                     info.Append("No se a cobrado dinero este mes");
-
+                info.Append(Environment.NewLine);
                 //Información del saldo total del mes
                 if (total_recaudado_mes != 0)
+                {
                     info.Append("Falta por cobrar $").Append(saldo_recaudado_mes.ToString("N2"));
-                else
-                    info.Append("No se a cobrado dinero este mes");
+                    info.Append(Environment.NewLine);
+                }
 
-                info.Append(Environment.NewLine);
-                info.Append("-------------------");
+                info.Append("-");
                 info.Append(Environment.NewLine);
 
                 //Información de la apertura
@@ -559,13 +560,13 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("Se abrió la caja el ").Append(eApertura.Fecha.ToLongDateString());
                 else
                     info.Append("No se encontró la apertura de la caja");
-
+                info.Append(Environment.NewLine);
                 //Información del valor inicial
                 if (valor_inicial != 0)
                     info.Append("Valor inicial $").Append(valor_inicial.ToString("N2"));
                 else
                     info.Append("No se ingresó un valor inicial");
-
+                info.Append(Environment.NewLine);
                 //Saldo en caja inicial
                 if (saldo_inicial != 0)
                     info.Append("La caja empieza con $").Append(saldo_inicial.ToString("N2"));
@@ -573,24 +574,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("La caja empieza sin dinero");
 
                 info.Append(Environment.NewLine);
-                info.Append("-------------------");
-                info.Append(Environment.NewLine);
-
-                //Total recaudado hoy
-                if (total_recaudado_hoy != 0)
-                    info.Append("Hoy se a cobrado $").Append(total_recaudado_hoy.ToString("N2"));
-                else
-                    info.Append("No se a recaudado dinero hoy");
-
-                saldo_caja_hoy = saldo_caja_hoy + total_recaudado_hoy;
-                //Saldo en caja hoy
-                if (saldo_caja_hoy != 0)
-                    info.Append("Total en caja actualmente $").Append(saldo_caja_hoy);
-                else
-                    info.Append("No hay dinero en la caja");
-
-                info.Append(Environment.NewLine);
-                info.Append("-------------------");
+                info.Append("-");
                 info.Append(Environment.NewLine);
 
                 //Gastos del mes
@@ -603,6 +587,30 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 else
                     info.Append("No hay gastos este mes");
 
+                info.Append(Environment.NewLine);
+                info.Append("-");
+                info.Append(Environment.NewLine);
+
+                //Total recaudado hoy
+                if (total_recaudado_hoy != 0)
+                    info.Append("Hoy se a cobrado $").Append(total_recaudado_hoy.ToString("N2"));
+                else
+                    info.Append("No se a recaudado dinero hoy");
+                info.Append(Environment.NewLine);
+                saldo_caja_hoy = saldo_caja_hoy + total_recaudado_hoy;
+                //Saldo en caja hoy
+                if (saldo_caja_hoy != 0)
+                {
+                    info.Append("Total en caja $").Append(saldo_caja_hoy.ToString("N2"));
+                    if (cantidad_gastos != 0)
+                        info.Append("Total en caja restando los gastos $").Append((saldo_caja_hoy - total_gastos).ToString("N2"));
+                }
+                else
+                    info.Append("No hay dinero en la caja");
+
+                info.Append(Environment.NewLine);
+                info.Append("-");
+                info.Append(Environment.NewLine);
                 this.txtInformacionCaja.Text = info.ToString();
             }
         }

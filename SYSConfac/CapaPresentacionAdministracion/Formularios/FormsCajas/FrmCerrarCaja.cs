@@ -1,5 +1,6 @@
 ﻿using CapaEntidades;
 using CapaPresentacionAdministracion.Formularios.FormsPrincipales;
+using CapaPresentacionAdministracion.Servicios;
 using System;
 using System.Data;
 using System.Globalization;
@@ -254,8 +255,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCajas
                             FrmReporteCierreCaja.AsignarReporte(eCierre);
                             FrmReporteCierreCaja.Show();
                             FrmReporteCierreCaja.Activate();
-
-                            MensajeEspera.CloseForm();
                         }
                         else if (rdImpresionDirecta.Checked)
                         {
@@ -266,22 +265,28 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCajas
                             };
                             FrmReporteCierreCaja.AsignarReporte(eCierre);
                             FrmReporteCierreCaja.Imprimir();
-
-                            MensajeEspera.CloseForm();
                         }
 
+                        if (chkCorreo.Checked)
+                        {
+                            HelperMail helperMail = new HelperMail();
+                            helperMail.SendEmailCierreCaja("Cierre de caja " + DateTime.Now.ToLongDateString() +
+                                " - Hora: " + DateTime.Now.ToLongTimeString(), this.InformacionCaja, out rpta);
+                            if (rpta.Equals("OK"))
+                            {
+                                Mensajes.MensajeOkForm("¡Se envió el reporte de caja correctamente!");
+                            }
+                            else
+                                throw new Exception(rpta);
+                        }
+                        MensajeEspera.CloseForm();
                         this.Close();
                     }
                     else
-                    {
                         throw new Exception(rpta);
-                    }
                 }
                 else
-                {
                     Mensajes.MensajeInformacion("Hubo un error, por favor verifique los datos", "Entendido");
-                }
-
             }
             catch (Exception ex)
             {
@@ -332,7 +337,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCajas
                 }
 
                 decimal totalGastos = 0;
-                DataTable dtGastos = EHistorialGastos.BuscarHistorialGastos("FECHA", 
+                DataTable dtGastos = EHistorialGastos.BuscarHistorialGastos("FECHA",
                     eCierre.Fecha_cierre.ToString("yyyy-MM-dd"), out rpta);
                 if (dtGastos != null)
                 {
@@ -445,6 +450,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCajas
         private decimal _total_caja;
         private decimal _deposito;
         private EApertura _eApertura;
+        private string _informacionCaja;
 
         DataTable dtGastos = null;
         DataTable dtPagos = null;
@@ -455,5 +461,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCajas
         public EApertura EApertura { get => _eApertura; set => _eApertura = value; }
         public decimal Deposito { get => _deposito; set => _deposito = value; }
         public bool IsObservar { get => _isObservar; set => _isObservar = value; }
+        public string InformacionCaja { get => _informacionCaja; set => _informacionCaja = value; }
     }
 }

@@ -60,6 +60,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.gbGastos = new System.Windows.Forms.GroupBox();
             this.txtGastos = new System.Windows.Forms.TextBox();
+            this.chkCorreo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -449,12 +450,25 @@
             this.txtGastos.Text = "0";
             this.txtGastos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // chkCorreo
+            // 
+            this.chkCorreo.AutoSize = true;
+            this.chkCorreo.Checked = true;
+            this.chkCorreo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkCorreo.Location = new System.Drawing.Point(9, 604);
+            this.chkCorreo.Name = "chkCorreo";
+            this.chkCorreo.Size = new System.Drawing.Size(105, 21);
+            this.chkCorreo.TabIndex = 20;
+            this.chkCorreo.Text = "Enviar correo";
+            this.chkCorreo.UseVisualStyleBackColor = true;
+            // 
             // FrmCerrarCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(393, 602);
+            this.ClientSize = new System.Drawing.Size(393, 632);
+            this.Controls.Add(this.chkCorreo);
             this.Controls.Add(this.gbGastos);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.gbFacturacion);
@@ -501,6 +515,7 @@
             this.gbGastos.ResumeLayout(false);
             this.gbGastos.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -536,5 +551,6 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.GroupBox gbGastos;
         private System.Windows.Forms.TextBox txtGastos;
+        private System.Windows.Forms.CheckBox chkCorreo;
     }
 }
