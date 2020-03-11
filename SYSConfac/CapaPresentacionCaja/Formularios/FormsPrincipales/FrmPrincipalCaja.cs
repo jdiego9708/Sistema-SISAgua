@@ -98,6 +98,9 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
         {
             VerificarCaja();
 
+            if (this.ECaja != null)
+                this.ComprobarInformacion(this.ECaja.Id_caja);
+
             this.txtBusqueda.txtBusqueda.Focus();
         }
 
@@ -158,13 +161,8 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
 
         private void FrmObservarCuentas_OnCuentaSuccess(object sender, EventArgs e)
         {
-            Decimal valor = (Decimal)sender;
-            //this.SumarValor(valor);
-
             if (this.ECaja != null)
-                this.ComprobarSaldoCaja(this.ECaja.Id_caja);
-
-            this.ComprobarMontoRecaudar(DateTime.Now.Month);
+                this.ComprobarInformacion(this.ECaja.Id_caja);
         }
 
         private void TxtBusqueda_onKeyPress(object sender, KeyPressEventArgs e)
@@ -188,16 +186,6 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             }
         }
 
-        public void RestarValor(decimal value)
-        {
-            this.Saldo_caja -= value;
-        }
-
-        public void SumarValor(decimal value)
-        {
-            this.Saldo_caja += value;
-        }
-
         private void BtnObservarGastosHoy_Click(object sender, EventArgs e)
         {
             FrmObservarHistorialGastos FrmObservarHistorialGastos = new FrmObservarHistorialGastos
@@ -219,8 +207,8 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
 
         private void FrmAgregarGasto_OnGastoSuccess(object sender, EventArgs e)
         {
-            EHistorialGastos eHistorial = (EHistorialGastos)sender;
-            this.RestarValor(eHistorial.Valor_gasto);
+            if (this.ECaja != null)
+                this.ComprobarInformacion(this.ECaja.Id_caja);
         }
 
         private void BtnLock_Click(object sender, EventArgs e)
@@ -268,7 +256,8 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             else
             {
                 ECierre eCierre = (ECierre)sender;
-                this.Saldo_caja = eCierre.Deposito;
+                if (this.ECaja != null)
+                    this.ComprobarInformacion(this.ECaja.Id_caja);
 
                 this.txtTitulo.Text = "Módulo de " + eCierre.EApertura.ECaja.Nombre_caja + " (Caja cerrada)";
                 this.groupBox1.Enabled = false;
@@ -331,9 +320,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
         private void FrmNuevaCuenta_OnCuentaSuccess(object sender, EventArgs e)
         {
             if (this.ECaja != null)
-                this.ComprobarSaldoCaja(this.ECaja.Id_caja);
-
-            this.ComprobarMontoRecaudar(DateTime.Now.Month);
+                this.ComprobarInformacion(this.ECaja.Id_caja);
         }
 
         ECaja ECaja;
@@ -398,27 +385,33 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             DataTable dtApertura = EApertura.BuscarAperturas("ID CAJA", id_caja.ToString(), out string rpta);
             //Variable para almacenar el valor inicial de la apertura
             decimal valor_inicial = 0;
+            EApertura eApertura = new EApertura();
             if (dtApertura != null)
             {
-                EApertura eApertura = new EApertura(dtApertura, 0);
+                eApertura = new EApertura(dtApertura, 0);
                 if (eApertura.Fecha.ToString("yyyy-MM-dd") ==
                         DateTime.Now.ToString("yyyy-MM-dd"))
                 {
                     valor_inicial = eApertura.Valor_inicial;
                 }
             }
+            else
+                eApertura = null;
             //Variable para almacenar las cuentas de hoy
             decimal saldo_caja_hoy = valor_inicial;
             //Obtener último cierre
             DataTable dtHistorialCierres =
                          ECierre.BuscarCierres("ID CAJA", id_caja.ToString(), out rpta);
-            ECierre eCierre;
+            ECierre eCierre = new ECierre();
             if (dtHistorialCierres != null)
             {
                 //Obtener el último cierre realizado
                 eCierre = new ECierre(dtHistorialCierres, 0);
                 saldo_caja_hoy += eCierre.Deposito;
             }
+            else
+                eCierre = null;
+
             //Obtener gastos del mes
             DataTable dtGastos =
                          EHistorialGastos.BuscarHistorialGastos("MES", DateTime.Now.Month.ToString(), out rpta);
@@ -433,6 +426,20 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     total_gastos += eHistorial.Valor_gasto;
                 }                
             }
+
+            //Obtener los pagos realizados hoy
+            DataTable dtPagos =
+                EPago_cuenta.BuscarPagoCuentas("ID CAJA FECHA", this.ECaja.Id_caja.ToString(), out rpta);
+            decimal total_recaudado_hoy = 0;
+            if (dtPagos != null)
+            {
+                foreach (DataRow row in dtPagos.Rows)
+                {
+                    decimal recaudo = Convert.ToDecimal(row["Total_pagar"]);
+                    total_recaudado_hoy += recaudo;
+                }
+            }
+
             //Obtenemos la fecha de inicio y de fin del mes en el que estamos
             DateTime fechaInicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             DateTime fechaFin = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
@@ -444,8 +451,6 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             decimal total_recaudar_mes = 0;
             //Variable para almacenar el total que llevamos cobrado en el mes
             decimal total_recaudado_mes = 0;
-            //Variable para almacenar lo que queda del total que debemos cobrar y lo que ya cobramos
-            decimal saldo_recaudado_mes = 0;
             //Si la cuentas es diferente de null
             if (dtCuentas != null)
             {
@@ -469,29 +474,136 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                         total_recaudado_mes += total_cuenta;
                     //Obtenemos el id de la cuenta
                     int id_cuenta = Convert.ToInt32(row["Id_cuenta"]);
-                    //Buscamos en todos los abonos el id de la cuenta que estamos recorriendo
-                    DataRow[] rows = dtAbonos.Select(string.Format("Id_cuenta = {0}", id_cuenta));
-                    if (rows.Length > 0)
+                    if (dtAbonos != null)
                     {
-                        //Recorremos los abonos
-                        foreach (DataRow rowAbono in rows)
+                        //Buscamos en todos los abonos el id de la cuenta que estamos recorriendo
+                        DataRow[] rows = dtAbonos.Select(string.Format("Id_cuenta = {0}", id_cuenta));
+                        if (rows.Length > 0)
                         {
-                            //Asignamos el valor del abono
-                            decimal valorAbono = Convert.ToDecimal(rowAbono["Valor_abono"]);
-                            //Sumamos al total de abonos
-                            total_abonos += valorAbono;
+                            //Recorremos los abonos
+                            foreach (DataRow rowAbono in rows)
+                            {
+                                //Asignamos el valor del abono
+                                decimal valorAbono = Convert.ToDecimal(rowAbono["Valor_abono"]);
+                                //Sumamos al total de abonos
+                                total_abonos += valorAbono;
+                            }
+                            //El total recaudado del mes se le suma el total de abonos
+                            total_recaudado_mes = total_recaudado_mes + total_abonos;
                         }
-                        //El total recaudado del mes se le suma el total de abonos
-                        total_recaudado_mes = total_recaudado_mes + total_abonos;
+                    }
+
+                    if (dtAbonos != null)
+                    {
+                        //Buscamos en todos los abonos el id de la cuenta que estamos recorriendo
+                        DataRow[] rows = dtAbonos.Select(string.Format("Fecha_abono = {0}", DateTime.Now.ToString("yyyy-MM-dd")));
+                        if (rows.Length > 0)
+                        {
+                            //Recorremos los abonos
+                            foreach (DataRow rowAbono in rows)
+                            {
+                                //Asignamos el valor del abono
+                                decimal valorAbono = Convert.ToDecimal(rowAbono["Valor_abono"]);
+                                //Sumamos al total de abonos
+                                total_recaudado_hoy += valorAbono;
+                            }
+                        }
                     }
                 }
+                //Variable para almacenar lo que queda del total que debemos cobrar y lo que ya cobramos
                 //El saldo recaudado es lo que falta por cobrar, por lo tanto es la renta de lo que hay que cobrar con lo cobrado
-                saldo_recaudado_mes = total_recaudar_mes - total_recaudado_mes;
+                decimal saldo_recaudado_mes = total_recaudar_mes - total_recaudado_mes;
 
+                //Saldo en caja inicial
+                decimal saldo_inicial = 0;
                 //Variable para almacenar la información
                 StringBuilder info = new StringBuilder();
-                info.Append("Último cierre")
+                //Información del último cierre
+                if (eCierre != null)
+                {
+                    info.Append("Último cierre ").Append(eCierre.Fecha_cierre.ToLongDateString()).Append(Environment.NewLine);
+                    info.Append("Depósito ").Append(eCierre.Deposito.ToString("N2"));
+                    saldo_inicial += eCierre.Deposito;
+                }
+                else
+                    info.Append("No se encontró el último cierre");
 
+                info.Append(Environment.NewLine);
+                info.Append("-------------------");
+                info.Append(Environment.NewLine);
+
+                //Información del total a recaudar
+                if (total_recaudar_mes != 0)
+                    info.Append("Total a cobrar en el mes $").Append(total_recaudar_mes.ToString("N2"));
+                else
+                    info.Append("No hay dinero para cobrar este mes");
+
+                //Información del total a recaudado
+                if (total_recaudado_mes != 0)
+                    info.Append("Total cobrado $").Append(total_recaudado_mes.ToString("N2"));
+                else
+                    info.Append("No se a cobrado dinero este mes");
+
+                //Información del saldo total del mes
+                if (total_recaudado_mes != 0)
+                    info.Append("Falta por cobrar $").Append(saldo_recaudado_mes.ToString("N2"));
+                else
+                    info.Append("No se a cobrado dinero este mes");
+
+                info.Append(Environment.NewLine);
+                info.Append("-------------------");
+                info.Append(Environment.NewLine);
+
+                //Información de la apertura
+                if (eApertura != null)
+                    info.Append("Se abrió la caja el ").Append(eApertura.Fecha.ToLongDateString());
+                else
+                    info.Append("No se encontró la apertura de la caja");
+
+                //Información del valor inicial
+                if (valor_inicial != 0)
+                    info.Append("Valor inicial $").Append(valor_inicial.ToString("N2"));
+                else
+                    info.Append("No se ingresó un valor inicial");
+
+                //Saldo en caja inicial
+                if (saldo_inicial != 0)
+                    info.Append("La caja empieza con $").Append(saldo_inicial.ToString("N2"));
+                else
+                    info.Append("La caja empieza sin dinero");
+
+                info.Append(Environment.NewLine);
+                info.Append("-------------------");
+                info.Append(Environment.NewLine);
+
+                //Total recaudado hoy
+                if (total_recaudado_hoy != 0)
+                    info.Append("Hoy se a cobrado $").Append(total_recaudado_hoy.ToString("N2"));
+                else
+                    info.Append("No se a recaudado dinero hoy");
+
+                saldo_caja_hoy = saldo_caja_hoy + total_recaudado_hoy;
+                //Saldo en caja hoy
+                if (saldo_caja_hoy != 0)
+                    info.Append("Total en caja actualmente $").Append(saldo_caja_hoy);
+                else
+                    info.Append("No hay dinero en la caja");
+
+                info.Append(Environment.NewLine);
+                info.Append("-------------------");
+                info.Append(Environment.NewLine);
+
+                //Gastos del mes
+                if (cantidad_gastos != 0)
+                {
+                    info.Append("En el mes se han registrado ").Append(cantidad_gastos).Append(" gastos");
+                    info.Append(Environment.NewLine);
+                    info.Append("Total de gastos este mes ").Append(total_gastos.ToString("N2"));
+                }
+                else
+                    info.Append("No hay gastos este mes");
+
+                this.txtInformacionCaja.Text = info.ToString();
             }
         }
 
@@ -502,7 +614,6 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
             get => saldo_caja;
             set
             {
-                this.lblSaldoCaja.Text = "Saldo en caja $" + value.ToString("N2");
                 saldo_caja = value;
             }
         }
