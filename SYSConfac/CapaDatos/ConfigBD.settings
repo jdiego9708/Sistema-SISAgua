@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionDefault" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=E:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SISAguaBD.db</Value>
+      <Value Profile="(Default)">Data Source=F:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBDBlancoJunta.db</Value>
     </Setting>
     <Setting Name="MotorBD" Type="System.String" Scope="User">
       <Value Profile="(Default)">SQLITE</Value>

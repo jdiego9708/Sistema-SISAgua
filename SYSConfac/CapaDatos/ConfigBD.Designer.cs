@@ -25,8 +25,8 @@ namespace CapaDatos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=E:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SISAguaB" +
-            "D.db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=F:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
+            "cBDBlancoJunta.db")]
         public string ConnectionDefault {
             get {
                 return ((string)(this["ConnectionDefault"]));
