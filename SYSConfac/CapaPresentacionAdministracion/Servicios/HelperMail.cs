@@ -59,11 +59,11 @@
                 headerEmail.Append("<h3>Reporte de cierre de caja</h3>");
                 headerEmail.Append("<br />");
 
-                contentEmail.Append("Reporte de caja enviado el " + DateTime.Now.ToLongDateString() +
-                    "a las " + DateTime.Now.ToLongTimeString());
+                headerEmail.Append("Reporte de caja enviado el " + DateTime.Now.ToLongDateString() +
+                    " - Hora " + DateTime.Now.ToLongTimeString());
                 contentEmail.Append("<br />");
 
-                contentEmail.Append("<strong>Detalle del reporte:</strong>");
+                contentEmail.Append("<h5>Detalle del reporte:</h5>");
                 contentEmail.Append("<p>" + informacion + "</p>");
 
                 contentEmail.Append("<br />");

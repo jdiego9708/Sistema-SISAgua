@@ -216,10 +216,10 @@ namespace CapaDatos
             {
                 consulta.Append("WHERE Descripcion like 'MANUAL' ");
             }
-            else if (tipo_busqueda.Equals("COMPLETO"))
-            {
-                consulta.Append("WHERE Descripcion != 'MANUAL' and Descripcion != 'CONSUMO DE AGUA' ");
-            }
+            //else if (tipo_busqueda.Equals("COMPLETO"))
+            //{
+            //    consulta.Append("WHERE Descripcion != 'MANUAL' and Descripcion != 'CONSUMO DE AGUA' ");
+            //}
             else if (tipo_busqueda.Equals("CONSUMO"))
             {
                 consulta.Append("WHERE Descripcion like 'CONSUMO DE AGUA' ");

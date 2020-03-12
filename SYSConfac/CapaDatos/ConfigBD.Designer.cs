@@ -25,7 +25,7 @@ namespace CapaDatos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=E:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=F:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
             "cBDPrueba.db")]
         public string ConnectionDefault {
             get {
@@ -74,7 +74,7 @@ namespace CapaDatos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("E:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\Backups")]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\")]
         public string RutaDestinoBackup {
             get {
                 return ((string)(this["RutaDestinoBackup"]));
@@ -88,8 +88,11 @@ namespace CapaDatos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
-  <string>Data Source=D:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SISAguaBD.db</string>
+  <string>Data Source=F:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBDPrueba.db</string>
+  <string>Data Source=F:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SISAguaBD.db</string>
+  <string>Data Source=E:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SYSConfacBDPrueba.db</string>
   <string>Data Source=E:\Juan Diego\Google Drive\Proyectos\SYSConfac\Base de datos\SISAguaBD.db</string>
+  <string />
 </ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection ConnectionsStrings {
             get {
@@ -102,7 +105,8 @@ namespace CapaDatos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("E:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SISAguaBD.db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("F:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfacBDPrueba.db" +
+            "")]
         public string FileNameConnection {
             get {
                 return ((string)(this["FileNameConnection"]));

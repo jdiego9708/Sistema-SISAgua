@@ -15,7 +15,7 @@ namespace CapaDatos
             string consulta = "INSERT INTO Lecturas_cliente (Id_cliente, Id_tarifa, Id_medidor, Id_empleado, Id_cuenta, " +
                 "Fecha_lectura, Hora_lectura, Valor_lectura, Total_consumo, Consumo_excedido, Id_medida, Mes_lectura) " +
                 "VALUES('" + variables[0] + "','" + variables[1] + "','" + variables[2] + "','" + variables[3] + "','" +
-                variables[4] + "','" + variables[5] + "','" + variables[6] + "','" + variables[7] + "','" + 
+                variables[4] + "','" + variables[5] + "','" + variables[6] + "','" + variables[7] + "','" +
                 variables[8] + "','" + variables[9] + "','" + variables[10] + "','" + variables[11].ToUpper() + "'); " +
                 "SELECT last_insert_rowid(); " +
                 "UPDATE Detalle_agendamiento_lecturas " +
@@ -96,6 +96,15 @@ namespace CapaDatos
                 else if (tipo_busqueda.Equals("LECTURA MES"))
                 {
                     consulta.Append("WHERE lec.Mes_lectura = '" + texto_busqueda + "' ");
+                }
+                else if (tipo_busqueda.Equals("LECTURA MES NUMERO"))
+                {
+                    int mes = Convert.ToInt32(texto_busqueda);
+                    DateTime date1 = new DateTime(DateTime.Now.Year, mes, 01);
+                    DateTime date2 = new DateTime(DateTime.Now.Year, mes,
+                        DateTime.DaysInMonth(DateTime.Now.Year, mes));
+                    consulta.Append("WHERE lec.Fecha_lectura between '" + date1.ToString("yyyy-MM-dd") + "' and '" +
+                        date2.ToString("yyyy-MM-dd") + "' ");
                 }
                 else if (tipo_busqueda.Equals("ID LECTURA"))
                 {

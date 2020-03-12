@@ -35,17 +35,14 @@
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.gbTarifaLectura = new System.Windows.Forms.GroupBox();
+            this.btnAddTarifaLecturas = new System.Windows.Forms.Button();
             this.btnTarifaLectura = new System.Windows.Forms.Button();
             this.gbTarifaSesion = new System.Windows.Forms.GroupBox();
+            this.btnAddTarifaSesion = new System.Windows.Forms.Button();
             this.btnTarifaSesion = new System.Windows.Forms.Button();
             this.gbTarifaManual = new System.Windows.Forms.GroupBox();
+            this.btnAddTarifaManual = new System.Windows.Forms.Button();
             this.btnTarifaManual = new System.Windows.Forms.Button();
-            this.btnAyudaTarifaLectura = new System.Windows.Forms.Button();
-            this.btnAyudaTarifaSesion = new System.Windows.Forms.Button();
-            this.btnAyudaTarifaManual = new System.Windows.Forms.Button();
-            this.btnAddTarifa = new System.Windows.Forms.Button();
-            this.btnAddTarifa1 = new System.Windows.Forms.Button();
-            this.btnAddTarifa2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.gbTarifaLectura.SuspendLayout();
@@ -122,8 +119,7 @@
             // 
             // gbTarifaLectura
             // 
-            this.gbTarifaLectura.Controls.Add(this.btnAddTarifa);
-            this.gbTarifaLectura.Controls.Add(this.btnAyudaTarifaLectura);
+            this.gbTarifaLectura.Controls.Add(this.btnAddTarifaLecturas);
             this.gbTarifaLectura.Controls.Add(this.btnTarifaLectura);
             this.gbTarifaLectura.Location = new System.Drawing.Point(12, 68);
             this.gbTarifaLectura.Name = "gbTarifaLectura";
@@ -131,6 +127,28 @@
             this.gbTarifaLectura.TabIndex = 7;
             this.gbTarifaLectura.TabStop = false;
             this.gbTarifaLectura.Text = "Tarifa predeterminada para las lecturas";
+            // 
+            // btnAddTarifaLecturas
+            // 
+            this.btnAddTarifaLecturas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddTarifaLecturas.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddTarifaLecturas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTarifaLecturas.BackgroundImage")));
+            this.btnAddTarifaLecturas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddTarifaLecturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTarifaLecturas.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAddTarifaLecturas.FlatAppearance.BorderSize = 0;
+            this.btnAddTarifaLecturas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAddTarifaLecturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAddTarifaLecturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTarifaLecturas.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTarifaLecturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddTarifaLecturas.Location = new System.Drawing.Point(496, 28);
+            this.btnAddTarifaLecturas.Name = "btnAddTarifaLecturas";
+            this.btnAddTarifaLecturas.Size = new System.Drawing.Size(25, 25);
+            this.btnAddTarifaLecturas.TabIndex = 9;
+            this.btnAddTarifaLecturas.Tag = "LECTURA";
+            this.btnAddTarifaLecturas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddTarifaLecturas.UseVisualStyleBackColor = false;
             // 
             // btnTarifaLectura
             // 
@@ -146,7 +164,7 @@
             this.btnTarifaLectura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTarifaLectura.Location = new System.Drawing.Point(6, 23);
             this.btnTarifaLectura.Name = "btnTarifaLectura";
-            this.btnTarifaLectura.Size = new System.Drawing.Size(451, 35);
+            this.btnTarifaLectura.Size = new System.Drawing.Size(484, 35);
             this.btnTarifaLectura.TabIndex = 6;
             this.btnTarifaLectura.Tag = "LECTURA";
             this.btnTarifaLectura.Text = "Seleccionar tarifa de la lista";
@@ -154,8 +172,7 @@
             // 
             // gbTarifaSesion
             // 
-            this.gbTarifaSesion.Controls.Add(this.btnAddTarifa1);
-            this.gbTarifaSesion.Controls.Add(this.btnAyudaTarifaSesion);
+            this.gbTarifaSesion.Controls.Add(this.btnAddTarifaSesion);
             this.gbTarifaSesion.Controls.Add(this.btnTarifaSesion);
             this.gbTarifaSesion.Location = new System.Drawing.Point(12, 141);
             this.gbTarifaSesion.Name = "gbTarifaSesion";
@@ -163,6 +180,28 @@
             this.gbTarifaSesion.TabIndex = 19;
             this.gbTarifaSesion.TabStop = false;
             this.gbTarifaSesion.Text = "Tarifa predeterminada para la sesión";
+            // 
+            // btnAddTarifaSesion
+            // 
+            this.btnAddTarifaSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddTarifaSesion.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddTarifaSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTarifaSesion.BackgroundImage")));
+            this.btnAddTarifaSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddTarifaSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTarifaSesion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAddTarifaSesion.FlatAppearance.BorderSize = 0;
+            this.btnAddTarifaSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAddTarifaSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAddTarifaSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTarifaSesion.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTarifaSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddTarifaSesion.Location = new System.Drawing.Point(496, 28);
+            this.btnAddTarifaSesion.Name = "btnAddTarifaSesion";
+            this.btnAddTarifaSesion.Size = new System.Drawing.Size(25, 25);
+            this.btnAddTarifaSesion.TabIndex = 10;
+            this.btnAddTarifaSesion.Tag = "SESION";
+            this.btnAddTarifaSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddTarifaSesion.UseVisualStyleBackColor = false;
             // 
             // btnTarifaSesion
             // 
@@ -178,7 +217,7 @@
             this.btnTarifaSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTarifaSesion.Location = new System.Drawing.Point(6, 23);
             this.btnTarifaSesion.Name = "btnTarifaSesion";
-            this.btnTarifaSesion.Size = new System.Drawing.Size(451, 35);
+            this.btnTarifaSesion.Size = new System.Drawing.Size(484, 35);
             this.btnTarifaSesion.TabIndex = 6;
             this.btnTarifaSesion.Tag = "SESION";
             this.btnTarifaSesion.Text = "Seleccionar tarifa de la lista";
@@ -186,8 +225,7 @@
             // 
             // gbTarifaManual
             // 
-            this.gbTarifaManual.Controls.Add(this.btnAddTarifa2);
-            this.gbTarifaManual.Controls.Add(this.btnAyudaTarifaManual);
+            this.gbTarifaManual.Controls.Add(this.btnAddTarifaManual);
             this.gbTarifaManual.Controls.Add(this.btnTarifaManual);
             this.gbTarifaManual.Location = new System.Drawing.Point(12, 214);
             this.gbTarifaManual.Name = "gbTarifaManual";
@@ -195,6 +233,28 @@
             this.gbTarifaManual.TabIndex = 20;
             this.gbTarifaManual.TabStop = false;
             this.gbTarifaManual.Text = "Tarifa predeterminada para las cuentas manuales";
+            // 
+            // btnAddTarifaManual
+            // 
+            this.btnAddTarifaManual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddTarifaManual.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddTarifaManual.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTarifaManual.BackgroundImage")));
+            this.btnAddTarifaManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddTarifaManual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddTarifaManual.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAddTarifaManual.FlatAppearance.BorderSize = 0;
+            this.btnAddTarifaManual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAddTarifaManual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAddTarifaManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTarifaManual.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTarifaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddTarifaManual.Location = new System.Drawing.Point(496, 28);
+            this.btnAddTarifaManual.Name = "btnAddTarifaManual";
+            this.btnAddTarifaManual.Size = new System.Drawing.Size(25, 25);
+            this.btnAddTarifaManual.TabIndex = 11;
+            this.btnAddTarifaManual.Tag = "MANUAL";
+            this.btnAddTarifaManual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddTarifaManual.UseVisualStyleBackColor = false;
             // 
             // btnTarifaManual
             // 
@@ -210,137 +270,11 @@
             this.btnTarifaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTarifaManual.Location = new System.Drawing.Point(6, 23);
             this.btnTarifaManual.Name = "btnTarifaManual";
-            this.btnTarifaManual.Size = new System.Drawing.Size(451, 35);
+            this.btnTarifaManual.Size = new System.Drawing.Size(484, 35);
             this.btnTarifaManual.TabIndex = 6;
             this.btnTarifaManual.Tag = "MANUAL";
             this.btnTarifaManual.Text = "Seleccionar tarifa de la lista";
             this.btnTarifaManual.UseVisualStyleBackColor = false;
-            // 
-            // btnAyudaTarifaLectura
-            // 
-            this.btnAyudaTarifaLectura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAyudaTarifaLectura.BackColor = System.Drawing.Color.Transparent;
-            this.btnAyudaTarifaLectura.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyudaTarifaLectura.BackgroundImage")));
-            this.btnAyudaTarifaLectura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAyudaTarifaLectura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyudaTarifaLectura.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAyudaTarifaLectura.FlatAppearance.BorderSize = 0;
-            this.btnAyudaTarifaLectura.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAyudaTarifaLectura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAyudaTarifaLectura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyudaTarifaLectura.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAyudaTarifaLectura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaTarifaLectura.Location = new System.Drawing.Point(494, 28);
-            this.btnAyudaTarifaLectura.Name = "btnAyudaTarifaLectura";
-            this.btnAyudaTarifaLectura.Size = new System.Drawing.Size(25, 25);
-            this.btnAyudaTarifaLectura.TabIndex = 8;
-            this.btnAyudaTarifaLectura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAyudaTarifaLectura.UseVisualStyleBackColor = false;
-            // 
-            // btnAyudaTarifaSesion
-            // 
-            this.btnAyudaTarifaSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAyudaTarifaSesion.BackColor = System.Drawing.Color.Transparent;
-            this.btnAyudaTarifaSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyudaTarifaSesion.BackgroundImage")));
-            this.btnAyudaTarifaSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAyudaTarifaSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyudaTarifaSesion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAyudaTarifaSesion.FlatAppearance.BorderSize = 0;
-            this.btnAyudaTarifaSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAyudaTarifaSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAyudaTarifaSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyudaTarifaSesion.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAyudaTarifaSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaTarifaSesion.Location = new System.Drawing.Point(494, 28);
-            this.btnAyudaTarifaSesion.Name = "btnAyudaTarifaSesion";
-            this.btnAyudaTarifaSesion.Size = new System.Drawing.Size(25, 25);
-            this.btnAyudaTarifaSesion.TabIndex = 9;
-            this.btnAyudaTarifaSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAyudaTarifaSesion.UseVisualStyleBackColor = false;
-            // 
-            // btnAyudaTarifaManual
-            // 
-            this.btnAyudaTarifaManual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAyudaTarifaManual.BackColor = System.Drawing.Color.Transparent;
-            this.btnAyudaTarifaManual.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyudaTarifaManual.BackgroundImage")));
-            this.btnAyudaTarifaManual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAyudaTarifaManual.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyudaTarifaManual.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAyudaTarifaManual.FlatAppearance.BorderSize = 0;
-            this.btnAyudaTarifaManual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAyudaTarifaManual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAyudaTarifaManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyudaTarifaManual.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAyudaTarifaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaTarifaManual.Location = new System.Drawing.Point(494, 28);
-            this.btnAyudaTarifaManual.Name = "btnAyudaTarifaManual";
-            this.btnAyudaTarifaManual.Size = new System.Drawing.Size(25, 25);
-            this.btnAyudaTarifaManual.TabIndex = 10;
-            this.btnAyudaTarifaManual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAyudaTarifaManual.UseVisualStyleBackColor = false;
-            // 
-            // btnAddTarifa
-            // 
-            this.btnAddTarifa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddTarifa.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddTarifa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTarifa.BackgroundImage")));
-            this.btnAddTarifa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddTarifa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddTarifa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAddTarifa.FlatAppearance.BorderSize = 0;
-            this.btnAddTarifa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAddTarifa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAddTarifa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTarifa.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTarifa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddTarifa.Location = new System.Drawing.Point(463, 28);
-            this.btnAddTarifa.Name = "btnAddTarifa";
-            this.btnAddTarifa.Size = new System.Drawing.Size(25, 25);
-            this.btnAddTarifa.TabIndex = 9;
-            this.btnAddTarifa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTarifa.UseVisualStyleBackColor = false;
-            // 
-            // btnAddTarifa1
-            // 
-            this.btnAddTarifa1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddTarifa1.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddTarifa1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTarifa1.BackgroundImage")));
-            this.btnAddTarifa1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddTarifa1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddTarifa1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAddTarifa1.FlatAppearance.BorderSize = 0;
-            this.btnAddTarifa1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAddTarifa1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAddTarifa1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTarifa1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTarifa1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddTarifa1.Location = new System.Drawing.Point(463, 28);
-            this.btnAddTarifa1.Name = "btnAddTarifa1";
-            this.btnAddTarifa1.Size = new System.Drawing.Size(25, 25);
-            this.btnAddTarifa1.TabIndex = 10;
-            this.btnAddTarifa1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTarifa1.UseVisualStyleBackColor = false;
-            // 
-            // btnAddTarifa2
-            // 
-            this.btnAddTarifa2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddTarifa2.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddTarifa2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddTarifa2.BackgroundImage")));
-            this.btnAddTarifa2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddTarifa2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddTarifa2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAddTarifa2.FlatAppearance.BorderSize = 0;
-            this.btnAddTarifa2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAddTarifa2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAddTarifa2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTarifa2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTarifa2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddTarifa2.Location = new System.Drawing.Point(463, 28);
-            this.btnAddTarifa2.Name = "btnAddTarifa2";
-            this.btnAddTarifa2.Size = new System.Drawing.Size(25, 25);
-            this.btnAddTarifa2.TabIndex = 11;
-            this.btnAddTarifa2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddTarifa2.UseVisualStyleBackColor = false;
             // 
             // errorProvider1
             // 
@@ -386,12 +320,9 @@
         private System.Windows.Forms.Button btnTarifaSesion;
         private System.Windows.Forms.GroupBox gbTarifaManual;
         private System.Windows.Forms.Button btnTarifaManual;
-        private System.Windows.Forms.Button btnAyudaTarifaLectura;
-        private System.Windows.Forms.Button btnAyudaTarifaSesion;
-        private System.Windows.Forms.Button btnAyudaTarifaManual;
-        private System.Windows.Forms.Button btnAddTarifa;
-        private System.Windows.Forms.Button btnAddTarifa1;
-        private System.Windows.Forms.Button btnAddTarifa2;
+        private System.Windows.Forms.Button btnAddTarifaLecturas;
+        private System.Windows.Forms.Button btnAddTarifaSesion;
+        private System.Windows.Forms.Button btnAddTarifaManual;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

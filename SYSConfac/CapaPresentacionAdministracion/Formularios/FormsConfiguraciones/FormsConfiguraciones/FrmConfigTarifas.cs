@@ -15,6 +15,48 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnTarifaManual.Click += BtnTarifa_Click;
             this.btnTerminar.Click += BtnTerminar_Click;
             this.btnAtras.Click += BtnAtras_Click;
+            this.btnAddTarifaLecturas.Click += BtnAddTarifa_Click;
+        }
+
+        private void BtnAddTarifa_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string tipo = Convert.ToString(btn.Tag);
+
+            FrmAgregarTarifa frmAgregarTarifa = new FrmAgregarTarifa
+            {
+                StartPosition = FormStartPosition.CenterScreen
+            };
+
+            if (tipo.Equals("LECTURA"))
+                frmAgregarTarifa.OnTarifaSuccess += OnTarifaSuccessLectura;
+            else if (tipo.Equals("SESION"))
+                frmAgregarTarifa.OnTarifaSuccess += OnTarifaSuccessSesion;
+            else if (tipo.Equals("MANUAL"))
+                frmAgregarTarifa.OnTarifaSuccess += OnTarifaSuccessManual;
+
+            frmAgregarTarifa.ShowDialog();
+        }
+
+        private void OnTarifaSuccessLectura(object sender, EventArgs e)
+        {
+            ETarifas eTarifa = (ETarifas)sender;
+            this.btnAddTarifaLecturas.Text = eTarifa.Descripcion;
+            this.btnAddTarifaLecturas.Tag = eTarifa;
+        }
+
+        private void OnTarifaSuccessSesion(object sender, EventArgs e)
+        {
+            ETarifas eTarifa = (ETarifas)sender;
+            this.btnAddTarifaSesion.Text = eTarifa.Descripcion;
+            this.btnAddTarifaSesion.Tag = eTarifa;
+        }
+
+        private void OnTarifaSuccessManual(object sender, EventArgs e)
+        {
+            ETarifas eTarifa = (ETarifas)sender;
+            this.btnAddTarifaManual.Text = eTarifa.Descripcion;
+            this.btnAddTarifaManual.Tag = eTarifa;
         }
 
         public string GuardarDatos()
@@ -96,9 +138,17 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         {
             Button btn = (Button)sender;
 
+            if (btn.Name.Equals("btnTarifaLectura"))
+                btn.Tag = "LECTURA";
+            else if (btn.Name.Equals("btnTarifaSesion"))
+                btn.Tag = "SESION";
+            else if (btn.Name.Equals("btnTarifaLManual"))
+                btn.Tag = "MANUAL";
+
             FrmObservarTarifas frmObservarTarifas = new FrmObservarTarifas
             {
-                StartPosition = FormStartPosition.CenterScreen
+                StartPosition = FormStartPosition.CenterScreen,
+                IsConfig = true
             };
 
             if (Convert.ToString(btn.Tag).Equals("LECTURA"))

@@ -1,4 +1,5 @@
 ﻿using CapaEntidades;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 using CapaPresentacionAdministracion.Formularios.FormsMedidores;
 using System;
 using System.Data;
@@ -154,7 +155,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 eCuenta.EMedidor = eMedidor;
 
                 if (this.IsEditar)
-                {                    
+                {
                     eCuenta.Estado_cuenta = this.ECuenta.Estado_cuenta;
                     eCuenta.Fecha_cuenta = this.ECuenta.Fecha_cuenta;
                     eCuenta.Fecha_pago = this.ECuenta.Fecha_pago;
@@ -301,7 +302,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             this.btnMedidor.Text = eMedidor.Medidor;
             this.btnMedidor.Tag = eMedidor;
             this.chkValorManual.Visible = false;
-            this.ListaTarifas(false);        
+            this.ListaTarifas(false);
             this.btnMedidor.Enabled = false;
             this.IsEditar = isEditar;
             if (isEditar)
@@ -318,38 +319,48 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
 
                 }
             }
+            else
+            {
+                this.ListaDescuentos();
+                this.ListaIva();
+            }
 
             this.Calcular();
         }
 
         private void ListaTarifas(bool isManual)
         {
-            DataTable dtTarifas = new DataTable();
+            DataTable dtTarifas = ETarifas.BuscarTarifas("COMPLETO", "", out _);
 
             if (isManual)
             {
                 this.listaTarifas.Enabled = true;
-                dtTarifas = ETarifas.BuscarTarifas("COMPLETO", "", out string rpta);
+                ETarifas eTarifas = new ETarifas(dtTarifas, 0);
+                this.tarifaSmall1.AsignarDatos(eTarifas);
             }
             else
             {
                 if (this.IsLectura)
                 {
                     this.listaTarifas.Enabled = false;
-                    dtTarifas = ETarifas.BuscarTarifas("CONSUMO", "CONSUMO", out string rpta);
-                    this.tarifaSmall1.AsignarDatos(new ETarifas(dtTarifas, 0));
+                    int id_tarifa_default = ConfigTarifas.Default.Id_tarifa_lectura;
+                    if (dtTarifas != null)
+                    {
+                        DataRow[] row = dtTarifas.Select(string.Format("Id_tarifa = {0}", id_tarifa_default));
+                        if (row.Length > 0)
+                        {
+                            this.tarifaSmall1.AsignarDatos(new ETarifas(row[0]));
+                        }
+                    }
                 }
                 else
                 {
                     this.listaTarifas.Enabled = true;
-                    dtTarifas = ETarifas.BuscarTarifas("COMPLETO", "", out string rpta);
                     this.tarifaSmall1.AsignarDatos(new ETarifas(dtTarifas, 0));
                 }
             }
 
-            this.listaTarifas.DataSource = dtTarifas;
-            ETarifas eTarifas = new ETarifas(dtTarifas, 0);
-            this.tarifaSmall1.AsignarDatos(eTarifas);
+            this.listaTarifas.DataSource = dtTarifas;            
             this.listaTarifas.ValueMember = "Id_tarifa";
             this.listaTarifas.DisplayMember = "Descripcion";
         }
@@ -418,7 +429,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
 
         private void FrmNuevaCuenta_Load(object sender, EventArgs e)
         {
-            if (!IsEditar)
+            if (!IsEditar && !IsLectura)
             {
                 this.ListaDescuentos();
                 this.ListaIva();
@@ -427,6 +438,9 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
 
             if (!this.IsLectura)
                 this.Calcular();
+
+            this.Show();
+            this.btnTerminar.Focus();
         }
 
         public event EventHandler OnCuentaSuccess;

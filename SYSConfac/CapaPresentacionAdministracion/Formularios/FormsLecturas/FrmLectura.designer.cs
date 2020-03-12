@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLectura));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbLecturaAnterior = new System.Windows.Forms.GroupBox();
             this.txtLecturaAnterior = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbLecturaActual = new System.Windows.Forms.GroupBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtLecturaActual = new System.Windows.Forms.TextBox();
             this.gbMedida = new System.Windows.Forms.GroupBox();
@@ -46,11 +46,11 @@
             this.txtMes = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.chkImprimir = new System.Windows.Forms.CheckBox();
-            this.calculadoraExcedentes1 = new CapaPresentacionAdministracion.Formularios.FormsExcedentes.CalculadoraExcedentes();
             this.lblRespuesta = new System.Windows.Forms.Label();
+            this.calculadoraExcedentes1 = new CapaPresentacionAdministracion.Formularios.FormsExcedentes.CalculadoraExcedentes();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbLecturaAnterior.SuspendLayout();
+            this.gbLecturaActual.SuspendLayout();
             this.gbMedida.SuspendLayout();
             this.gbProximaLectura.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -80,17 +80,18 @@
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(529, 22);
             this.txtCliente.TabIndex = 0;
+            this.txtCliente.TabStop = false;
             this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox2
+            // gbLecturaAnterior
             // 
-            this.groupBox2.Controls.Add(this.txtLecturaAnterior);
-            this.groupBox2.Location = new System.Drawing.Point(12, 73);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(126, 55);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lectura anterior";
+            this.gbLecturaAnterior.Controls.Add(this.txtLecturaAnterior);
+            this.gbLecturaAnterior.Location = new System.Drawing.Point(12, 73);
+            this.gbLecturaAnterior.Name = "gbLecturaAnterior";
+            this.gbLecturaAnterior.Size = new System.Drawing.Size(126, 55);
+            this.gbLecturaAnterior.TabIndex = 0;
+            this.gbLecturaAnterior.TabStop = false;
+            this.gbLecturaAnterior.Text = "Lectura anterior";
             // 
             // txtLecturaAnterior
             // 
@@ -104,20 +105,20 @@
             this.txtLecturaAnterior.MaxLength = 10;
             this.txtLecturaAnterior.Name = "txtLecturaAnterior";
             this.txtLecturaAnterior.Size = new System.Drawing.Size(93, 22);
-            this.txtLecturaAnterior.TabIndex = 0;
+            this.txtLecturaAnterior.TabIndex = 1;
             this.txtLecturaAnterior.Text = "0";
             this.txtLecturaAnterior.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox3
+            // gbLecturaActual
             // 
-            this.groupBox3.Controls.Add(this.btnRefresh);
-            this.groupBox3.Controls.Add(this.txtLecturaActual);
-            this.groupBox3.Location = new System.Drawing.Point(144, 73);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(126, 55);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lectura actual";
+            this.gbLecturaActual.Controls.Add(this.btnRefresh);
+            this.gbLecturaActual.Controls.Add(this.txtLecturaActual);
+            this.gbLecturaActual.Location = new System.Drawing.Point(144, 73);
+            this.gbLecturaActual.Name = "gbLecturaActual";
+            this.gbLecturaActual.Size = new System.Drawing.Size(126, 55);
+            this.gbLecturaActual.TabIndex = 2;
+            this.gbLecturaActual.TabStop = false;
+            this.gbLecturaActual.Text = "Lectura actual";
             // 
             // btnRefresh
             // 
@@ -132,7 +133,8 @@
             this.btnRefresh.Location = new System.Drawing.Point(93, 22);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(27, 25);
-            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.TabStop = false;
             this.btnRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
@@ -148,7 +150,7 @@
             this.txtLecturaActual.MaxLength = 10;
             this.txtLecturaActual.Name = "txtLecturaActual";
             this.txtLecturaActual.Size = new System.Drawing.Size(72, 22);
-            this.txtLecturaActual.TabIndex = 0;
+            this.txtLecturaActual.TabIndex = 3;
             this.txtLecturaActual.Text = "0";
             this.txtLecturaActual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -174,6 +176,7 @@
             this.txtMedida.ReadOnly = true;
             this.txtMedida.Size = new System.Drawing.Size(136, 25);
             this.txtMedida.TabIndex = 1;
+            this.txtMedida.TabStop = false;
             this.txtMedida.Text = "Metros cúbicos (M3)";
             this.txtMedida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -200,6 +203,7 @@
             this.txtFechaProximaLectura.ReadOnly = true;
             this.txtFechaProximaLectura.Size = new System.Drawing.Size(246, 22);
             this.txtFechaProximaLectura.TabIndex = 1;
+            this.txtFechaProximaLectura.TabStop = false;
             this.txtFechaProximaLectura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnTerminar
@@ -216,7 +220,7 @@
             this.btnTerminar.Location = new System.Drawing.Point(429, 130);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(117, 56);
-            this.btnTerminar.TabIndex = 14;
+            this.btnTerminar.TabIndex = 4;
             this.btnTerminar.Text = "Terminar";
             this.btnTerminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTerminar.UseVisualStyleBackColor = true;
@@ -227,7 +231,7 @@
             this.groupBox4.Location = new System.Drawing.Point(276, 134);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(146, 52);
-            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Mes de lectura";
             // 
@@ -244,6 +248,7 @@
             this.txtMes.ReadOnly = true;
             this.txtMes.Size = new System.Drawing.Size(134, 22);
             this.txtMes.TabIndex = 0;
+            this.txtMes.TabStop = false;
             this.txtMes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // errorProvider1
@@ -257,9 +262,20 @@
             this.chkImprimir.Name = "chkImprimir";
             this.chkImprimir.Size = new System.Drawing.Size(76, 21);
             this.chkImprimir.TabIndex = 20;
+            this.chkImprimir.TabStop = false;
             this.chkImprimir.Text = "Imprimir";
             this.chkImprimir.UseVisualStyleBackColor = true;
             this.chkImprimir.Visible = false;
+            // 
+            // lblRespuesta
+            // 
+            this.lblRespuesta.AutoSize = true;
+            this.lblRespuesta.Location = new System.Drawing.Point(15, 426);
+            this.lblRespuesta.Name = "lblRespuesta";
+            this.lblRespuesta.Size = new System.Drawing.Size(68, 17);
+            this.lblRespuesta.TabIndex = 22;
+            this.lblRespuesta.Text = "Respuesta";
+            this.lblRespuesta.Visible = false;
             // 
             // calculadoraExcedentes1
             // 
@@ -272,22 +288,13 @@
             this.calculadoraExcedentes1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.calculadoraExcedentes1.Name = "calculadoraExcedentes1";
             this.calculadoraExcedentes1.Size = new System.Drawing.Size(515, 235);
-            this.calculadoraExcedentes1.TabIndex = 21;
+            this.calculadoraExcedentes1.TabIndex = 0;
+            this.calculadoraExcedentes1.TabStop = false;
             this.calculadoraExcedentes1.Total_excedente = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            // 
-            // lblRespuesta
-            // 
-            this.lblRespuesta.AutoSize = true;
-            this.lblRespuesta.Location = new System.Drawing.Point(15, 426);
-            this.lblRespuesta.Name = "lblRespuesta";
-            this.lblRespuesta.Size = new System.Drawing.Size(68, 17);
-            this.lblRespuesta.TabIndex = 22;
-            this.lblRespuesta.Text = "Respuesta";
-            this.lblRespuesta.Visible = false;
             // 
             // FrmLectura
             // 
@@ -301,8 +308,8 @@
             this.Controls.Add(this.btnTerminar);
             this.Controls.Add(this.gbProximaLectura);
             this.Controls.Add(this.gbMedida);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbLecturaActual);
+            this.Controls.Add(this.gbLecturaAnterior);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.calculadoraExcedentes1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -313,13 +320,12 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmLectura";
-            this.Text = "Lectura";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbLecturaAnterior.ResumeLayout(false);
+            this.gbLecturaAnterior.PerformLayout();
+            this.gbLecturaActual.ResumeLayout(false);
+            this.gbLecturaActual.PerformLayout();
             this.gbMedida.ResumeLayout(false);
             this.gbMedida.PerformLayout();
             this.gbProximaLectura.ResumeLayout(false);
@@ -336,8 +342,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox gbLecturaAnterior;
+        private System.Windows.Forms.GroupBox gbLecturaActual;
         private System.Windows.Forms.TextBox txtLecturaActual;
         private System.Windows.Forms.GroupBox gbMedida;
         private System.Windows.Forms.TextBox txtMedida;

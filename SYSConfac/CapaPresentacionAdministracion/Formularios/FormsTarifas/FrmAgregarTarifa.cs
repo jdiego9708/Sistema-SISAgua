@@ -37,6 +37,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsTarifas
             this.btnMedida.Click += BtnMedida_Click;
         }
 
+        public event EventHandler OnTarifaSuccess;
+
         private void BtnMedida_Click(object sender, EventArgs e)
         {
             FrmObservarMedidas frmObservarMedidas = new FrmObservarMedidas
@@ -237,6 +239,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsTarifas
                         rpta = ETarifas.InsertarTarifa(eTarifas, out int id_tarifa);
                         if (rpta.Equals("OK") & eTarifas.Tipo_tarifa.Equals("DETALLE"))
                         {
+                            eTarifas.Id_tarifa = id_tarifa;
                             eDetalleTarifa.ETarifa = new ETarifas
                             {
                                 Id_tarifa = id_tarifa
@@ -249,6 +252,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsTarifas
                     if (rpta.Equals("OK"))
                     {
                         Mensajes.MensajeOkForm(mensaje);
+                        this.OnTarifaSuccess?.Invoke(eTarifas, e);
                         this.Close();
                     }
                     else

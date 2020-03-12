@@ -770,6 +770,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                         result = false;
 
                     // MensajeEspera.ChangeMensaje("Recopilando cuentas pendientes");
+                    //Obtener el mes que seleccionamos
+                    int mes_actual = Convert.ToInt32(this.btnMes.Tag);
 
                     //Tabla de cuentas pendientes, buscamos todas las cuentas
                     DataTable dtCuentasPendientes = EDetalleAgendamientoLectura.BuscarDetalleAgendamiento(out rpta);
@@ -777,16 +779,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                     //MensajeEspera.ChangeMensaje("Recopilando lecturas");
                     //Lecturas del mes actual
                     DataTable dtLecturas =
-                        ELecturas.BuscarLecturas("LECTURA MES", this.btnMes.Text.ToUpper(), out rpta);
+                        ELecturas.BuscarLecturas("LECTURA MES NUMERO", mes_actual.ToString(), out rpta);
 
                     //MensajeEspera.ChangeMensaje("Recopilando lecturas anteriores");
-                    //Obtener el mes que seleccionamos
-                    int mes_actual = Convert.ToInt32(this.btnMes.Tag);
+                    int mes_anterior_numero = mes_actual == 1 ? 12 : mes_actual;
                     //Obtenemos el mes anterior al seleccionado
                     string mes_anterior = mes_actual == 1 ? this.MonthName(12) : this.MonthName(mes_actual - 1);
                     //Buscamos las lecturas anteriores
                     DataTable dtLecturasMesAnterior =
-                        ELecturas.BuscarLecturas("LECTURA MES", mes_anterior, out rpta);
+                        ELecturas.BuscarLecturas("LECTURA MES NUMERO", mes_anterior_numero.ToString(), out rpta);
 
                     this.BuscarLecturas(dtLecturas, dtLecturasMesAnterior);
 

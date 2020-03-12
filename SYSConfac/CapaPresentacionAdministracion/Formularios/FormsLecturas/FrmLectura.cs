@@ -3,6 +3,7 @@ using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfi
 using CapaPresentacionAdministracion.Formularios.FormsCuentas;
 using CapaPresentacionAdministracion.Formularios.FormsPrincipales;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Threading;
@@ -33,6 +34,17 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
             this.Load += FrmLectura_Load;
             this.btnRefresh.Click += BtnRefresh_Click;
         }
+
+        private void EstablecerOrdenTabulacion()
+        {
+            this.txtLecturaAnterior.TabIndex = 0;
+            this.txtLecturaActual.TabIndex = 1;
+            this.btnTerminar.TabIndex = 2;
+
+            this.txtLecturaActual.Focus();
+            this.txtLecturaActual.SelectAll();
+        }
+
 
         private void BtnTerminar_Click(object sender, EventArgs e)
         {
@@ -253,6 +265,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                     if (dtDetalleTarifa != null)
                     {
                         this.EDetalleTarifa = new EDetalleTarifas(dtDetalleTarifa, 0);
+                        this.Show();
+                        this.EstablecerOrdenTabulacion();
                     }
                     else
                     {
@@ -343,6 +357,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
 
         private void Txt_KeyPress(object sender, KeyPressEventArgs e)
         {
+            TextBox txt = (TextBox)sender;
             CultureInfo cc = Thread.CurrentThread.CurrentCulture;
             if (e.KeyChar.ToString() == cc.NumberFormat.NumberDecimalSeparator ||
                 char.IsDigit(e.KeyChar) ||
@@ -355,7 +370,9 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                 if ((int)e.KeyChar == (int)Keys.Enter)
                 {
                     e.Handled = false;
-                    this.ComprobacionesLectura();
+                    bool result = this.ComprobacionesLectura();
+                    if (result)
+                        this.SelectNextControl((Control)sender, true, true, false, true);
                 }
                 else
                     e.Handled = true;
