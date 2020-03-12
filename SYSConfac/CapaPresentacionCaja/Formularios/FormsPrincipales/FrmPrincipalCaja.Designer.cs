@@ -49,6 +49,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtInformacionCaja = new System.Windows.Forms.TextBox();
+            this.btnCorreo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -155,6 +156,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCorreo);
             this.groupBox2.Controls.Add(this.rdMedidor);
             this.groupBox2.Controls.Add(this.rdNombres);
             this.groupBox2.Controls.Add(this.rdIdentificacion);
@@ -338,6 +340,24 @@
             this.txtInformacionCaja.TabIndex = 3;
             this.txtInformacionCaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnCorreo
+            // 
+            this.btnCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(175)))), ((int)(((byte)(194)))));
+            this.btnCorreo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCorreo.FlatAppearance.BorderSize = 0;
+            this.btnCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCorreo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCorreo.ForeColor = System.Drawing.Color.White;
+            this.btnCorreo.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreo.Image")));
+            this.btnCorreo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCorreo.Location = new System.Drawing.Point(485, 11);
+            this.btnCorreo.Name = "btnCorreo";
+            this.btnCorreo.Size = new System.Drawing.Size(43, 41);
+            this.btnCorreo.TabIndex = 12;
+            this.btnCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCorreo.UseVisualStyleBackColor = false;
+            this.btnCorreo.Visible = false;
+            // 
             // FrmPrincipalCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -389,5 +409,6 @@
         private System.Windows.Forms.Button btnObservarPagosHoy;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtInformacionCaja;
+        private System.Windows.Forms.Button btnCorreo;
     }
 }

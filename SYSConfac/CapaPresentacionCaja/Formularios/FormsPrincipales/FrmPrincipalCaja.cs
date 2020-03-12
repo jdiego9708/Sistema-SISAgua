@@ -11,6 +11,7 @@ using System.Data;
 using System.Windows.Forms;
 using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 using System.Text;
+using CapaPresentacionAdministracion.Servicios;
 
 namespace CapaPresentacionCaja.Formularios.FormsPrincipales
 {
@@ -33,6 +34,33 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
 
             this.btnHome.Click += BtnHome_Click;
             this.FormClosing += FrmPrincipalCaja_FormClosing;
+            this.btnCorreo.Click += BtnCorreo_Click;
+        }
+
+        private void BtnCorreo_Click(object sender, EventArgs e)
+        {
+            HelperMail helperMail = new HelperMail();
+
+            string info = this.txtInformacionCaja.Text;
+
+            info = info.Replace("\r\n", "<br />");
+
+            //StringBuilder info1 = new StringBuilder();
+            //foreach (string c in info.Split('\r\n'))
+            //{
+            //    info1.Append(c).Append("<br />");
+            //}
+
+            //info = info1.ToString();
+
+            helperMail.SendEmailCierreCaja("Cierre de caja " + DateTime.Now.ToLongDateString() +
+                " - Hora: " + DateTime.Now.ToLongTimeString(), info, out string rpta);
+            if (rpta.Equals("OK"))
+            {
+                Mensajes.MensajeOkForm("¡Se envió el reporte de caja correctamente!");
+            }
+            else
+                throw new Exception(rpta);
         }
 
         private void BtnObservarPagosHoy_Click(object sender, EventArgs e)
@@ -530,7 +558,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("No se encontró el último cierre");
 
                 info.Append(Environment.NewLine);
-                info.Append("-");
+                info.Append(" ");
                 info.Append(Environment.NewLine);
 
                 //Información del total a recaudar
@@ -552,7 +580,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append(Environment.NewLine);
                 }
 
-                info.Append("-");
+                info.Append(" ");
                 info.Append(Environment.NewLine);
 
                 //Información de la apertura
@@ -574,7 +602,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("La caja empieza sin dinero");
 
                 info.Append(Environment.NewLine);
-                info.Append("-");
+                info.Append(" ");
                 info.Append(Environment.NewLine);
 
                 //Gastos del mes
@@ -588,7 +616,7 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                     info.Append("No hay gastos este mes");
 
                 info.Append(Environment.NewLine);
-                info.Append("-");
+                info.Append(" ");
                 info.Append(Environment.NewLine);
 
                 //Total recaudado hoy
@@ -603,13 +631,16 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 {
                     info.Append("Total en caja $").Append(saldo_caja_hoy.ToString("N2"));
                     if (cantidad_gastos != 0)
+                    {
+                        info.Append(Environment.NewLine);
                         info.Append("Total en caja restando los gastos $").Append((saldo_caja_hoy - total_gastos).ToString("N2"));
+                    }
                 }
                 else
                     info.Append("No hay dinero en la caja");
 
                 info.Append(Environment.NewLine);
-                info.Append("-");
+                info.Append(" ");
                 info.Append(Environment.NewLine);
                 this.txtInformacionCaja.Text = info.ToString();
             }

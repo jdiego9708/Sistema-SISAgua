@@ -4,6 +4,7 @@ using CapaPresentacionAdministracion.Servicios;
 using System;
 using System.Data;
 using System.Globalization;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -461,6 +462,13 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCajas
         public EApertura EApertura { get => _eApertura; set => _eApertura = value; }
         public decimal Deposito { get => _deposito; set => _deposito = value; }
         public bool IsObservar { get => _isObservar; set => _isObservar = value; }
-        public string InformacionCaja { get => _informacionCaja; set => _informacionCaja = value; }
+        public string InformacionCaja
+        {
+            get => _informacionCaja;
+            set
+            {
+                _informacionCaja = value.Replace("\r\n", "<br />");
+            }
+        }
     }
 }
