@@ -91,7 +91,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsArchivos
                     if (rpta.Equals("OK"))
                     {
                         rpta =
-                            ArchivosAdjuntos.GuardarArchivo("RutaDestinoArchivos", eArchivo.Nombre_archivo, this.uploadArchive1.Ruta_origen_archivo);
+                            ArchivosAdjuntos.GuardarArchivo("Ruta_archivos", eArchivo.Nombre_archivo, this.uploadArchive1.Ruta_origen_archivo);
                         if (!rpta.Equals("OK"))
                         {
                             Mensajes.MensajeInformacion("Se guardó correctamente el registro en " +

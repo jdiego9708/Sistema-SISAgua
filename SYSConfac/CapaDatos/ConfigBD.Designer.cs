@@ -25,7 +25,7 @@ namespace CapaDatos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=F:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=E:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
             "cBDPrueba.db")]
         public string ConnectionDefault {
             get {

@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Diagnostics;
 using System.Configuration;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 
 namespace CapaPresentacionAdministracion
 {
@@ -50,10 +51,10 @@ namespace CapaPresentacionAdministracion
         public static string ObtenerRutaDestino(string appKey)
         {
             string ruta = "";
-            var appSettings = ConfigurationManager.AppSettings;
             try
             {
-                ruta = Convert.ToString(appSettings[appKey]);
+                if (appKey.Equals("Ruta_archivos"))
+                    ruta = ConfigGeneral.Default.Ruta_archivos;
             }
             catch (ConfigurationErrorsException ex)
             {

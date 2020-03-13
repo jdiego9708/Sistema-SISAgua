@@ -98,6 +98,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 return;
             }
             this.Id_caja = datosInicioSesion.ECaja.Id_caja;
+            this.Show();
+            this.btnTerminar.Focus();
         }
 
         private void BtnObservarLectura_Click(object sender, EventArgs e)

@@ -45,7 +45,7 @@
             this.groupBox2.Controls.Add(this.panelArchivos);
             this.groupBox2.Location = new System.Drawing.Point(12, 86);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(819, 592);
+            this.groupBox2.Size = new System.Drawing.Size(819, 544);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Archivos";
@@ -60,7 +60,7 @@
             this.panelArchivos.Location = new System.Drawing.Point(6, 24);
             this.panelArchivos.Name = "panelArchivos";
             this.panelArchivos.PageSize = 10;
-            this.panelArchivos.Size = new System.Drawing.Size(807, 562);
+            this.panelArchivos.Size = new System.Drawing.Size(807, 514);
             this.panelArchivos.TabIndex = 0;
             // 
             // groupBox1
@@ -111,6 +111,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmObservarArchivos";
             this.Text = "Archivos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

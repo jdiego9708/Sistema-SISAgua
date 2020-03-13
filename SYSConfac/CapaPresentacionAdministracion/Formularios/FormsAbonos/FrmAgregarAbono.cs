@@ -20,6 +20,13 @@ namespace CapaPresentacionAdministracion.Formularios.FormsAbonos
             this.rdAbono.CheckedChanged += RdPagoCompleto_CheckedChanged;
             this.btnTerminar.Click += BtnTerminar_Click;
             this.btnAbonos.Click += BtnAbonos_Click;
+            this.Load += FrmAgregarAbono_Load;
+        }
+
+        private void FrmAgregarAbono_Load(object sender, EventArgs e)
+        {
+            this.Show();
+            this.btnTerminar.Focus();
         }
 
         private void TxtAbono_Click(object sender, EventArgs e)
