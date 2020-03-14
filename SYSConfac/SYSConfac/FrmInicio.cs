@@ -15,12 +15,16 @@ namespace SYSConfac
             this.btnCaja.Click += BtnCaja_Click;
             this.btnLecturas.Click += BtnLecturas_Click;
             this.Load += FrmInicio_Load;
+            this.btnUpdate.Click += BtnUpdate_Click;
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            Updates.InstallUpdateSyncWithInfo();
         }
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
-            Updates.InstallUpdateSyncWithInfo();
-
             DateTime fechaActual = DateTime.Now;
             if (fechaActual > new DateTime(2019, 09, 16) & fechaActual < new DateTime(2019, 09, 23))
             {

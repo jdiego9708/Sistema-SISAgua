@@ -32,6 +32,7 @@
             this.btnCaja = new System.Windows.Forms.Button();
             this.btnAdministracion = new System.Windows.Forms.Button();
             this.btnLecturas = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCaja
@@ -91,12 +92,32 @@
             this.btnLecturas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLecturas.UseVisualStyleBackColor = true;
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(95)))), ((int)(((byte)(112)))));
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(162)))), ((int)(((byte)(175)))));
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(227)))), ((int)(((byte)(229)))));
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(12, 211);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(158, 60);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Actualización \r\nmanual";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(581, 187);
+            this.ClientSize = new System.Drawing.Size(581, 262);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnLecturas);
             this.Controls.Add(this.btnAdministracion);
             this.Controls.Add(this.btnCaja);
@@ -117,6 +138,7 @@
         private System.Windows.Forms.Button btnCaja;
         private System.Windows.Forms.Button btnAdministracion;
         private System.Windows.Forms.Button btnLecturas;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 
