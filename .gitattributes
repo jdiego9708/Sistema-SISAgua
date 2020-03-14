@@ -1,27 +1,17 @@
-# THIS IS ONLY FOR THE gitattributes REPOSITORY.
-# Handle line endings automatically for files detected as text
-# and leave all files detected as binary untouched.
-*               text=auto
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
 
-#
-# The above will handle all files NOT found below
-#
-# These files are text and should be normalized (Convert crlf => lf)
-*.gitattributes text
-.gitignore      text
-*.md            text
-* .manifest binary
-* .application binary
-* .deploy binary
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.c text
+*.h text
 
-#
-# Exclude files from exporting
-#
+# Declare files that will always have CRLF line endings on checkout.
+*.sln text eol=crlf
 
-.gitattributes  export-ignore
-.gitignore      export-ignore
-
-#
-# Enable syntax highlighting for files with `.gitattributes` extensions.
-#
-*.gitattributes linguist-language=gitattributes
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.manifest binary
+*.application binary
+*.deploy binary
