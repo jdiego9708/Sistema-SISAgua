@@ -16,6 +16,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnTerminar.Click += BtnTerminar_Click;
             this.btnAtras.Click += BtnAtras_Click;
             this.btnAddTarifaLecturas.Click += BtnAddTarifa_Click;
+            this.btnAddTarifaManual.Click += BtnAddTarifa_Click;
+            this.btnAddTarifaSesion.Click += BtnAddTarifa_Click;
             this.Load += FrmConfigTarifas_Load;
         }
 
@@ -47,22 +49,22 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         private void OnTarifaSuccessLectura(object sender, EventArgs e)
         {
             ETarifas eTarifa = (ETarifas)sender;
-            this.btnAddTarifaLecturas.Text = eTarifa.Descripcion;
-            this.btnAddTarifaLecturas.Tag = eTarifa;
+            this.btnTarifaLectura.Text = eTarifa.Descripcion;
+            this.btnTarifaLectura.Tag = eTarifa;
         }
 
         private void OnTarifaSuccessSesion(object sender, EventArgs e)
         {
             ETarifas eTarifa = (ETarifas)sender;
-            this.btnAddTarifaSesion.Text = eTarifa.Descripcion;
-            this.btnAddTarifaSesion.Tag = eTarifa;
+            this.btnTarifaSesion.Text = eTarifa.Descripcion;
+            this.btnTarifaSesion.Tag = eTarifa;
         }
 
         private void OnTarifaSuccessManual(object sender, EventArgs e)
         {
             ETarifas eTarifa = (ETarifas)sender;
-            this.btnAddTarifaManual.Text = eTarifa.Descripcion;
-            this.btnAddTarifaManual.Tag = eTarifa;
+            this.btnTarifaManual.Text = eTarifa.Descripcion;
+            this.btnTarifaManual.Tag = eTarifa;
         }
 
         public string GuardarDatos()

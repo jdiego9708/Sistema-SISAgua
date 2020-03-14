@@ -63,8 +63,9 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
             parameters[14] = new ReportParameter("Tipo", "VIVIENDA");
             parameters[15] = new ReportParameter("Mes_de_consumo", this.MonthName(eCuenta.Fecha_cuenta.Month));
             parameters[16] = new ReportParameter("Total_pagar", "$" + eCuenta.Total_pagar.ToString("N2"));
-            parameters[17] = new ReportParameter("InformacionPago", "Subtotal: " + eCuenta.Total_lectura.ToString("N2") + Environment.NewLine + 
-                                                                    "IVA: " + eCuenta.Iva * 100 + "%" + Environment.NewLine);
+            parameters[17] = new ReportParameter("InformacionPago", "Subtotal: " + eCuenta.Total_lectura.ToString("N2") + Environment.NewLine +
+                                                                    "IVA: " + eCuenta.Iva * 100 + "%" + Environment.NewLine +
+                                                                    "Descuento: " + eCuenta.Descuento * 100 + "%" + Environment.NewLine);
 
             this.reportViewer1.Dock = DockStyle.Fill;
             this.Controls.Add(this.reportViewer1);

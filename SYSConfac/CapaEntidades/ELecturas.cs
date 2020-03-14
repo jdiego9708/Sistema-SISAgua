@@ -83,6 +83,7 @@ namespace CapaEntidades
 
                 this.Total_consumo = Convert.ToInt32(row["Total_consumo"]);
                 this.Consumo_excedido = Convert.ToInt32(row["Consumo_excedido"]);
+                this.Total_lectura = Convert.ToDecimal(row["Total_lectura"]);
             }
             catch (Exception ex)
             {
@@ -158,6 +159,7 @@ namespace CapaEntidades
                 this.Mes_lectura = Convert.ToString(dt.Rows[fila]["Mes_lectura"]);
                 this.Total_consumo = Convert.ToInt32(dt.Rows[fila]["Total_consumo"]);
                 this.Consumo_excedido = Convert.ToInt32(dt.Rows[fila]["Consumo_excedido"]);
+                this.Total_lectura = Convert.ToDecimal(dt.Rows[fila]["Total_lectura"]);
             }
             catch (Exception ex)
             {
@@ -237,6 +239,7 @@ namespace CapaEntidades
                     this.Mes_lectura = Convert.ToString(dt.Rows[0]["Mes_lectura"]);
                     this.Total_consumo = Convert.ToInt32(dt.Rows[0]["Total_consumo"]);
                     this.Consumo_excedido = Convert.ToInt32(dt.Rows[0]["Consumo_excedido"]);
+                    this.Total_lectura = Convert.ToDecimal(dt.Rows[0]["Total_lectura"]);
                 }
                 else
                 {
@@ -264,7 +267,8 @@ namespace CapaEntidades
                 eLecturas.Total_consumo.ToString(),
                 eLecturas.Consumo_excedido.ToString(),
                 eLecturas.EMedida.Id_medida.ToString(),
-                eLecturas.Mes_lectura
+                eLecturas.Mes_lectura,
+                eLecturas.Total_lectura.ToString("N2")
             };
             return DLecturas.InsertarLectura(out id_lectura, vs);
         }
@@ -283,7 +287,8 @@ namespace CapaEntidades
                 eLecturas.Total_consumo.ToString(),
                 eLecturas.Consumo_excedido.ToString(),
                 eLecturas.EMedida.Id_medida.ToString(),
-                eLecturas.Mes_lectura
+                eLecturas.Mes_lectura,
+                eLecturas.Total_lectura.ToString("N2")
             };
             return DLecturas.ModificarLectura(id_lectura, vs);
         }
@@ -311,6 +316,7 @@ namespace CapaEntidades
         private string _mes_lectura;
         private int _total_consumo;
         private int _consumo_excedido;
+        private decimal _total_lectura;
 
         public event EventHandler OnError;
 
@@ -327,5 +333,6 @@ namespace CapaEntidades
         public EMedida EMedida { get => _eMedida; set => _eMedida = value; }
         public int Total_consumo { get => _total_consumo; set => _total_consumo = value; }
         public int Consumo_excedido { get => _consumo_excedido; set => _consumo_excedido = value; }
+        public decimal Total_lectura { get => _total_lectura; set => _total_lectura = value; }
     }
 }

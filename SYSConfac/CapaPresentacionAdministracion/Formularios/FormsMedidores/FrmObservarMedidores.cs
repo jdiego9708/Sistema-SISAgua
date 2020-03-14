@@ -72,7 +72,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsMedidores
                     {
                         MedidorSmall medidorSmall = new MedidorSmall();
                         EMedidor eMedidor = new EMedidor(row);
-                        if (eMedidor.Estado_medidor.Equals("ACTIVO"))
+                        if (!eMedidor.Estado_medidor.Equals("INACTIVO"))
                         {
                             medidorSmall.AsignarDatos(new EMedidor(row));
                             medidorSmall.OnBtnSiguienteClick += MedidorSmall_OnBtnSiguienteClick;

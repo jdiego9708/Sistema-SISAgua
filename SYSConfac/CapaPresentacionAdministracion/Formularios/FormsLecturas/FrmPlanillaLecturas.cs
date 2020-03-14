@@ -782,7 +782,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                         ELecturas.BuscarLecturas("LECTURA MES NUMERO", mes_actual.ToString(), out rpta);
 
                     //MensajeEspera.ChangeMensaje("Recopilando lecturas anteriores");
-                    int mes_anterior_numero = mes_actual == 1 ? 12 : mes_actual;
+                    int mes_anterior_numero = mes_actual == 1 ? 12 : mes_actual - 1;
                     //Obtenemos el mes anterior al seleccionado
                     string mes_anterior = mes_actual == 1 ? this.MonthName(12) : this.MonthName(mes_actual - 1);
                     //Buscamos las lecturas anteriores

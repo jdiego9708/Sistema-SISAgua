@@ -50,14 +50,21 @@ namespace CapaPresentacionAdministracion.Formularios.FormsMedidores
                 this.txtMedidor.Text = eMedidor.Medidor;
                 this.txtDescripcion.Text = eMedidor.Descripcion;
 
-                if (eMedidor.Estado_medidor.Equals("INACTIVO"))
+                if (!eMedidor.Estado_medidor.Equals("ACTIVO"))
                 {
+                    this.BackColor = Color.FromArgb(255, 192, 192);
                     foreach (Control control in this.Controls)
                     {
-                        control.Enabled = false;
+                        if (control is GroupBox gb)
+                        {
+                            foreach(Control c in gb.Controls)
+                            {
+                                c.BackColor = Color.FromArgb(255, 192, 192);
+                            }
+                        }
+                        control.BackColor = Color.FromArgb(255, 192, 192);
                     }
-                }
-               
+                }             
             }
         }
     }

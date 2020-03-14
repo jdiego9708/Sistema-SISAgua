@@ -45,7 +45,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
             this.txtLecturaActual.SelectAll();
         }
 
-
         private void BtnTerminar_Click(object sender, EventArgs e)
         {
             if (this.ComprobacionesLectura())
@@ -123,7 +122,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                             Hora_lectura = DateTime.Now.ToString("HH:mm"),
                             Total_consumo = Convert.ToInt32(this.txtLecturaActual.Text) - Convert.ToInt32(this.txtLecturaAnterior.Text),
                             Consumo_excedido = this.calculadoraExcedentes1.Cantidad_excedente,
-                            EMedida = this.EDetalleTarifa.EMedida
+                            EMedida = this.EDetalleTarifa.EMedida,
+                            Total_lectura = this.Total
                         };
 
                         string rpta = ELecturas.EditarLectura(this.ELecturaEditar.Id_lectura, eLectura);
@@ -175,7 +175,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsLecturas
                             Hora_lectura = DateTime.Now.ToString("HH:mm"),
                             Total_consumo = Convert.ToInt32(this.txtLecturaActual.Text) - Convert.ToInt32(this.txtLecturaAnterior.Text),
                             Consumo_excedido = this.calculadoraExcedentes1.Cantidad_excedente,
-                            EMedida = this.EDetalleTarifa.EMedida
+                            EMedida = this.EDetalleTarifa.EMedida,
+                            Total_lectura = this.Total
                         };
 
                         string rpta = "";

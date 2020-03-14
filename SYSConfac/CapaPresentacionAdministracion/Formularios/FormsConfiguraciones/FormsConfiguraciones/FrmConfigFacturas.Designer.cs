@@ -229,7 +229,7 @@
             this.gbAlto.TabIndex = 11;
             this.gbAlto.TabStop = false;
             this.gbAlto.Tag = "*";
-            this.gbAlto.Text = "Alto";
+            this.gbAlto.Text = "Alto*";
             // 
             // txtAlto
             // 

@@ -317,6 +317,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                         this.IsLectura = true;
                         ELecturas lectura = new ELecturas(dtLectura, 0);
                         this.ELectura = lectura;
+                        this.ECuenta.Total_lectura = lectura.Valor_lectura;
                         this.lecturaSmall = new LecturaSmall();
                         lecturaSmall.AsignarDatos(lectura);
 

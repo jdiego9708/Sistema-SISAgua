@@ -13,10 +13,11 @@ namespace CapaDatos
         public static string InsertarLectura(out int id_lectura, List<string> variables)
         {
             string consulta = "INSERT INTO Lecturas_cliente (Id_cliente, Id_tarifa, Id_medidor, Id_empleado, Id_cuenta, " +
-                "Fecha_lectura, Hora_lectura, Valor_lectura, Total_consumo, Consumo_excedido, Id_medida, Mes_lectura) " +
+                "Fecha_lectura, Hora_lectura, Valor_lectura, Total_consumo, Consumo_excedido, Id_medida, Mes_lectura, Total_lectura) " +
                 "VALUES('" + variables[0] + "','" + variables[1] + "','" + variables[2] + "','" + variables[3] + "','" +
                 variables[4] + "','" + variables[5] + "','" + variables[6] + "','" + variables[7] + "','" +
-                variables[8] + "','" + variables[9] + "','" + variables[10] + "','" + variables[11].ToUpper() + "'); " +
+                variables[8] + "','" + variables[9] + "','" + variables[10] + "','" + variables[11].ToUpper() + "','" +
+                variables[12] + "'); " +
                 "SELECT last_insert_rowid(); " +
                 "UPDATE Detalle_agendamiento_lecturas " +
                 "SET Estado = 'TERMINADO' " +
@@ -41,7 +42,8 @@ namespace CapaDatos
                 "Total_consumo ='" + variables[8] + "', " +
                 "Consumo_excedido ='" + variables[9] + "', " +
                 "Id_medida ='" + variables[10] + "', " +
-                "Mes_lectura ='" + variables[11].ToUpper() + "' " +
+                "Mes_lectura ='" + variables[11].ToUpper() + "', " +
+                "Total_lectura ='" + variables[12].ToUpper() + "' " +
                 "WHERE Id_lectura = '" + id_lectura + "' ";
             return DConexion.EjecutarConsultaCadena(consulta, false);
         }

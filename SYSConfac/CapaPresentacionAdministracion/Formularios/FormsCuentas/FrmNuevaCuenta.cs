@@ -146,6 +146,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 }
 
                 eCuenta.Total_pagar = this.Total_cuenta;
+                eCuenta.Total_lectura = this.Total_lectura;
                 eCuenta.Motivo_descuento = "";
                 eCuenta.Estado_cuenta = "PENDIENTE DE PAGO";
                 eCuenta.Fecha_cuenta = DateTime.Now;
@@ -332,8 +333,24 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
         {
             DataTable dtTarifas = ETarifas.BuscarTarifas("COMPLETO", "", out _);
 
+            int id_tarifa_sesion_default = ConfigTarifas.Default.Id_tarifa_sesion;
+            int id_tarifa_lectura_default = ConfigTarifas.Default.Id_tarifa_lectura;
+            int id_tarifa_manual_default = ConfigTarifas.Default.Id_tarifa_manual;
+
             if (isManual)
             {
+                DataRow[] rowSearch =
+                dtTarifas.Select(string.Format("Id_tarifa = {0} or Id_tarifa = {1} or Id_tarifa = {2} ",
+                id_tarifa_lectura_default, id_tarifa_manual_default, id_tarifa_sesion_default));
+                if (rowSearch.Length > 0)
+                {
+                    foreach (DataRow row in rowSearch)
+                    {
+                        dtTarifas.Rows.Remove(row);
+                    }
+                }
+
+
                 this.listaTarifas.Enabled = true;
                 ETarifas eTarifas = new ETarifas(dtTarifas, 0);
                 this.tarifaSmall1.AsignarDatos(eTarifas);
@@ -355,10 +372,23 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 }
                 else
                 {
+                    DataRow[] rowSearch =
+                    dtTarifas.Select(string.Format("Id_tarifa = {0} or Id_tarifa = {1} or Id_tarifa = {2} ",
+                    id_tarifa_lectura_default, id_tarifa_manual_default, id_tarifa_sesion_default));
+                    if (rowSearch.Length > 0)
+                    {
+                        foreach (DataRow row in rowSearch)
+                        {
+                            dtTarifas.Rows.Remove(row);
+                        }
+                    }
+
+
                     this.listaTarifas.Enabled = true;
                     this.tarifaSmall1.AsignarDatos(new ETarifas(dtTarifas, 0));
                 }
             }
+
 
             this.listaTarifas.DataSource = dtTarifas;            
             this.listaTarifas.ValueMember = "Id_tarifa";
