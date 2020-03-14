@@ -48,6 +48,7 @@
             this.txtTeléfono = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,7 +95,7 @@
             this.groupBox1.Size = new System.Drawing.Size(558, 65);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nombre de la empresa";
+            this.groupBox1.Text = "Nombre de la empresa*";
             // 
             // txtEmpresa
             // 
@@ -129,7 +130,7 @@
             this.groupBox2.Size = new System.Drawing.Size(313, 56);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nombre del presidente de la junta";
+            this.groupBox2.Text = "Nombre del presidente de la junta*";
             // 
             // txtPresidente
             // 
@@ -191,7 +192,7 @@
             this.groupBox3.Size = new System.Drawing.Size(239, 56);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Correo electrónico";
+            this.groupBox3.Text = "Correo electrónico*";
             // 
             // txtCorreo
             // 
@@ -219,7 +220,7 @@
             this.groupBox4.Size = new System.Drawing.Size(313, 56);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Dirección empresa";
+            this.groupBox4.Text = "Dirección empresa*";
             // 
             // txtDireccion
             // 
@@ -243,7 +244,7 @@
             this.groupBox5.Size = new System.Drawing.Size(239, 56);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Teléfono empresa";
+            this.groupBox5.Text = "Teléfono empresa*";
             // 
             // txtTeléfono
             // 
@@ -267,7 +268,7 @@
             this.groupBox6.Size = new System.Drawing.Size(230, 56);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "País, Ciudad";
+            this.groupBox6.Text = "País, Ciudad*";
             // 
             // txtCiudad
             // 
@@ -283,12 +284,23 @@
             this.txtCiudad.TabIndex = 1;
             this.txtCiudad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 364);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.TabIndex = 21;
+            this.label2.Tag = "";
+            this.label2.Text = "* (Obligatorio)";
+            // 
             // FrmConfigInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 484);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -345,5 +357,6 @@
         private System.Windows.Forms.TextBox txtTeléfono;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtCiudad;
+        private System.Windows.Forms.Label label2;
     }
 }

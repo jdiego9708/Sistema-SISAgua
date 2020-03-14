@@ -33,7 +33,6 @@
             this.gbCorreo = new System.Windows.Forms.GroupBox();
             this.gbContraseña = new System.Windows.Forms.GroupBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.chkCopia = new System.Windows.Forms.CheckBox();
             this.btnPrueba = new System.Windows.Forms.Button();
             this.gbCorreoRecepcion = new System.Windows.Forms.GroupBox();
             this.txtCorreoRecepcion = new System.Windows.Forms.TextBox();
@@ -57,7 +56,6 @@
             // gbCorreo
             // 
             this.gbCorreo.Controls.Add(this.gbContraseña);
-            this.gbCorreo.Controls.Add(this.chkCopia);
             this.gbCorreo.Controls.Add(this.btnPrueba);
             this.gbCorreo.Controls.Add(this.gbCorreoRecepcion);
             this.gbCorreo.Controls.Add(this.gbPuerto);
@@ -69,7 +67,7 @@
             this.gbCorreo.Size = new System.Drawing.Size(598, 136);
             this.gbCorreo.TabIndex = 8;
             this.gbCorreo.TabStop = false;
-            this.gbCorreo.Text = "Envío de correo de errores";
+            this.gbCorreo.Text = "Envío de correo de errores*";
             // 
             // gbContraseña
             // 
@@ -79,7 +77,7 @@
             this.gbContraseña.Size = new System.Drawing.Size(178, 52);
             this.gbContraseña.TabIndex = 13;
             this.gbContraseña.TabStop = false;
-            this.gbContraseña.Text = "Contraseña";
+            this.gbContraseña.Text = "Contraseña*";
             // 
             // txtContraseña
             // 
@@ -97,16 +95,6 @@
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtContraseña.UseSystemPasswordChar = true;
-            // 
-            // chkCopia
-            // 
-            this.chkCopia.AutoSize = true;
-            this.chkCopia.Location = new System.Drawing.Point(523, 90);
-            this.chkCopia.Name = "chkCopia";
-            this.chkCopia.Size = new System.Drawing.Size(66, 38);
-            this.chkCopia.TabIndex = 12;
-            this.chkCopia.Text = "Enviar \r\ncopia";
-            this.chkCopia.UseVisualStyleBackColor = true;
             // 
             // btnPrueba
             // 
@@ -135,7 +123,7 @@
             this.gbCorreoRecepcion.Size = new System.Drawing.Size(294, 52);
             this.gbCorreoRecepcion.TabIndex = 10;
             this.gbCorreoRecepcion.TabStop = false;
-            this.gbCorreoRecepcion.Text = "Correo electrónico de recepción";
+            this.gbCorreoRecepcion.Text = "Correo electrónico de recepción*";
             // 
             // txtCorreoRecepcion
             // 
@@ -160,7 +148,7 @@
             this.gbPuerto.Size = new System.Drawing.Size(66, 52);
             this.gbPuerto.TabIndex = 9;
             this.gbPuerto.TabStop = false;
-            this.gbPuerto.Text = "Puerto";
+            this.gbPuerto.Text = "Puerto*";
             // 
             // txtPuerto
             // 
@@ -185,7 +173,7 @@
             this.gbServidorSMTP.Size = new System.Drawing.Size(126, 52);
             this.gbServidorSMTP.TabIndex = 8;
             this.gbServidorSMTP.TabStop = false;
-            this.gbServidorSMTP.Text = "Servidor SMTP";
+            this.gbServidorSMTP.Text = "Servidor SMTP*";
             // 
             // txtServidorSMTP
             // 
@@ -210,7 +198,7 @@
             this.gbCorreoEnvio.Size = new System.Drawing.Size(294, 52);
             this.gbCorreoEnvio.TabIndex = 7;
             this.gbCorreoEnvio.TabStop = false;
-            this.gbCorreoEnvio.Text = "Correo electrónico de envío";
+            this.gbCorreoEnvio.Text = "Correo electrónico de envío*";
             // 
             // txtCorreoEnvio
             // 
@@ -263,7 +251,6 @@
             this.Name = "ConfigEmailSmall";
             this.Size = new System.Drawing.Size(612, 144);
             this.gbCorreo.ResumeLayout(false);
-            this.gbCorreo.PerformLayout();
             this.gbContraseña.ResumeLayout(false);
             this.gbContraseña.PerformLayout();
             this.gbCorreoRecepcion.ResumeLayout(false);
@@ -282,7 +269,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbCorreo;
-        private System.Windows.Forms.CheckBox chkCopia;
         private System.Windows.Forms.Button btnPrueba;
         private System.Windows.Forms.GroupBox gbCorreoRecepcion;
         private System.Windows.Forms.GroupBox gbPuerto;

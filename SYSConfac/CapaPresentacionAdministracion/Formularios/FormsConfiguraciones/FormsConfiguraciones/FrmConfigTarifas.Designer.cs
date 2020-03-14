@@ -44,6 +44,7 @@
             this.btnAddTarifaManual = new System.Windows.Forms.Button();
             this.btnTarifaManual = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbTarifaLectura.SuspendLayout();
             this.gbTarifaSesion.SuspendLayout();
@@ -126,7 +127,7 @@
             this.gbTarifaLectura.Size = new System.Drawing.Size(527, 67);
             this.gbTarifaLectura.TabIndex = 7;
             this.gbTarifaLectura.TabStop = false;
-            this.gbTarifaLectura.Text = "Tarifa predeterminada para las lecturas";
+            this.gbTarifaLectura.Text = "Tarifa predeterminada para las lecturas*";
             // 
             // btnAddTarifaLecturas
             // 
@@ -179,7 +180,7 @@
             this.gbTarifaSesion.Size = new System.Drawing.Size(527, 67);
             this.gbTarifaSesion.TabIndex = 19;
             this.gbTarifaSesion.TabStop = false;
-            this.gbTarifaSesion.Text = "Tarifa predeterminada para la sesión";
+            this.gbTarifaSesion.Text = "Tarifa predeterminada para la sesión*";
             // 
             // btnAddTarifaSesion
             // 
@@ -232,7 +233,7 @@
             this.gbTarifaManual.Size = new System.Drawing.Size(527, 67);
             this.gbTarifaManual.TabIndex = 20;
             this.gbTarifaManual.TabStop = false;
-            this.gbTarifaManual.Text = "Tarifa predeterminada para las cuentas manuales";
+            this.gbTarifaManual.Text = "Tarifa predeterminada para las cuentas manuales*";
             // 
             // btnAddTarifaManual
             // 
@@ -280,12 +281,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 284);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.TabIndex = 21;
+            this.label1.Tag = "";
+            this.label1.Text = "* (Obligatorio)";
+            // 
             // FrmConfigTarifas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 538);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gbTarifaManual);
             this.Controls.Add(this.gbTarifaSesion);
             this.Controls.Add(this.btnTerminar);
@@ -305,6 +317,7 @@
             this.gbTarifaManual.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -324,5 +337,6 @@
         private System.Windows.Forms.Button btnAddTarifaSesion;
         private System.Windows.Forms.Button btnAddTarifaManual;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label1;
     }
 }

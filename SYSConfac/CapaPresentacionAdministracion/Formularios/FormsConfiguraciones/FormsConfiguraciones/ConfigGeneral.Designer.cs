@@ -142,5 +142,17 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                 this["Ciudad_empresa"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SI")]
+        public string Primer_inicio {
+            get {
+                return ((string)(this["Primer_inicio"]));
+            }
+            set {
+                this["Primer_inicio"] = value;
+            }
+        }
     }
 }

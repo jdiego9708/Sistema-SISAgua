@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones;
 using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsLicencias;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
 
 namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
 {
@@ -186,30 +187,45 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
                 this.IsLicenciado = this.ComprobarLicencia();
                 if (this.IsLicenciado)
                 {
-                    bool result = DatosInicioSesion.ComprobarConfiguraciones();
-                    if (result)
+                    if (ConfigGeneral.Default.Primer_inicio.Equals("SI") ||
+                        string.IsNullOrWhiteSpace(ConfigGeneral.Default.Primer_inicio))
                     {
-                        AutoCompleteStringCollection source = new AutoCompleteStringCollection();
-                        DataTable dtUsuarios = EEmpleado.BuscarEmpleados("COMPLETO", "", out string rpta);
-                        if (dtUsuarios != null)
+                        Mensajes.MensajeInformacion("Configure la aplicación para su primer uso", "Entendido");
+
+                        FrmConfiguracionInicial frm = new FrmConfiguracionInicial
                         {
-                            foreach (DataRow row in dtUsuarios.Rows)
+                            StartPosition = FormStartPosition.CenterScreen,
+                            FormBorderStyle = FormBorderStyle.None
+                        };
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        bool result = DatosInicioSesion.ComprobarConfiguraciones();
+                        if (result)
+                        {
+                            AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+                            DataTable dtUsuarios = EEmpleado.BuscarEmpleados("COMPLETO", "", out string rpta);
+                            if (dtUsuarios != null)
                             {
-                                source.Add(
-                                    Convert.ToString(row["Nombre_completo"]));
+                                foreach (DataRow row in dtUsuarios.Rows)
+                                {
+                                    source.Add(
+                                        Convert.ToString(row["Nombre_completo"]));
+                                }
+
+                                this.txtUsuario.AutoCompleteCustomSource = source;
+                                this.txtUsuario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                                this.txtUsuario.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                            }
+                            else
+                            {
+                                if (!rpta.Equals("OK"))
+                                    throw new Exception(rpta);
                             }
 
-                            this.txtUsuario.AutoCompleteCustomSource = source;
-                            this.txtUsuario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                            this.txtUsuario.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                            this.txtUsuario.Focus();
                         }
-                        else
-                        {
-                            if (!rpta.Equals("OK"))
-                                throw new Exception(rpta);
-                        }
-
-                        this.txtUsuario.Focus();
                     }
                 }
                 else

@@ -48,6 +48,7 @@
             this.numericMesesAlerta = new System.Windows.Forms.NumericUpDown();
             this.btnAyudaMesesAlerta = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbRuta.SuspendLayout();
             this.gbCaja.SuspendLayout();
@@ -95,7 +96,7 @@
             this.gbRuta.Size = new System.Drawing.Size(546, 65);
             this.gbRuta.TabIndex = 1;
             this.gbRuta.TabStop = false;
-            this.gbRuta.Text = "Ruta predeterminada de archivos";
+            this.gbRuta.Text = "Ruta predeterminada de archivos*";
             // 
             // btnAyudaRuta
             // 
@@ -188,7 +189,7 @@
             this.gbCaja.Size = new System.Drawing.Size(309, 57);
             this.gbCaja.TabIndex = 18;
             this.gbCaja.TabStop = false;
-            this.gbCaja.Text = "Caja principal";
+            this.gbCaja.Text = "Caja principal*";
             // 
             // btnAyudaCaja
             // 
@@ -255,7 +256,7 @@
             this.gbMesesCorte.Size = new System.Drawing.Size(151, 60);
             this.gbMesesCorte.TabIndex = 19;
             this.gbMesesCorte.TabStop = false;
-            this.gbMesesCorte.Text = "Meses para corte";
+            this.gbMesesCorte.Text = "Meses para corte*";
             // 
             // numericMesesCorte
             // 
@@ -300,7 +301,7 @@
             this.gbMesesAlerta.Size = new System.Drawing.Size(152, 60);
             this.gbMesesAlerta.TabIndex = 20;
             this.gbMesesAlerta.TabStop = false;
-            this.gbMesesAlerta.Text = "Meses para alerta";
+            this.gbMesesAlerta.Text = "Meses para alerta*";
             // 
             // numericMesesAlerta
             // 
@@ -340,12 +341,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 265);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Tag = "";
+            this.label2.Text = "* (Obligatorio)";
+            // 
             // FrmConfigGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 484);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.gbMesesAlerta);
             this.Controls.Add(this.gbMesesCorte);
             this.Controls.Add(this.gbCaja);
@@ -369,6 +381,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericMesesAlerta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -392,5 +405,6 @@
         private System.Windows.Forms.NumericUpDown numericMesesAlerta;
         private System.Windows.Forms.Button btnAyudaMesesAlerta;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label2;
     }
 }

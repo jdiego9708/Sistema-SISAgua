@@ -35,6 +35,7 @@
             this.btnSiguiente = new System.Windows.Forms.Button();
             this.emailReportes = new CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones.ConfigEmailSmall();
             this.emailErrores = new CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones.ConfigEmailSmall();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,12 +129,23 @@
             this.emailErrores.TabIndex = 10;
             this.emailErrores.Tipo_email = "ERRORES";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 360);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Tag = "";
+            this.label2.Text = "* (Obligatorio)";
+            // 
             // FrmConfigCorreos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(614, 510);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.emailReportes);
             this.Controls.Add(this.emailErrores);
             this.Controls.Add(this.btnSiguiente);
@@ -148,6 +160,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -159,5 +172,6 @@
         private System.Windows.Forms.Button btnSiguiente;
         private ConfigEmailSmall emailReportes;
         private ConfigEmailSmall emailErrores;
+        private System.Windows.Forms.Label label2;
     }
 }

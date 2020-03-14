@@ -46,15 +46,16 @@
             this.btnAyudaDias = new System.Windows.Forms.Button();
             this.gbRutaDestino = new System.Windows.Forms.GroupBox();
             this.btnRutaBackup = new System.Windows.Forms.Button();
+            this.btnAyudaRuta = new System.Windows.Forms.Button();
             this.rdAutomaticas = new System.Windows.Forms.RadioButton();
             this.rdManuales = new System.Windows.Forms.RadioButton();
-            this.btnAyudaRuta = new System.Windows.Forms.Button();
             this.gbMotorBD = new System.Windows.Forms.GroupBox();
             this.rdSqlserver = new System.Windows.Forms.RadioButton();
             this.rdSqlite = new System.Windows.Forms.RadioButton();
             this.btnAyudaMotorBD = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbBaseDatos.SuspendLayout();
             this.gbConexion.SuspendLayout();
@@ -102,7 +103,7 @@
             this.gbBaseDatos.Size = new System.Drawing.Size(541, 65);
             this.gbBaseDatos.TabIndex = 1;
             this.gbBaseDatos.TabStop = false;
-            this.gbBaseDatos.Text = "Seleccione la base de datos a conectar";
+            this.gbBaseDatos.Text = "Seleccione la base de datos a conectar*";
             // 
             // btnAyudaArchivoBD
             // 
@@ -241,7 +242,7 @@
             this.gbBackups.Size = new System.Drawing.Size(558, 147);
             this.gbBackups.TabIndex = 6;
             this.gbBackups.TabStop = false;
-            this.gbBackups.Text = "Copias de seguridad";
+            this.gbBackups.Text = "Copias de seguridad*";
             // 
             // gbFrecuencia
             // 
@@ -303,7 +304,7 @@
             this.gbRutaDestino.Size = new System.Drawing.Size(532, 60);
             this.gbRutaDestino.TabIndex = 10;
             this.gbRutaDestino.TabStop = false;
-            this.gbRutaDestino.Text = "Ruta de destino";
+            this.gbRutaDestino.Text = "Ruta de destino*";
             // 
             // btnRutaBackup
             // 
@@ -323,6 +324,28 @@
             this.btnRutaBackup.TabIndex = 6;
             this.btnRutaBackup.Text = "Seleccionar una ruta";
             this.btnRutaBackup.UseVisualStyleBackColor = false;
+            // 
+            // btnAyudaRuta
+            // 
+            this.btnAyudaRuta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAyudaRuta.BackColor = System.Drawing.Color.Transparent;
+            this.btnAyudaRuta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyudaRuta.BackgroundImage")));
+            this.btnAyudaRuta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAyudaRuta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAyudaRuta.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAyudaRuta.FlatAppearance.BorderSize = 0;
+            this.btnAyudaRuta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnAyudaRuta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnAyudaRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyudaRuta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAyudaRuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAyudaRuta.Location = new System.Drawing.Point(501, 24);
+            this.btnAyudaRuta.Name = "btnAyudaRuta";
+            this.btnAyudaRuta.Size = new System.Drawing.Size(25, 25);
+            this.btnAyudaRuta.TabIndex = 7;
+            this.btnAyudaRuta.Tag = "RUTA DESTINO";
+            this.btnAyudaRuta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAyudaRuta.UseVisualStyleBackColor = false;
             // 
             // rdAutomaticas
             // 
@@ -349,28 +372,6 @@
             this.rdManuales.Text = "Manuales";
             this.rdManuales.UseVisualStyleBackColor = true;
             // 
-            // btnAyudaRuta
-            // 
-            this.btnAyudaRuta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAyudaRuta.BackColor = System.Drawing.Color.Transparent;
-            this.btnAyudaRuta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAyudaRuta.BackgroundImage")));
-            this.btnAyudaRuta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAyudaRuta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAyudaRuta.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAyudaRuta.FlatAppearance.BorderSize = 0;
-            this.btnAyudaRuta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAyudaRuta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnAyudaRuta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyudaRuta.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAyudaRuta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyudaRuta.Location = new System.Drawing.Point(501, 24);
-            this.btnAyudaRuta.Name = "btnAyudaRuta";
-            this.btnAyudaRuta.Size = new System.Drawing.Size(25, 25);
-            this.btnAyudaRuta.TabIndex = 7;
-            this.btnAyudaRuta.Tag = "RUTA DESTINO";
-            this.btnAyudaRuta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAyudaRuta.UseVisualStyleBackColor = false;
-            // 
             // gbMotorBD
             // 
             this.gbMotorBD.Controls.Add(this.rdSqlserver);
@@ -381,7 +382,7 @@
             this.gbMotorBD.Size = new System.Drawing.Size(541, 55);
             this.gbMotorBD.TabIndex = 7;
             this.gbMotorBD.TabStop = false;
-            this.gbMotorBD.Text = "Motor de base de datos";
+            this.gbMotorBD.Text = "Motor de base de datos*";
             // 
             // rdSqlserver
             // 
@@ -434,12 +435,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(140, 417);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.TabIndex = 22;
+            this.label2.Tag = "";
+            this.label2.Text = "* (Obligatorio)";
+            // 
             // FrmConfigBD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 484);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.gbMotorBD);
             this.Controls.Add(this.gbBackups);
             this.Controls.Add(this.btnSiguiente);
@@ -467,6 +479,7 @@
             this.gbMotorBD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -497,5 +510,6 @@
         private System.Windows.Forms.NumericUpDown numericFrecuencia;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -53,6 +53,7 @@
             this.gbArriba = new System.Windows.Forms.GroupBox();
             this.txtArriba = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gbTitulo.SuspendLayout();
             this.gbAncho.SuspendLayout();
@@ -141,7 +142,7 @@
             this.gbTitulo.Size = new System.Drawing.Size(554, 57);
             this.gbTitulo.TabIndex = 7;
             this.gbTitulo.TabStop = false;
-            this.gbTitulo.Text = "Título de reporte";
+            this.gbTitulo.Text = "Título de reporte*";
             // 
             // txtTitulo
             // 
@@ -165,7 +166,7 @@
             this.gbAncho.Size = new System.Drawing.Size(110, 57);
             this.gbAncho.TabIndex = 10;
             this.gbAncho.TabStop = false;
-            this.gbAncho.Text = "Ancho";
+            this.gbAncho.Text = "Ancho*";
             // 
             // txtAncho
             // 
@@ -191,7 +192,7 @@
             this.gbMedida.Size = new System.Drawing.Size(245, 57);
             this.gbMedida.TabIndex = 14;
             this.gbMedida.TabStop = false;
-            this.gbMedida.Text = "Medida";
+            this.gbMedida.Text = "Medida*";
             // 
             // listaMedida
             // 
@@ -217,7 +218,7 @@
             this.gbDimensiones.Size = new System.Drawing.Size(245, 100);
             this.gbDimensiones.TabIndex = 18;
             this.gbDimensiones.TabStop = false;
-            this.gbDimensiones.Text = "Dimensiones";
+            this.gbDimensiones.Text = "Dimensiones*";
             // 
             // gbAlto
             // 
@@ -227,6 +228,7 @@
             this.gbAlto.Size = new System.Drawing.Size(117, 57);
             this.gbAlto.TabIndex = 11;
             this.gbAlto.TabStop = false;
+            this.gbAlto.Tag = "*";
             this.gbAlto.Text = "Alto";
             // 
             // txtAlto
@@ -366,12 +368,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 297);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.TabIndex = 20;
+            this.label1.Tag = "";
+            this.label1.Text = "* (Obligatorio)";
+            // 
             // FrmConfigFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(579, 444);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gbMargenes);
             this.Controls.Add(this.gbDimensiones);
             this.Controls.Add(this.gbMedida);
@@ -406,6 +419,7 @@
             this.gbArriba.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -434,5 +448,6 @@
         private System.Windows.Forms.GroupBox gbDerecha;
         private System.Windows.Forms.TextBox txtDerecha;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -230,6 +230,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.errorProvider1.SetError(this.gbRutaDestino, "Verifique la carpeta seleccionada al parecer no existe");
                     return false;
                 }
+
+                eConfigBD.RutaDestinoBackup = ruta;
             }
 
             if (this.rdAutomaticas.Checked)

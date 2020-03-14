@@ -116,69 +116,64 @@
             }
             else if (frm.Name.Equals("FrmConfigTarifas"))
             {
+                bool result = true;
                 //Terminar la configuración
                 string rpta = this.FrmConfigInicial.GuardarDatos();
-                if (rpta.Equals("OK"))
-                {
-                    rpta = this.FrmConfigBD.GuardarDatos();
-                    if (rpta.Equals("OK"))
-                    {
-                        rpta = this.FrmConfigGeneral.GuardarDatos();
-                        if (rpta.Equals("OK"))
-                        {
-                            rpta = this.FrmConfigFacturas.GuardarDatos();
-                            if (rpta.Equals("OK"))
-                            {
-                                rpta = this.FrmConfigCorreos.GuardarDatos();
-                                if (rpta.Equals("OK"))
-                                {
-                                    rpta = this.FrmConfigTarifas.GuardarDatos();
-                                    if (rpta.Equals("OK"))
-                                    {
-                                        Mensajes.MensajeInformacion("¡Se guardaron las configuraciones correctamente! " +
-                                            "Reinicie el programa para que los cambios surgan efecto", "Entendido");
-                                        this.Close();
-                                    }
-                                    else
-                                    {
-                                        Mensajes.MensajeInformacion("Hubo un error con los datos de " +
-                                            "la configuración de tarifas", "Entendido");
-                                        return;
-                                    }
-                                }
-                                else
-                                {
-                                    Mensajes.MensajeInformacion("Hubo un error con los datos de " +
-                                        "la configuración de correos", "Entendido");
-                                    return;
-                                }
-                            }
-                            else
-                            {
-                                Mensajes.MensajeInformacion("Hubo un error con los datos de " +
-                                    "la configuración de facturas", "Entendido");
-                                return;
-                            }
-                        }
-                        else
-                        {
-                            Mensajes.MensajeInformacion("Hubo un error con los datos de " +
-                                "la configuración general", "Entendido");
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        Mensajes.MensajeInformacion("Hubo un error con los datos del formulario de la " +
-                            "base de datos", "Entendido");
-                        return;
-                    }
-                }
-                else
+                if (!rpta.Equals("OK"))
                 {
                     Mensajes.MensajeInformacion("Hubo un error con los datos del formulario inicial", "Entendido");
-                    return;
+                    result = false;
                 }
+
+                rpta = this.FrmConfigBD.GuardarDatos();
+                if (!rpta.Equals("OK"))
+                {
+                    Mensajes.MensajeInformacion("Hubo un error con los datos del formulario de la " +
+                       "base de datos", "Entendido"); ;
+                    result = false;
+                }
+
+                rpta = this.FrmConfigGeneral.GuardarDatos();
+                if (!rpta.Equals("OK"))
+                {
+                    Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                        "la configuración general", "Entendido");
+                    result = false;
+                }
+
+                rpta = this.FrmConfigFacturas.GuardarDatos();
+                if (!rpta.Equals("OK"))
+                {
+                    Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                        "la configuración de facturas", "Entendido");
+                    result = false;
+                }
+
+                rpta = this.FrmConfigCorreos.GuardarDatos();
+                if (!rpta.Equals("OK"))
+                {
+                    Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                                        "la configuración de correos", "Entendido");
+                    result = false;
+                }
+
+                rpta = this.FrmConfigTarifas.GuardarDatos();
+                if (!rpta.Equals("OK"))
+                {
+                    Mensajes.MensajeInformacion("Hubo un error con los datos de " +
+                                           "la configuración de tarifas", "Entendido");
+                    result = false;
+                }
+
+                if (result)
+                {
+                    Mensajes.MensajeInformacion("¡Se guardaron las configuraciones correctamente! " +
+                                         "Reinicie el programa para que los cambios surgan efecto", "Entendido");
+                    ConfigGeneral.Default.Primer_inicio = "NO";
+                    ConfigGeneral.Default.Save();
+                    this.Close();
+                }
+
             }
         }
 
