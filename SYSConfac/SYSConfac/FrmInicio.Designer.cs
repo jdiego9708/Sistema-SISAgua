@@ -49,7 +49,7 @@
             this.btnCaja.Name = "btnCaja";
             this.btnCaja.Size = new System.Drawing.Size(193, 181);
             this.btnCaja.TabIndex = 0;
-            this.btnCaja.Text = "Módulo de \r\ncaja";
+            this.btnCaja.Text = "Módulo de \r\nadmin caja";
             this.btnCaja.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCaja.UseVisualStyleBackColor = true;
             // 
