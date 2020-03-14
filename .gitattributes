@@ -15,3 +15,5 @@
 *.manifest binary
 *.application binary
 *.deploy binary
+*.html binary
+*.htm binary
