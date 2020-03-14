@@ -24,7 +24,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://raw.githubusercontent.com/jdiego9708/SISAgua/master/Publicaciones/</InstallUrl>
+    <InstallUrl>https://rawgithub.com/jdiego9708/SISAgua/master/Publicaciones/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/jdiego9708/SISAgua/master/Publicaciones/</UpdateUrl>
     <TargetCulture>es-CO</TargetCulture>
     <ProductName>SISAgua</ProductName>
@@ -32,7 +32,7 @@
     <SuiteName>SISAgua</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>50</ApplicationRevision>
+    <ApplicationRevision>53</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
