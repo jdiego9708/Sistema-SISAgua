@@ -59,14 +59,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
                         }
                         else if (this.txtPass.Text.Equals("configadmin"))
                         {
-                            FrmConfiguracionAplicacion frm = new FrmConfiguracionAplicacion
-                            {
-                                StartPosition = FormStartPosition.CenterScreen
-                            };
-                            frm.ShowDialog();
-                        }
-                        else if (this.txtPass.Text.Equals("con"))
-                        {
                             FrmConfiguracionInicial frm = new FrmConfiguracionInicial
                             {
                                 StartPosition = FormStartPosition.CenterScreen,
@@ -194,27 +186,31 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
                 this.IsLicenciado = this.ComprobarLicencia();
                 if (this.IsLicenciado)
                 {
-                    AutoCompleteStringCollection source = new AutoCompleteStringCollection();
-                    DataTable dtUsuarios = EEmpleado.BuscarEmpleados("COMPLETO", "", out string rpta);
-                    if (dtUsuarios != null)
+                    bool result = DatosInicioSesion.ComprobarConfiguraciones();
+                    if (result)
                     {
-                        foreach (DataRow row in dtUsuarios.Rows)
+                        AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+                        DataTable dtUsuarios = EEmpleado.BuscarEmpleados("COMPLETO", "", out string rpta);
+                        if (dtUsuarios != null)
                         {
-                            source.Add(
-                                Convert.ToString(row["Nombre_completo"]));
+                            foreach (DataRow row in dtUsuarios.Rows)
+                            {
+                                source.Add(
+                                    Convert.ToString(row["Nombre_completo"]));
+                            }
+
+                            this.txtUsuario.AutoCompleteCustomSource = source;
+                            this.txtUsuario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                            this.txtUsuario.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        }
+                        else
+                        {
+                            if (!rpta.Equals("OK"))
+                                throw new Exception(rpta);
                         }
 
-                        this.txtUsuario.AutoCompleteCustomSource = source;
-                        this.txtUsuario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                        this.txtUsuario.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                        this.txtUsuario.Focus();
                     }
-                    else
-                    {
-                        if (!rpta.Equals("OK"))
-                            throw new Exception(rpta);
-                    }
-
-                    this.txtUsuario.Focus();
                 }
                 else
                 {
@@ -229,7 +225,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
                         frmGestionarLicencias.ShowDialog();
                     }
                     else
-                        this.Close();
+                        Application.Exit();
                 }
             }
             catch (Exception ex)

@@ -19,6 +19,21 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnSiguiente.Click += BtnSiguiente_Click;
         }
 
+        public bool AsignarDatos()
+        {
+            bool result = this.emailErrores.AsignarDatos();
+            if (result)
+            {
+                result = this.emailReportes.AsignarDatos();
+                if (!result)
+                    return false;
+            }
+            else
+                return false;
+
+            return true;
+        }
+
         public string GuardarDatos()
         {
             string rpta = "OK";

@@ -71,10 +71,14 @@ namespace CapaPresentacionAdministracion.Formularios.FormsMedidores
                     foreach (DataRow row in dtMedidores.Rows)
                     {
                         MedidorSmall medidorSmall = new MedidorSmall();
-                        medidorSmall.AsignarDatos(new EMedidor(row));
-                        medidorSmall.OnBtnSiguienteClick += MedidorSmall_OnBtnSiguienteClick;
-                        medidorSmall.OnBtnEliminarClick += MedidorSmall_OnBtnEliminarClick;
-                        medidors.Add(medidorSmall);
+                        EMedidor eMedidor = new EMedidor(row);
+                        if (eMedidor.Estado_medidor.Equals("ACTIVO"))
+                        {
+                            medidorSmall.AsignarDatos(new EMedidor(row));
+                            medidorSmall.OnBtnSiguienteClick += MedidorSmall_OnBtnSiguienteClick;
+                            medidorSmall.OnBtnEliminarClick += MedidorSmall_OnBtnEliminarClick;
+                            medidors.Add(medidorSmall);
+                        }    
                     }
                     this.panel1.AddArrayControl(medidors);
                 }

@@ -310,14 +310,17 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             }
         }
 
-        private void AsignarDatos()
+        public bool AsignarDatos()
         {
+            bool result = true;
             EConfigBD eConfigBD = new EConfigBD();
             this.EConfigBD = eConfigBD;
             if (eConfigBD.MotorBD.Equals("SQLITE"))
                 this.rdSqlite.Checked = true;
             else if (eConfigBD.MotorBD.Equals("SQL SERVER"))
                 this.rdSqlserver.Checked = true;
+            else
+                result = false;
 
             string connectionString = eConfigBD.ConnectionDefault;
             string rutaBD = eConfigBD.FileName;
@@ -325,6 +328,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             {
                 this.btnSeleccionarBD.Text = "Seleccione una ruta";
                 this.btnSeleccionarBD.Tag = null;
+
+                result = false;
             }
             else
             {
@@ -347,13 +352,20 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                             Mensajes.MensajeInformacion("Hubo un error al tratar de conectarse a la base de datos, detalles: " +
                                 rpta, "Entendido");
                             this.errorProvider1.SetError(this.gbBaseDatos, "Hubo un error al tratar de conectarse a la base de datos");
+                            result = false;
                         }
                     }
                     else
+                    {
                         this.errorProvider1.SetError(this.gbBaseDatos, "Verifique los permisos sobre la base de datos " + rpta1);
+                        result = false;
+                    }
                 }
                 else
+                {
                     this.errorProvider1.SetError(this.gbBaseDatos, "El directorio de base de datos no existe");
+                    result = false;
+                }
             }
 
             this.txtConexion.Text = eConfigBD.ConnectionDefault;
@@ -376,6 +388,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             {
                 this.btnRutaBackup.Text = "Seleccione una ruta";
                 this.btnRutaBackup.Tag = null;
+                result = false;
             }
             else
             {
@@ -393,11 +406,18 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                         this.btnRutaBackup.Tag = rutaDestinoBackup;
                     }
                     else
+                    {
                         this.errorProvider1.SetError(this.gbRutaDestino, "Verifique los permisos sobre la carpeta " + rpta1);
+                        result = false;
+                    }
                 }
                 else
+                {
                     this.errorProvider1.SetError(this.gbRutaDestino, "El directorio no existe");
+                    result = false;
+                }
             }
+            return result;
         }
 
         private EConfigBD _eConfigBD;

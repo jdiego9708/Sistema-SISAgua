@@ -42,13 +42,14 @@
             this.btnConfiguracionAvanzada.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracionAvanzada.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracionAvanzada.Image")));
             this.btnConfiguracionAvanzada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracionAvanzada.Location = new System.Drawing.Point(1, 1);
+            this.btnConfiguracionAvanzada.Location = new System.Drawing.Point(0, 53);
             this.btnConfiguracionAvanzada.Name = "btnConfiguracionAvanzada";
             this.btnConfiguracionAvanzada.Size = new System.Drawing.Size(141, 49);
             this.btnConfiguracionAvanzada.TabIndex = 4;
             this.btnConfiguracionAvanzada.Text = "Configuración avanzada";
             this.btnConfiguracionAvanzada.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfiguracionAvanzada.UseVisualStyleBackColor = true;
+            this.btnConfiguracionAvanzada.Visible = false;
             // 
             // btnConfig
             // 
@@ -59,7 +60,7 @@
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.Image = ((System.Drawing.Image)(resources.GetObject("btnConfig.Image")));
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 51);
+            this.btnConfig.Location = new System.Drawing.Point(0, 0);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(141, 49);
             this.btnConfig.TabIndex = 5;

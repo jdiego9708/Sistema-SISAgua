@@ -16,6 +16,12 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.btnTerminar.Click += BtnTerminar_Click;
             this.btnAtras.Click += BtnAtras_Click;
             this.btnAddTarifaLecturas.Click += BtnAddTarifa_Click;
+            this.Load += FrmConfigTarifas_Load;
+        }
+
+        private void FrmConfigTarifas_Load(object sender, EventArgs e)
+        {
+            this.AsignarDatos();
         }
 
         private void BtnAddTarifa_Click(object sender, EventArgs e)
@@ -180,6 +186,58 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             ETarifas eTarifa = (ETarifas)sender;
             this.btnTarifaManual.Text = eTarifa.Descripcion;
             this.btnTarifaManual.Tag = eTarifa;
+        }
+
+        public bool AsignarDatos()
+        {
+            bool result = true;
+            int id_lectura = ConfigTarifas.Default.Id_tarifa_lectura;
+            int id_sesion = ConfigTarifas.Default.Id_tarifa_sesion;
+            int id_manual = ConfigTarifas.Default.Id_tarifa_manual;
+
+            if (id_lectura == 0)
+                result = false;
+            else
+            {
+                ETarifas eTarifa = new ETarifas(id_lectura);
+                if (eTarifa.Id_tarifa != 0)
+                {
+                    this.btnAddTarifaLecturas.Text = eTarifa.Descripcion;
+                    this.btnAddTarifaLecturas.Tag = eTarifa;
+                }
+                else
+                    result = false;
+            }
+
+            if (id_sesion == 0)
+                result = false;
+            else
+            {
+                ETarifas eTarifa = new ETarifas(id_sesion);
+                if (eTarifa.Id_tarifa != 0)
+                {
+                    this.btnAddTarifaSesion.Text = eTarifa.Descripcion;
+                    this.btnAddTarifaSesion.Tag = eTarifa;
+                }
+                else
+                    result = false;
+            }
+
+            if (id_manual == 0)
+                result = false;
+            else
+            {
+                ETarifas eTarifa = new ETarifas(id_manual);
+                if (eTarifa.Id_tarifa != 0)
+                {
+                    this.btnAddTarifaManual.Text = eTarifa.Descripcion;
+                    this.btnAddTarifaManual.Tag = eTarifa;
+                }
+                else
+                    result = false;
+            }
+
+            return result;
         }
 
         public event EventHandler OnBtnSiguienteClick;

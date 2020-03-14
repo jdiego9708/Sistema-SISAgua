@@ -9,7 +9,7 @@
       <Value Profile="(Default)">JUAN DIEGO DUQUE</Value>
     </Setting>
     <Setting Name="Ruta_archivos" Type="System.String" Scope="User">
-      <Value Profile="(Default)">F:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac</Value>
+      <Value Profile="(Default)">E:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac</Value>
     </Setting>
     <Setting Name="Id_caja_principal" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>

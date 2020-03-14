@@ -17,6 +17,7 @@ using CapaPresentacionAdministracion.Formularios.FormsArchivos;
 using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones;
 using CapaPresentacionAdministracion.Formularios.FormsReportes;
 using CapaPresentacionAdministracion.Formularios.FormsLecturas;
+using CapaPresentacionAdministracion.Formularios.FormsCorreos;
 
 namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
 {
@@ -40,6 +41,37 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
             this.btnHome.Click += BtnHome_Click;
             this.btnReportes.Click += BtnReportes_Click;
             this.FormClosing += FrmPrincipal_FormClosing;
+            this.btnEnviarEmail.Click += BtnEnviarEmail_Click;
+        }
+
+        private void BtnEnviarEmail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FrmEnvioEmail frm = new FrmEnvioEmail
+                {
+                    TopLevel = false,
+                    StartPosition = FormStartPosition.CenterParent
+                };
+                Form FormComprobado = this.ComprobarExistencia(frm);
+                if (FormComprobado != null)
+                {
+                    frm.WindowState = FormWindowState.Normal;
+                    frm.Activate();
+                }
+                else
+                {
+                    this.panel1.Controls.Add(frm);
+                    this.panel1.Tag = frm;
+                    frm.Show();
+                }
+                frm.BringToFront();
+            }
+            catch (Exception ex)
+            {
+                Mensajes.MensajeErrorCompleto(this.Name, "BtnEnviarEmail_Click",
+                    "Hubo un error con el botón enviar email", ex.Message);
+            }
         }
 
         private void BtnReportes_Click(object sender, EventArgs e)
@@ -59,11 +91,6 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
         }
 
         public event EventHandler OnBtnHome;
-
-        private void BtnHistorialPagoCuentas_Click(object sender, EventArgs e)
-        {
-            Mensajes.MensajeInformacion("Función en mantenimiento", "Entendido");
-        }
 
         private void BtnCierresCaja_Click(object sender, EventArgs e)
         {

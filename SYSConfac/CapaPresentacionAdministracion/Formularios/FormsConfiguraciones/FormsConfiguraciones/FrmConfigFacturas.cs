@@ -201,6 +201,43 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                 this.OnBtnSiguienteClick?.Invoke(this, e);
         }
 
+        public bool AsignarDatos()
+        {
+            bool result = true;
+            string titulo = ConfigFacturas.Default.Titulo_reporte;
+            string medida_default = ConfigFacturas.Default.Medida_default;
+            decimal ancho = ConfigFacturas.Default.Ancho;
+            decimal alto = ConfigFacturas.Default.Alto;
+            decimal arriba = ConfigFacturas.Default.MargenArriba;
+            decimal abajo = ConfigFacturas.Default.MargenAbajo;
+            decimal derecha = ConfigFacturas.Default.MargenDerecha;
+            decimal izquierda = ConfigFacturas.Default.MargenIzquierda;
+
+            if (string.IsNullOrWhiteSpace(titulo))
+                result = false;
+
+            if (string.IsNullOrWhiteSpace(medida_default))
+                result = false;
+
+            if (alto == 0)
+                result = false;
+
+            if (ancho == 0)
+                result = false;
+
+            this.txtTitulo.Text = titulo;
+            this.LlenarListasMedidas();
+            this.listaMedida.Text = medida_default;
+            this.txtAncho.Text = ancho.ToString("N2");
+            this.txtAlto.Text = alto.ToString("N2");
+            this.txtArriba.Text = arriba.ToString("N2");
+            this.txtBajo.Text = abajo.ToString("N2");
+            this.txtDerecha.Text = derecha.ToString("N2");
+            this.txtIzquierda.Text = izquierda.ToString("N2");
+
+            return result;
+        }
+
         public event EventHandler OnBtnSiguienteClick;
         public event EventHandler OnBtnAtrasClick;
     }

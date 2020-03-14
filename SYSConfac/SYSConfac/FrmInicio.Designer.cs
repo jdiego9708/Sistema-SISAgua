@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(593, 211);
+            this.ClientSize = new System.Drawing.Size(581, 187);
             this.Controls.Add(this.btnLecturas);
             this.Controls.Add(this.btnAdministracion);
             this.Controls.Add(this.btnCaja);

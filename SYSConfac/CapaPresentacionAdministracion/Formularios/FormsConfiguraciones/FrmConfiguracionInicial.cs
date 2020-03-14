@@ -12,6 +12,43 @@
             this.Load += FrmConfiguracionInicial_Load;
         }
 
+        public bool ComprobarConfiguracion()
+        {
+            bool result = true;
+            this.AbrirConfigInicial();
+            result = this.FrmConfigInicial.AsignarDatos();
+            if (result)
+            {
+                this.AbrirConfigBD();
+                result = this.FrmConfigBD.AsignarDatos();
+
+                if (result)
+                {
+                    this.AbrirConfigGeneral();
+                    result = this.FrmConfigGeneral.AsignarDatos();
+
+                    if (result)
+                    {
+                        this.AbrirConfigFacturas();
+                        result = this.FrmConfigFacturas.AsignarDatos();
+
+                        if (result)
+                        {
+                            this.AbrirConfigCorreos();
+                            result = this.FrmConfigCorreos.AsignarDatos();
+
+                            if (result)
+                            {
+                                this.AbrirConfigTarifas();
+                                result = this.FrmConfigTarifas.AsignarDatos();
+                            }
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
         private FrmConfigBD FrmConfigBD;
         private FrmConfigCorreos FrmConfigCorreos;
         private FrmConfigFacturas FrmConfigFacturas;

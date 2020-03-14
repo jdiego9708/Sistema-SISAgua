@@ -1,9 +1,5 @@
 ﻿using CapaEntidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones;
 
 namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
 {
@@ -20,6 +16,18 @@ namespace CapaPresentacionAdministracion.Formularios.FormsPrincipales
             return _Instancia;
         }
         #endregion
+
+        public static bool ComprobarConfiguraciones()
+        {
+            FrmConfiguracionInicial frmConfiguracionInicial = new FrmConfiguracionInicial();
+            bool result = frmConfiguracionInicial.ComprobarConfiguracion();
+            if (!result)
+            {
+                Mensajes.MensajeInformacion("Encontramos problemas en la configuración de la aplicación, " +
+                    "por favor revise la configuración y solucione los problemas", "Entendido");
+            }
+            return result;
+        }
 
         private EEmpleado _eEmpleado;
         private ECaja _eCaja;

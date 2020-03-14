@@ -44,6 +44,7 @@
             this.btnLecturas = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEnviarEmail = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             this.panelBotones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(175)))), ((int)(((byte)(194)))));
+            this.panelBotones.Controls.Add(this.btnEnviarEmail);
             this.panelBotones.Controls.Add(this.btnReportes);
             this.panelBotones.Controls.Add(this.btnHome);
             this.panelBotones.Controls.Add(this.btnCierresCaja);
@@ -155,13 +157,13 @@
             this.btnConfiguraciones.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguraciones.ForeColor = System.Drawing.Color.White;
             this.btnConfiguraciones.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguraciones.Image")));
-            this.btnConfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnConfiguraciones.Location = new System.Drawing.Point(0, 517);
+            this.btnConfiguraciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguraciones.Location = new System.Drawing.Point(0, 561);
             this.btnConfiguraciones.Name = "btnConfiguraciones";
             this.btnConfiguraciones.Size = new System.Drawing.Size(156, 47);
             this.btnConfiguraciones.TabIndex = 9;
             this.btnConfiguraciones.Text = "Otras \r\nconfiguraciones";
-            this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConfiguraciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConfiguraciones.UseVisualStyleBackColor = true;
             // 
             // btnGastos
@@ -324,6 +326,25 @@
             this.panel1.Size = new System.Drawing.Size(896, 669);
             this.panel1.TabIndex = 1;
             // 
+            // btnEnviarEmail
+            // 
+            this.btnEnviarEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEnviarEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnviarEmail.FlatAppearance.BorderSize = 0;
+            this.btnEnviarEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviarEmail.ForeColor = System.Drawing.Color.White;
+            this.btnEnviarEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnEnviarEmail.Image")));
+            this.btnEnviarEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEnviarEmail.Location = new System.Drawing.Point(0, 510);
+            this.btnEnviarEmail.Name = "btnEnviarEmail";
+            this.btnEnviarEmail.Size = new System.Drawing.Size(156, 47);
+            this.btnEnviarEmail.TabIndex = 16;
+            this.btnEnviarEmail.Text = "Enviar correo";
+            this.btnEnviarEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnviarEmail.UseVisualStyleBackColor = true;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -363,5 +384,6 @@
         private System.Windows.Forms.Button btnCierresCaja;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnReportes;
+        private System.Windows.Forms.Button btnEnviarEmail;
     }
 }

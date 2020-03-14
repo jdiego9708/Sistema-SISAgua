@@ -14,22 +14,22 @@
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>E:\Juan Diego\Google Drive\PROYECTOS\EN CURSO\SYSConfac\Publicaciones\Publicación 19-10-2019\</PublishUrl>
+    <PublishUrl>E:\Juan Diego\Repositorios\Sistema-SISAgua\Publicaciones\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>https://raw.githubusercontent.com/jdiego9708/SISAgua/master/SYSConfac/SYSConfac/publish/</UpdateUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/jdiego9708/SISAgua/master/Publicaciones/</UpdateUrl>
     <TargetCulture>es-CO</TargetCulture>
     <ProductName>SISAgua</ProductName>
     <PublisherName>Juan Diego Duque</PublisherName>
     <SuiteName>SISAgua</SuiteName>
-    <ApplicationRevision>47</ApplicationRevision>
+    <ApplicationRevision>48</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

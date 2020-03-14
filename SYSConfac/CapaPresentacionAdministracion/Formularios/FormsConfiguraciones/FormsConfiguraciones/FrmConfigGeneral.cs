@@ -226,13 +226,15 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             }
         }
 
-        private void AsignarDatos()
+        public bool AsignarDatos()
         {
+            bool result = true;
             string rutaArchivo = ConfigGeneral.Default.Ruta_archivos;
             if (string.IsNullOrEmpty(rutaArchivo))
             {
                 this.btnRuta.Text = "Seleccione una ruta";
                 this.btnRuta.Tag = null;
+                result = false;
             }
             else
             {
@@ -248,16 +250,23 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                         this.btnRuta.Tag = rutaArchivo;
                     }
                     else
+                    {
                         this.errorProvider1.SetError(this.gbRuta, "Verifique los permisos sobre la carpeta " + rpta1);
+                        result = false;
+                    }
                 }
                 else
+                {
                     this.errorProvider1.SetError(this.gbRuta, "El directorio no existe");
+                    result = false;
+                }
             }
 
             this.CargarCajas();
 
             this.numericMesesAlerta.Value = ConfigGeneral.Default.Meses_alerta_corte;
             this.numericMesesCorte.Value = ConfigGeneral.Default.Meses_corte;
+            return result;
         }
     }
 }

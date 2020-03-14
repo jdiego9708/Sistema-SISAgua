@@ -57,6 +57,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsArchivos
                     {
                         EArchivosSistema eArchivosSistema = new EArchivosSistema(row);
                         ArchivoSmall archivoSmall = new ArchivoSmall();
+                        archivoSmall.OnRefresh += ArchivoSmall_OnRefresh;
                         archivoSmall.AsignarDatos(eArchivosSistema);
                         controls.Add(archivoSmall);
                     }
@@ -75,6 +76,11 @@ namespace CapaPresentacionAdministracion.Formularios.FormsArchivos
                 Mensajes.MensajeErrorCompleto(this.Name, "BuscarArchivos",
                     "Hubo un error al observar los archivos", ex.Message);
             }
+        }
+
+        private void ArchivoSmall_OnRefresh(object sender, EventArgs e)
+        {
+            this.BuscarArchivos("COMPLETO", "");
         }
     }
 }

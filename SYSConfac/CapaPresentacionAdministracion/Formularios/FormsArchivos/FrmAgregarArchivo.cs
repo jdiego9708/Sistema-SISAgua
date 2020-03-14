@@ -60,7 +60,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsArchivos
 
             eArchivosSistema.Fecha_ingreso = DateTime.Now;
             eArchivosSistema.Ruta_archivo = 
-                Path.Combine(ArchivosAdjuntos.ObtenerRutaDestino("RutaDestinoArchivos"), this.uploadArchive1.Nombre_archivo);
+                Path.Combine(ArchivosAdjuntos.ObtenerRutaDestino("Ruta_archivos"), this.uploadArchive1.Nombre_archivo);
             eArchivosSistema.Nombre_archivo = this.uploadArchive1.Nombre_archivo;
             eArchivosSistema.Titulo = this.txtTitulo.Text;
             eArchivosSistema.Descripcion = this.txtDescripcion.Text;

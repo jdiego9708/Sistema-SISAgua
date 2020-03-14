@@ -428,6 +428,12 @@
     <Compile Include="Formularios\FormsConfiguraciones\FrmConfiguracionInicial.Designer.cs">
       <DependentUpon>FrmConfiguracionInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormsCorreos\FrmEnvioEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormsCorreos\FrmEnvioEmail.Designer.cs">
+      <DependentUpon>FrmEnvioEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormsCuentas\CuentaLarge.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -996,6 +1002,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsConfiguraciones\FrmConfiguracionInicial.resx">
       <DependentUpon>FrmConfiguracionInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormsCorreos\FrmEnvioEmail.resx">
+      <DependentUpon>FrmEnvioEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormsCuentas\CuentaLarge.resx">
       <DependentUpon>CuentaLarge.cs</DependentUpon>

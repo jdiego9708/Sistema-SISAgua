@@ -93,14 +93,35 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             this.AsignarDatos();
         }
 
-        private void AsignarDatos()
+        public bool AsignarDatos()
         {
+            bool result = true;
             this.txtEmpresa.Text = ConfigGeneral.Default.Nombre_empresa;
             this.txtPresidente.Text = ConfigGeneral.Default.Nombre_presidente;
             this.txtCorreo.Text = ConfigGeneral.Default.Correo_presidente;
             this.txtDireccion.Text = ConfigGeneral.Default.Direccion_empresa;
             this.txtCiudad.Text = ConfigGeneral.Default.Ciudad_empresa;
             this.txtTeléfono.Text = ConfigGeneral.Default.Telefono_empresa;
+
+            if (string.IsNullOrWhiteSpace(this.txtEmpresa.Text))
+                result = false;
+
+            if (string.IsNullOrWhiteSpace(this.txtPresidente.Text))
+                result = false;
+
+            if (string.IsNullOrWhiteSpace(this.txtCorreo.Text))
+                result = false;
+
+            if (string.IsNullOrWhiteSpace(this.txtDireccion.Text))
+                result = false;
+
+            if (string.IsNullOrWhiteSpace(this.txtCiudad.Text))
+                result = false;
+
+            if (string.IsNullOrWhiteSpace(this.txtTeléfono.Text))
+                result = false;
+
+            return result;
         }
     }
 }

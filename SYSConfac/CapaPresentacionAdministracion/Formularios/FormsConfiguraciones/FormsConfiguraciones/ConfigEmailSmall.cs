@@ -26,23 +26,25 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             if (this.Comprobaciones())
             {
                 HelperMail helperMail = new HelperMail();
-                if (helperMail.SendEmailTest(this.txtCorreoEnvio.Text, this.txtCorreoRecepcion.Text, this.txtServidorSMTP.Text, 
+                if (helperMail.SendEmailTest(this.txtCorreoEnvio.Text, this.txtCorreoRecepcion.Text, this.txtServidorSMTP.Text,
                     int.Parse(this.txtPuerto.Text), this.txtContraseña.Text, this.Tipo_email, out string rpta))
                 {
                     Mensajes.MensajeOkForm("¡Se envió el correo de prueba correctamente!");
                 }
                 else
                 {
-                    Mensajes.MensajeInformacion("Hubo un error al enviar el correo electrónico de prueba, detalles: " + 
+                    Mensajes.MensajeInformacion("Hubo un error al enviar el correo electrónico de prueba, detalles: " +
                         rpta, "Entendido");
                 }
             }
         }
 
-        private void AsignarDatos()
+        public bool AsignarDatos()
         {
+            bool result = false;
             if (this.Tipo_email != null)
             {
+                result = true;
                 if (this.Tipo_email.Equals("ERRORES"))
                 {
                     this.txtCorreoEnvio.Text = ConfigEmail.Default.Email_errores;
@@ -50,7 +52,27 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.txtCorreoRecepcion.Text = ConfigEmail.Default.Email_recepcion_errores;
                     this.txtServidorSMTP.Text = ConfigEmail.Default.Server_smtp_errores;
                     this.txtPuerto.Text = ConfigEmail.Default.Port_server_errores;
-                    return;
+
+                    if (string.IsNullOrWhiteSpace(this.txtCorreoEnvio.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtCorreoRecepcion.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtServidorSMTP.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtPuerto.Text))
+                        result = false;
+
+                    if (!HelperMail.Email_comprobation(this.txtCorreoEnvio.Text))                  
+                        result = false;
+
+                    if (!HelperMail.Email_comprobation(this.txtCorreoRecepcion.Text))
+                        result = false;
                 }
 
                 if (this.Tipo_email.Equals("REPORTES"))
@@ -60,9 +82,30 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
                     this.txtCorreoRecepcion.Text = ConfigEmail.Default.Email_recepcion_reportes;
                     this.txtServidorSMTP.Text = ConfigEmail.Default.Server_smtp_reportes;
                     this.txtPuerto.Text = ConfigEmail.Default.Port_server_reportes;
-                    return;
+
+                    if (string.IsNullOrWhiteSpace(this.txtCorreoEnvio.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtCorreoRecepcion.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtServidorSMTP.Text))
+                        result = false;
+
+                    if (string.IsNullOrWhiteSpace(this.txtPuerto.Text))
+                        result = false;
+
+                    if (!HelperMail.Email_comprobation(this.txtCorreoEnvio.Text))
+                        result = false;
+
+                    if (!HelperMail.Email_comprobation(this.txtCorreoRecepcion.Text))
+                        result = false;
                 }
             }
+            return result;
         }
 
         public bool Comprobaciones()
@@ -128,7 +171,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
             {
                 this.container = new PoperContainer(this.helpToolTip);
                 this.container.Show(this.btnAyudaCorreo);
-            }           
+            }
         }
 
         private void AsignarDatos(string tipo)

@@ -49,7 +49,7 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("F:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac")]
+        [global::System.Configuration.DefaultSettingValueAttribute("E:\\JUAN DIEGO\\Google Drive\\Proyectos\\SYSConfac")]
         public string Ruta_archivos {
             get {
                 return ((string)(this["Ruta_archivos"]));
