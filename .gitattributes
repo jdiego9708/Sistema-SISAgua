@@ -10,6 +10,9 @@
 *.gitattributes text
 .gitignore      text
 *.md            text
+* .manifest binary
+* .application binary
+* .deploy binary
 
 #
 # Exclude files from exporting
