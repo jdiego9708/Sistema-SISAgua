@@ -107,7 +107,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " Módulos SIS-AGUA";
+            this.Text = " Módulos del software SIS-AGUA";
             this.ResumeLayout(false);
 
         }
