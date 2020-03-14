@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.1" />
+  </startup>
+
+  <appSettings>
+    <add key="eMailFrom" value="jdiego970831@gmail.com" />
+    <add key="eMailTo" value="jdiego9708@gmail.com" />
+    <add key="eMailSMTP" value="smtp.gmail.com" />
+    <add key="eMailPass" value="" />
+    <add key="portEmail" value="587" />
+    <add key="nameBDConnection" value="conexionLocalBDAdminSalas" />
+    <add key="primerUso" value="true" />
+    <add key="licencia" value="3229098696" />
+    <add key="activado" value="false" />
+    <add key="tiempoCorteServicio" value="4" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+    <add key="RutaDestinoArchivos" value="G:\Juan Diego\OneDrive\PROYECTOS\EN CURSO\SYSConfac\Archivos prueba\" />
+    <add key="IdCajaPrincipal" value="1" />
+    <add key="TituloFactura" value="JUNTA ADMINISTRADORA DE AGUA POTABLE DE LA PARROQUIA DE YAMANA;    YAMANA - PALTAS - LOJA - ECUADOR" />
+    <add key="TituloPlanilla" value="JUNTA ADMINISTRADORA DE AGUA POTABLE DE LA PARROQUIA DE YAMANA;    YAMANA - PALTAS - LOJA - ECUADOR" />
+  </appSettings>
+
+  <connectionStrings>
+    <add name="ConexionBDJoseLuis" connectionString="Data Source=ROSMENI-PC\SQLEXPRESS; Initial Catalog=SISAdminPlaceBD; User ID=sa;Password=admin2019*" providerName="System.Data.SqlClient" />
+    <add name="ConexionBDJunta" connectionString="Data Source=DESKTOP-8Q5JAQE\SQLEXPRESS; Initial Catalog=SISAdminPlaceBD; User ID=sa;Password=admin2019*" providerName="System.Data.SqlClient" />
+    <add name="conexionLocalBDAdminSalas" connectionString="Data Source=G:\Juan Diego\OneDrive\PROYECTOS\EN CURSO\SYSConfac\Base de datos\SYSConfacBD.db" providerName="System.Data.SQLite" />
+    <add name="conexionLocalBDJuanDiego" connectionString="Data Source=C:\Users\Diego\OneDrive\PROYECTOS\EN CURSO\SYSConfac\Base de datos\SYSConfacBD.db" providerName="System.Data.SQLite" />
+  </connectionStrings>
+
+  <runtime>
+
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+
+      <dependentAssembly>
+
+        <assemblyIdentity name="Microsoft.ReportViewer.Common" publicKeyToken="89845dcd8080cc91" culture="neutral" />
+
+        <bindingRedirect oldVersion="0.0.0.0-15.0.0.0" newVersion="15.0.0.0" />
+
+      </dependentAssembly>
+
+      <dependentAssembly>
+
+        <assemblyIdentity name="Microsoft.ReportViewer.ProcessingObjectModel" publicKeyToken="89845dcd8080cc91" culture="neutral" />
+
+        <bindingRedirect oldVersion="0.0.0.0-11.0.0.0" newVersion="11.0.0.0" />
+
+      </dependentAssembly>
+
+    </assemblyBinding>
+
+  </runtime>
+</configuration>
