@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones" GeneratedClassName="ConfigGeneral">
+  <Profiles />
+  <Settings>
+    <Setting Name="Nombre_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">JUNTA ADMINISTRADORA DE AGUA DE LA PARROQUIA DE YAMANA</Value>
+    </Setting>
+    <Setting Name="Nombre_presidente" Type="System.String" Scope="User">
+      <Value Profile="(Default)">JUAN DIEGO DUQUE</Value>
+    </Setting>
+    <Setting Name="Ruta_archivos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E:\JUAN DIEGO\Google Drive\Proyectos\SYSConfac</Value>
+    </Setting>
+    <Setting Name="Id_caja_principal" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Meses_alerta_corte" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Meses_corte" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="Correo_presidente" Type="System.String" Scope="User">
+      <Value Profile="(Default)">jdiego9708@gmail.com</Value>
+    </Setting>
+    <Setting Name="Telefono_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">8768684</Value>
+    </Setting>
+    <Setting Name="Direccion_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Calle de prueba</Value>
+    </Setting>
+    <Setting Name="Ciudad_empresa" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ecuador</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
