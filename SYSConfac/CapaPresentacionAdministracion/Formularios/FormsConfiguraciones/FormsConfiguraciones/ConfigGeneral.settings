@@ -33,7 +33,7 @@
       <Value Profile="(Default)">Ecuador</Value>
     </Setting>
     <Setting Name="Primer_inicio" Type="System.String" Scope="User">
-      <Value Profile="(Default)">NO</Value>
+      <Value Profile="(Default)">SI</Value>
     </Setting>
   </Settings>
 </SettingsFile>
