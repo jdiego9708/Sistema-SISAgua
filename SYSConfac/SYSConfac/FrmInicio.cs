@@ -19,6 +19,8 @@ namespace SYSConfac
 
         private void FrmInicio_Load(object sender, EventArgs e)
         {
+            Updates.InstallUpdateSyncWithInfo();
+
             DateTime fechaActual = DateTime.Now;
             if (fechaActual > new DateTime(2019, 09, 16) & fechaActual < new DateTime(2019, 09, 23))
             {
