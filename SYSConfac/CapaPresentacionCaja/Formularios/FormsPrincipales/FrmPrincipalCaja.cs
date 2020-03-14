@@ -442,6 +442,8 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                          EHistorialGastos.BuscarHistorialGastos("MES", DateTime.Now.Month.ToString(), out rpta);
             decimal total_gastos = 0;
             int cantidad_gastos = 0;
+            int cantidad_gastos_hoy = 0;
+            decimal total_gastos_hoy = 0;
             if (dtGastos != null)
             {
                 cantidad_gastos = dtGastos.Rows.Count;
@@ -449,6 +451,12 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 {
                     EHistorialGastos eHistorial = new EHistorialGastos(row);
                     total_gastos += eHistorial.Valor_gasto;
+
+                    if (eHistorial.Fecha_gasto.ToString("yyyy-MM-dd").Equals(DateTime.Now.ToString("yyyy-MM-dd")))
+                    {
+                        cantidad_gastos_hoy += 1;
+                        total_gastos_hoy += 1;
+                    }
                 }
             }
 
