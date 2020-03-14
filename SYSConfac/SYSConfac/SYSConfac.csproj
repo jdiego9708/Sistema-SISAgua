@@ -29,7 +29,7 @@
     <ProductName>SISAgua</ProductName>
     <PublisherName>Juan Diego Duque</PublisherName>
     <SuiteName>SISAgua</SuiteName>
-    <ApplicationRevision>48</ApplicationRevision>
+    <ApplicationRevision>49</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
