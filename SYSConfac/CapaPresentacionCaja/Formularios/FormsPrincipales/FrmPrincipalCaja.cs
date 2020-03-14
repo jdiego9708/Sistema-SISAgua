@@ -622,6 +622,16 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
                 }
                 else
                     info.Append("No hay gastos este mes");
+                info.Append(Environment.NewLine);
+                //Gastos de hoy
+                if (cantidad_gastos_hoy != 0)
+                {
+                    info.Append("Hoy se a registrado ").Append(cantidad_gastos_hoy).Append(" gastos");
+                    info.Append(Environment.NewLine);
+                    info.Append("Total de gastos hoy ").Append(total_gastos_hoy.ToString("N2"));
+                }
+                else
+                    info.Append("No hay gastos este mes");
 
                 info.Append(Environment.NewLine);
                 info.Append(" ");
