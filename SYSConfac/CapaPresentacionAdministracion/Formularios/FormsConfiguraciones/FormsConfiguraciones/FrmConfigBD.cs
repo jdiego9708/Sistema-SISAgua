@@ -123,7 +123,10 @@ namespace CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsC
         private void BtnSiguiente_Click(object sender, EventArgs e)
         {
             if (this.Comprobaciones(out _))
+            {
+                this.GuardarDatos();
                 OnBtnSiguienteClick?.Invoke(this, e);
+            }
         }
 
         private void BtnAtras_Click(object sender, EventArgs e)
