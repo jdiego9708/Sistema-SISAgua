@@ -94,24 +94,24 @@ namespace CapaPresentacionAdministracion.Formularios.FormsTarifas
                     ETarifas.BuscarTarifas(tipo_busqueda, texto_busqueda, out string rpta);
                 if (dtTarifas != null)
                 {
-                    if (!this.IsConfig)
-                    {
-                        int id_tarifa_sesion_default = ConfigTarifas.Default.Id_tarifa_sesion;
-                        int id_tarifa_lectura_default = ConfigTarifas.Default.Id_tarifa_lectura;
-                        int id_tarifa_manual_default = ConfigTarifas.Default.Id_tarifa_manual;
+                    //if (!this.IsConfig)
+                    //{
+                    //    int id_tarifa_sesion_default = ConfigTarifas.Default.Id_tarifa_sesion;
+                    //    int id_tarifa_lectura_default = ConfigTarifas.Default.Id_tarifa_lectura;
+                    //    int id_tarifa_manual_default = ConfigTarifas.Default.Id_tarifa_manual;
 
-                        DataRow[] rows =
-                            dtTarifas.Select(string.Format("Id_tarifa = {0} or " +
-                            "Id_tarifa = {1} or Id_tarifa = {2} ", id_tarifa_lectura_default,
-                            id_tarifa_manual_default, id_tarifa_sesion_default));
-                        if (rows.Length > 0)
-                        {
-                            foreach (DataRow row in rows)
-                            {
-                                dtTarifas.Rows.Remove(row);
-                            }
-                        }
-                    }
+                    //    DataRow[] rows =
+                    //        dtTarifas.Select(string.Format("Id_tarifa = {0} or " +
+                    //        "Id_tarifa = {1} or Id_tarifa = {2} ", id_tarifa_lectura_default,
+                    //        id_tarifa_manual_default, id_tarifa_sesion_default));
+                    //    if (rows.Length > 0)
+                    //    {
+                    //        foreach (DataRow row in rows)
+                    //        {
+                    //            dtTarifas.Rows.Remove(row);
+                    //        }
+                    //    }
+                    //}
 
                     this.lblResultados.Text = "Se encontraron " + dtTarifas.Rows.Count + " tarifas";
                     this.dgvTarifas.Enabled = true;

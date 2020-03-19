@@ -58,7 +58,7 @@
             this.groupBox1.Controls.Add(this.txtBusqueda);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(579, 61);
+            this.groupBox1.Size = new System.Drawing.Size(858, 61);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda";
@@ -74,7 +74,7 @@
             this.txtBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBusqueda.MaxLenght = 0;
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(567, 20);
+            this.txtBusqueda.Size = new System.Drawing.Size(846, 20);
             this.txtBusqueda.TabIndex = 0;
             this.txtBusqueda.Texto = null;
             this.txtBusqueda.Texto_inicial = null;
@@ -97,7 +97,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(386, 80);
+            this.bindingNavigator1.Location = new System.Drawing.Point(665, 80);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -214,7 +214,7 @@
             this.dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmpleados.RowTemplate.Height = 30;
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(579, 339);
+            this.dgvEmpleados.Size = new System.Drawing.Size(858, 504);
             this.dgvEmpleados.TabIndex = 15;
             // 
             // lblResultados
@@ -231,7 +231,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(603, 459);
+            this.ClientSize = new System.Drawing.Size(882, 624);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.dgvEmpleados);

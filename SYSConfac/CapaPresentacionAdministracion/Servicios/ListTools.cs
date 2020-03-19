@@ -22,14 +22,25 @@ namespace CapaPresentacionAdministracion
             int contador24hours = 1;
             int contador12hours = 1;
             string tipo = "am";
+            bool isMediaHora = false;
             while (contador24hours <= 24)
             {
                 DataRow row = dtHoras.NewRow();
-                row["Hora"] = contador24hours + ":00";
-                row["Texto_hora"] = contador12hours + ":00 " + tipo;
-                dtHoras.Rows.Add(row);
-                contador24hours += 1;
-                contador12hours += 1;
+                if (isMediaHora)
+                {                   
+                    row["Hora"] = contador24hours + ":30";
+                    row["Texto_hora"] = contador12hours + ":30 " + tipo;
+                    isMediaHora = false;
+                    contador24hours += 1;
+                    contador12hours += 1;
+                }
+                else
+                {
+                    isMediaHora = true;
+                    row["Hora"] = contador24hours + ":00";
+                    row["Texto_hora"] = contador12hours + ":00 " + tipo;
+                }
+                dtHoras.Rows.Add(row);             
                 if (contador12hours > 12)
                 {
                     contador12hours = 1;

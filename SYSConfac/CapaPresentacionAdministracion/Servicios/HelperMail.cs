@@ -1,6 +1,7 @@
 ﻿namespace CapaPresentacionAdministracion.Servicios
 {
     using CapaPresentacionAdministracion.Formularios.FormsConfiguraciones.FormsConfiguraciones;
+    using CapaPresentacionAdministracion.Properties;
     using System;
     using System.IO;
     using System.Net.Mail;
@@ -216,7 +217,12 @@
 
         private string templateEmail()
         {
-            string _pathTemplate = "Servicios/templateMail.htm";
+            return Resources.templateMail;
+        }
+
+        private string templateEmail1()
+        {
+            string _pathTemplate = "templateMail.htm";
 
             string eMailHTML = null;
 

@@ -211,6 +211,26 @@ namespace CapaPresentacionAdministracion.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+        ///&lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+        ///    &lt;!-- Facebook sharing information tags --&gt;
+        ///    &lt;meta property=&quot;og:title&quot; content=&quot;*|MC:SUBJECT|*&quot; /&gt;
+        ///    &lt;title&gt;*|MC:SUBJECT|*&lt;/title&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///                /* Client-specific Styles */
+        ///                #outlook a {
+        ///                    padding: 0;
+        ///                }        /// [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string templateMail {
+            get {
+                return ResourceManager.GetString("templateMail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap textx24 {

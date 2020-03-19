@@ -269,12 +269,15 @@ namespace CapaPresentacionCaja.Formularios.FormsPrincipales
 
         private void Frm_OnCajaModified(object sender, EventArgs e)
         {
-            if (ECaja.Estado_caja.Equals("CERRADA"))
+            if (this.ECaja.Estado_caja.Equals("CERRADA"))
             {
                 EApertura eApertura = (EApertura)sender;
                 this.EApertura = eApertura;
                 //this.SumarValor(eApertura.Valor_inicial);
                 VerificarCaja();
+
+                if (this.ECaja != null)
+                    this.ComprobarInformacion(this.ECaja.Id_caja);
             }
             else
             {
