@@ -14,6 +14,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsMedidores
 {
     public partial class FrmObservarMedidores : Form
     {
+        FrmAgregarMedidorCliente frmAgregarMedidorCliente;
+        PoperContainer container;
         public FrmObservarMedidores()
         {
             InitializeComponent();

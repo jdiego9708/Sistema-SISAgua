@@ -45,7 +45,21 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
                 Id_cliente = this.ECliente.Id_cliente
             };
             frmObservarMedidores.OnBtnMedidorSmallSiguiente += FrmObservarMedidores_OnBtnMedidorSmallSiguiente;
+            frmObservarMedidores.OnBtnMedidorSmallAgregarMedidor += FrmObservarMedidores_OnBtnMedidorSmallAgregarMedidor;
             frmObservarMedidores.ShowDialog();
+        }
+
+        private void FrmObservarMedidores_OnBtnMedidorSmallAgregarMedidor(object sender, EventArgs e)
+        {
+            FrmAgregarMedidorCliente frmAgregarMedidor = new FrmAgregarMedidorCliente
+            {
+                Dock = DockStyle.Fill,
+                FormBorderStyle = FormBorderStyle.None,
+                TopLevel = false
+            };
+            PoperContainer container = new PoperContainer(frmAgregarMedidor);
+            container.Show(this.btnMedidor);
+            frmAgregarMedidor.Show();
         }
 
         private void FrmObservarMedidores_OnBtnMedidorSmallSiguiente(object sender, EventArgs e)
@@ -340,8 +354,8 @@ namespace CapaPresentacionAdministracion.Formularios.FormsCuentas
             if (isManual)
             {
                 DataRow[] rowSearch =
-                dtTarifas.Select(string.Format("Id_tarifa = {0} or Id_tarifa = {1} or Id_tarifa = {2} ",
-                id_tarifa_lectura_default, id_tarifa_manual_default, id_tarifa_sesion_default));
+                dtTarifas.Select(string.Format("Id_tarifa = {0} or Id_tarifa = {1} ",
+                id_tarifa_lectura_default, id_tarifa_sesion_default));
                 if (rowSearch.Length > 0)
                 {
                     foreach (DataRow row in rowSearch)
