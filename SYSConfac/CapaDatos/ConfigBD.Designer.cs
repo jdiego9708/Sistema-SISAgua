@@ -12,7 +12,7 @@ namespace CapaDatos {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     internal sealed partial class ConfigBD : global::System.Configuration.ApplicationSettingsBase {
         
         private static ConfigBD defaultInstance = ((ConfigBD)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new ConfigBD())));
@@ -25,7 +25,7 @@ namespace CapaDatos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=E:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=F:\\Juan Diego\\Google Drive\\Proyectos\\SYSConfac\\Base de datos\\SYSConfa" +
             "cBDPrueba.db")]
         public string ConnectionDefault {
             get {
